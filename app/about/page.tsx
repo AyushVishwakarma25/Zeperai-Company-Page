@@ -11,30 +11,30 @@ export default function AboutPage() {
   const values = [
     {
       icon: <Zap className="w-8 h-8 text-blue-400" />,
-      title: "Innovation First",
-      description: "We blend AI, automation, and creative thinking to solve real problems for brands."
+      title: "AI as Partner, Not Replacement",
+      description: "We view AI as an enabler of human creativity. Technology amplifies our capabilities, but humans remain the director of every project."
     },
     {
       icon: <Target className="w-8 h-8 text-purple-400" />,
-      title: "Data-Driven Strategy",
-      description: "Every decision backed by analytics, insights, and performance metrics."
+      title: "Data-Driven Solutions",
+      description: "Every strategy combines design excellence, creative intelligence, and cutting-edge automation to deliver measurable results."
     },
     {
       icon: <Users className="w-8 h-8 text-indigo-400" />,
-      title: "Client-Centric",
-      description: "Your success is our success. We're invested in elevating your brand globally."
+      title: "Creative Automation",
+      description: "We specialize in Vibe Coding and creative automation powered by Gen AI—making design scalable without losing its soul."
     }
   ]
 
   const expertise = [
-    "AI & Marketing Automation",
+    "Growth Strategies",
+    "ROI-Focused Design",
     "Web Design & Development",
-    "High-Impact Video Editing",
-    "Ad Creative Generation",
-    "Graphic Design Systems",
-    "Content Strategy",
-    "Data Analytics",
-    "Growth Optimization"
+    "Video Editing & Production",
+    "AI Ad Creatives",
+    "Vibe Coding",
+    "Creative Automation",
+    "Gen AI Solutions"
   ]
 
   return (
@@ -63,75 +63,33 @@ export default function AboutPage() {
 
       {/* Founder Story */}
       <section className="py-20 px-6 relative overflow-hidden">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-8">
-                Meet Ayush Vishwakarma
-              </h2>
-              <p className="text-white/70 text-lg leading-relaxed mb-6">
-                Founder & AI Builder at ZeperAi, Ayush is a curious mind passionate about 
-                building at the intersection of AI, automation, and marketing. With over 2 years 
-                of professional experience and a background in commerce, he&apos;s dedicated to 
-                helping brands scale through innovative technology and creative excellence.
-              </p>
-              <p className="text-white/70 text-lg leading-relaxed mb-6">
-                His journey started in digital marketing and data analytics, where he learned 
-                to blend creativity with logic—designing campaigns, analyzing performance, and 
-                optimizing brand messaging that truly connects. Today, he focuses on AI-driven 
-                marketing workflows, helping D2C and B2B brands automate content creation, 
-                design, and performance optimization.
-              </p>
-              <p className="text-white/70 text-lg leading-relaxed">
-                From high-converting AI ads to personalized automation systems, Ayush loves 
-                experimenting with how technology can make creativity scalable and measurable.
-              </p>
-            </motion.div>
+        <div className="container mx-auto max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">From the Founder</h2>
+            
+            <blockquote className="text-2xl md:text-3xl font-semibold italic text-blue-300 mb-12 border-l-4 border-blue-400 pl-6">
+              &ldquo;Innovation is not just about the tools we use, but how we use them to solve human problems.&rdquo;
+            </blockquote>
 
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="space-y-6"
-            >
-              <GlassCard className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Background</h3>
-                <ul className="space-y-3 text-white/70">
-                  <li className="flex items-start gap-3">
-                    <span className="text-blue-400 font-bold mt-1">•</span>
-                    <span>B.Com from University of Lucknow</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-blue-400 font-bold mt-1">•</span>
-                    <span>2+ years in digital marketing & analytics</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-blue-400 font-bold mt-1">•</span>
-                    <span>Specialized in WordPress design & Fiverr</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-blue-400 font-bold mt-1">•</span>
-                    <span>AI & automation workflow expert</span>
-                  </li>
-                </ul>
-              </GlassCard>
+            <div className="space-y-6 text-white/70 text-lg leading-relaxed">
+              <p>
+                ZeperAi was born out of a half decade-long obsession with the intersection of technology and creativity. As a founder with 5+ years of experience in entrepreneurship, I have spent my career at the front lines of digital growth—building products from scratch, scaling D2C brands, and refining growth strategies that actually move the needle.
+              </p>
 
-              <GlassCard className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Mission</h3>
-                <p className="text-white/70">
-                  To help international brands elevate their presence through meaningful, 
-                  data-driven solutions that combine design excellence, creative intelligence, 
-                  and cutting-edge automation.
-                </p>
-              </GlassCard>
-            </motion.div>
-          </div>
+              <p>
+                My journey started with a simple realization: most brands are slowed down by fragmented workflows and outdated creative processes. Having built and scaled multiple ventures, I designed ZeperAi to be the agency I wished I had—one that balances aesthetic excellence with technical automation.
+              </p>
+
+              <p>
+                Today, we don&apos;t just provide services; we provide a competitive advantage. We leverage the same AI-driven workflows we build in our SaaS products to deliver agency results that are faster, smarter, and strictly ROI-focused.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 

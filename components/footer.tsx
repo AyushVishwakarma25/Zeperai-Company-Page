@@ -14,7 +14,7 @@ export function Footer() {
               <span>ZeperAi</span>
             </Link>
             <p className="text-white/50 leading-relaxed">
-              Empowering international brands through AI-driven strategies, creative design, and content automation.
+              AI-powered design, video editing, and creative strategy that makes brands stand out.
             </p>
           </div>
           
