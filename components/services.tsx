@@ -7,23 +7,23 @@ import { Code2, Palette, Rocket, Smartphone } from 'lucide-react'
 const services = [
   {
     icon: <Palette className="w-8 h-8 text-blue-400" />,
-    title: "Brand Identity",
-    description: "Crafting visual systems that speak louder than words. We build brands that resonate and endure.",
+    title: "Digital Architecture",
+    description: "Strategic website design and development for D2C brands. User-centric interfaces optimized for conversions and global reach.",
   },
   {
     icon: <Smartphone className="w-8 h-8 text-purple-400" />,
-    title: "Digital Product",
-    description: "User-centric interfaces designed for clarity and delight. From mobile apps to complex dashboards.",
+    title: "High-Impact Video Editing",
+    description: "Cinematic content creation and video editing for social campaigns, ads, and brand storytelling that captures attention.",
   },
   {
     icon: <Code2 className="w-8 h-8 text-indigo-400" />,
-    title: "Development",
-    description: "Clean, scalable code that powers your vision. We build robust solutions using cutting-edge tech.",
+    title: "AI-Generated Ad Creatives",
+    description: "Intelligent ad design and copywriting using AI tools. Data-driven creatives that maximize ROI and engagement across platforms.",
   },
   {
     icon: <Rocket className="w-8 h-8 text-pink-400" />,
-    title: "Growth Strategy",
-    description: "Data-driven insights to scale your digital presence. We help you reach and engage your audience.",
+    title: "Strategic Graphic Design",
+    description: "Custom visual identities, brand assets, and design systems. From logos to complete brand guidelines for international appeal.",
   },
 ]
 

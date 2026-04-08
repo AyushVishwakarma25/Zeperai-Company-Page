@@ -16,10 +16,10 @@ export function Navbar() {
   })
 
   const navLinks = [
-    { name: "Work", href: "#work" },
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Contact", href: "/contact" },
   ]
 
   return (
@@ -38,8 +38,9 @@ export function Navbar() {
           "glass bg-black/40"
         )}
       >
-        <Link href="/" className="text-2xl font-bold tracking-tighter relative z-50">
-          Lumina<span className="text-blue-400">.</span>
+        <Link href="/" className="flex items-center gap-2 font-bold tracking-tighter relative z-50">
+          <img src="/logo-zeperai.png" alt="ZeperAi" className="h-6 w-auto" />
+          <span className="text-lg hidden sm:inline">ZeperAi</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -53,9 +54,9 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
-            Let's Talk
-          </button>
+          <Link href="https://calendly.com/reahtoayush25" target="_blank" className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
+            Let&apos;s Talk
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -85,9 +86,9 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <button className="mt-4 bg-white text-black px-8 py-3 rounded-full text-lg font-semibold">
-                Let's Talk
-              </button>
+              <Link href="https://calendly.com/reahtoayush25" target="_blank" className="mt-4 bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/90 transition-colors">
+                Let&apos;s Talk
+              </Link>
             </div>
           </motion.div>
         )}

@@ -1,8 +1,9 @@
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Services } from "@/components/services"
-import { Work } from "@/components/work"
+import { LogoSlider } from "@/components/logo-slider"
 import { Footer } from "@/components/footer"
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -10,21 +11,21 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
-      <Work />
+      <LogoSlider />
       
       {/* Call to Action Section */}
-      <section id="contact" className="py-32 relative">
+      <section className="py-32 relative">
         <div className="container mx-auto px-6 text-center relative z-10">
           <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
-            Ready to shape <br />
-            <span className="text-gradient">the future?</span>
+            Let&apos;s Build <br />
+            <span className="text-gradient">Something Great</span>
           </h2>
           <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
-            Let's collaborate to build something extraordinary. Your vision, our expertise.
+            Ready to elevate your brand with AI-driven strategies and creative excellence? Let&apos;s talk about your vision.
           </p>
-          <button className="px-10 py-5 bg-white text-black rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
-            Start a Project
-          </button>
+          <Link href="https://calendly.com/reahtoayush25" target="_blank" className="inline-block px-10 py-5 bg-white text-black rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
+            Schedule a Call
+          </Link>
         </div>
         
         {/* Background Gradient for CTA */}
