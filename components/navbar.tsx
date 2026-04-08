@@ -54,7 +54,7 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Link href="https://calendly.com/reahtoayush25" target="_blank" className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
+          <Link href="/booking" className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
             Let&apos;s Talk
           </Link>
         </div>
@@ -86,7 +86,7 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Link href="https://calendly.com/reahtoayush25" target="_blank" className="mt-4 bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/90 transition-colors">
+              <Link href="/booking" onClick={() => setIsMobileMenuOpen(false)} className="mt-4 bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/90 transition-colors">
                 Let&apos;s Talk
               </Link>
             </div>

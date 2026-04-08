@@ -55,8 +55,7 @@ export default function AboutPage() {
             </h1>
             <p className="text-xl text-white/60 leading-relaxed">
               Founded on a passion for blending technology, creativity, and strategy, 
-              ZeperAi empowers international brands to scale through AI-driven solutions and 
-              design excellence.
+              ZeperAi helps brands scale through AI-driven solutions and creative excellence.
             </p>
           </motion.div>
         </div>
@@ -207,7 +206,7 @@ export default function AboutPage() {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Let&apos;s Connect</h2>
             <p className="text-xl text-white/60 mb-12">
-              Interested in collaborating or learning more about how ZeperAi can elevate your brand?
+              Ready to build something amazing? Let&apos;s schedule a call and chat about your vision.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a 
@@ -216,13 +215,13 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-white text-black rounded-full font-semibold hover:scale-105 transition-transform"
               >
-                Visit LinkedIn Profile
+                Connect on LinkedIn
               </a>
               <Link 
-                href="/contact" 
+                href="/booking" 
                 className="px-8 py-4 glass rounded-full font-semibold hover:bg-white/10 transition-all flex items-center gap-2"
               >
-                Get In Touch <ArrowRight className="w-4 h-4" />
+                Let&apos;s Talk <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </motion.div>

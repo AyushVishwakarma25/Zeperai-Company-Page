@@ -17,13 +17,14 @@ export default function Home() {
       <section className="py-32 relative">
         <div className="container mx-auto px-6 text-center relative z-10">
           <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
-            Let&apos;s Build <br />
-            <span className="text-gradient">Something Great</span>
+            Ready to
+            <br />
+            <span className="text-gradient">Turn Heads?</span>
           </h2>
           <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
-            Ready to elevate your brand with AI-driven strategies and creative excellence? Let&apos;s talk about your vision.
+            Let&apos;s create something that makes your audience actually care. No boring strategies. Just pure creativity and results.
           </p>
-          <Link href="https://calendly.com/reahtoayush25" target="_blank" className="inline-block px-10 py-5 bg-white text-black rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
+          <Link href="/booking" className="inline-block px-10 py-5 bg-white text-black rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
             Schedule a Call
           </Link>
         </div>

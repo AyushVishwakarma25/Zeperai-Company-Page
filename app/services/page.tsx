@@ -148,13 +148,6 @@ export default function ServicesPage() {
                           </div>
                         ))}
                       </div>
-                      <Link 
-                        href="https://calendly.com/reahtoayush25" 
-                        target="_blank"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full font-semibold hover:scale-105 transition-transform"
-                      >
-                        Learn More & Get Started
-                      </Link>
                     </div>
                     <div className={`h-80 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center`}>
                       <div className="text-center">
@@ -181,22 +174,45 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold mb-16 text-center"
           >
-            Our Process
+            How We Work Our Magic
           </motion.h2>
 
           <div className="grid md:grid-cols-4 gap-6">
             {process.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.15, duration: 0.6, type: "spring", stiffness: 100 }}
+                whileHover={{ y: -10, transition: { duration: 0.3 } }}
               >
-                <GlassCard className="h-full">
-                  <div className="text-5xl font-bold text-blue-400/20 mb-4">{item.step}</div>
-                  <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                  <p className="text-white/60">{item.description}</p>
+                <GlassCard className="h-full hover:bg-white/10 transition-all duration-300 group cursor-pointer relative overflow-hidden">
+                  {/* Animated background gradient on hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-blue-500/10 to-purple-500/10 pointer-events-none" />
+                  
+                  <div className="relative z-10">
+                    <motion.div 
+                      className="text-6xl font-bold text-blue-400/30 mb-4 group-hover:text-blue-400/60 transition-colors"
+                      animate={{ y: [0, -5, 0] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      {item.step}
+                    </motion.div>
+                    <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-300 transition-colors">{item.title}</h3>
+                    <p className="text-white/60 group-hover:text-white/80 transition-colors leading-relaxed">{item.description}</p>
+                    
+                    {/* Connection arrow indicator */}
+                    {index < process.length - 1 && (
+                      <motion.div 
+                        className="hidden md:block absolute -right-8 top-1/2 -translate-y-1/2 text-blue-400/40 group-hover:text-blue-400 transition-colors"
+                        animate={{ x: [0, 3, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      >
+                        →
+                      </motion.div>
+                    )}
+                  </div>
                 </GlassCard>
               </motion.div>
             ))}
@@ -213,17 +229,16 @@ export default function ServicesPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Ready to Transform Your Brand?
+              Let&apos;s Build Something Amazing
             </h2>
             <p className="text-xl text-white/60 mb-12">
-              Let&apos;s discuss how our services can elevate your digital presence and drive growth.
+              Ready to level up your brand? Schedule a discovery call and let&apos;s talk about your vision.
             </p>
             <Link 
-              href="https://calendly.com/reahtoayush25" 
-              target="_blank"
+              href="/booking"
               className="inline-block px-10 py-5 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-transform"
             >
-              Schedule a Consultation
+              Schedule a Call
             </Link>
           </motion.div>
         </div>

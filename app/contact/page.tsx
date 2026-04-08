@@ -183,12 +183,10 @@ export default function ContactPage() {
                   how ZeperAi can help elevate your brand.
                 </p>
                 <a
-                  href="https://calendly.com/reahtoayush25"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/booking"
                   className="inline-block w-full px-6 py-3 bg-white text-black rounded-lg font-semibold text-center hover:scale-105 transition-transform"
                 >
-                  Open Calendly
+                  Schedule Now
                 </a>
               </GlassCard>
             </motion.div>
