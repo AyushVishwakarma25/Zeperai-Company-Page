@@ -57,15 +57,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0"
         >
-          <a href="/services" className="group relative px-8 py-4 bg-white text-black rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105">
-            <span className="relative z-10 flex items-center gap-2">
+          <a href="/services" className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-white text-black rounded-full font-semibold text-base sm:text-lg overflow-hidden transition-all hover:scale-105 w-full sm:w-auto text-center">
+            <span className="relative z-10 flex items-center justify-center gap-2">
               See What We Do <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
-          <a href="/booking" className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all hover:scale-105">
+          <a href="/booking" className="px-6 sm:px-8 py-3 sm:py-4 glass rounded-full font-semibold text-base sm:text-lg text-white hover:bg-white/10 transition-all hover:scale-105 w-full sm:w-auto text-center">
             Let&apos;s Talk
           </a>
         </motion.div>

@@ -72,20 +72,20 @@ export function Navbar() {
             initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
             animate={{ opacity: 1, backdropFilter: "blur(20px)" }}
             exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            className="fixed inset-0 bg-black/60 z-40 flex items-center justify-center md:hidden"
+            className="fixed inset-0 bg-black/80 z-40 flex items-center justify-center md:hidden pt-20"
           >
-            <div className="flex flex-col items-center gap-8">
+            <div className="flex flex-col items-center gap-6 w-full px-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-3xl font-light text-white hover:text-blue-400 transition-colors"
+                  className="text-2xl font-light text-white hover:text-blue-400 transition-colors w-full text-center py-3 border-b border-white/10"
                 >
                   {link.name}
                 </Link>
               ))}
-              <Link href="/booking" onClick={() => setIsMobileMenuOpen(false)} className="mt-4 bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-white/90 transition-colors">
+              <Link href="/booking" onClick={() => setIsMobileMenuOpen(false)} className="mt-6 bg-white text-black px-8 py-3 rounded-full text-base font-semibold hover:bg-white/90 transition-colors w-full text-center">
                 Let&apos;s Talk
               </Link>
             </div>

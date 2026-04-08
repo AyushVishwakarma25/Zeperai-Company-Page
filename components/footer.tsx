@@ -28,37 +28,27 @@ export function Footer() {
           </div>
           
           <div>
+            <h4 className="font-semibold mb-6">Serving Brands</h4>
+            <p className="text-white/60 text-sm mb-4 font-medium">Internationally</p>
+            <ul className="space-y-2 text-white/60 text-sm mb-6">
+              <li>India</li>
+              <li>US</li>
+              <li>UK</li>
+              <li>UAE</li>
+              <li>and more</li>
+            </ul>
+          </div>
+          
+          <div>
             <h4 className="font-semibold mb-6">Legal</h4>
             <ul className="space-y-4 text-white/60">
               <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
-          
-          <div>
-            <h4 className="font-semibold mb-6">Get In Touch</h4>
-            <p className="text-white/60 mb-4">Ready to elevate your brand?</p>
-            <div className="space-y-4">
-              <a 
-                href="mailto:reahtoayush25@gmail.com" 
-                className="text-sm font-medium hover:text-blue-400 transition-colors block"
-              >
-                reahtoayush25@gmail.com
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/vishwakarma-ayush/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium hover:text-blue-400 transition-colors"
-              >
-                <Linkedin className="w-4 h-4" />
-                LinkedIn
-              </a>
-            </div>
-          </div>
         </div>
         
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/5 text-sm text-white/40">
+        <div className="flex flex-col md:flex-row items-center justify-between text-sm text-white/40">
           <p>&copy; 2025 ZeperAi. All rights reserved.</p>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

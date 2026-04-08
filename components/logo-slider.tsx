@@ -6,7 +6,7 @@ import Image from "next/image"
 const logos = [
   { id: 1, src: "/logo-1.png", alt: "Client Logo 1", isImage: true },
   { id: 2, src: "/logo-2.png", alt: "UTPERL", isImage: true },
-  { id: 3, src: "/logo-3.svg", alt: "Prustlr", isImage: true },
+  { id: 3, src: "/logo-partner.png", alt: "Partner Logo", isImage: true },
 ]
 
 export function LogoSlider() {
@@ -15,12 +15,12 @@ export function LogoSlider() {
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-3xl md:text-5xl font-bold mb-4"
           >
             Trusted by Leading Brands
           </motion.h2>
@@ -29,18 +29,18 @@ export function LogoSlider() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-white/60 max-w-2xl mx-auto"
+            className="text-sm md:text-base text-white/60 max-w-2xl mx-auto px-4"
           >
             We&apos;ve partnered with innovative companies to elevate their digital presence
           </motion.p>
         </div>
 
         <div className="relative overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none" />
 
           <motion.div
-            className="flex gap-8 w-max"
+            className="flex gap-4 md:gap-8 w-max"
             animate={{ x: ["0%", "-33.333%"] }}
             transition={{
               duration: 20,
@@ -54,15 +54,15 @@ export function LogoSlider() {
             {duplicatedLogos.map((logo, index) => (
               <motion.div
                 key={index}
-                className="min-w-max flex items-center justify-center px-8 py-4 rounded-2xl glass bg-white/5 hover:bg-white/10 transition-all group cursor-pointer"
+                className="min-w-max flex items-center justify-center px-4 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl glass bg-white/5 hover:bg-white/10 transition-all group cursor-pointer"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="w-48 h-24 flex items-center justify-center relative">
+                <div className="w-40 md:w-48 h-20 md:h-24 flex items-center justify-center relative">
                   <img 
                     src={logo.src} 
                     alt={logo.alt}
                     className="max-w-full max-h-full object-contain filter brightness-95 group-hover:brightness-110 transition-all"
-                    style={{ height: "60px" }}
+                    style={{ height: "50px", maxWidth: "140px" }}
                   />
                 </div>
               </motion.div>

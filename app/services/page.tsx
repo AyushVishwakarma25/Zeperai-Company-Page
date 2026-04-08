@@ -130,26 +130,26 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <GlassCard className="p-12 group hover:bg-white/5 transition-all">
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
+                <GlassCard className="p-6 md:p-12 group hover:bg-white/5 transition-all">
+                  <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                     <div>
                       <div className="mb-6 p-5 rounded-2xl bg-white/5 w-fit group-hover:bg-white/10 transition-colors">
                         {service.icon}
                       </div>
-                      <h2 className="text-4xl font-bold mb-4">{service.title}</h2>
-                      <p className="text-white/70 text-lg leading-relaxed mb-8">
+                      <h2 className="text-2xl md:text-4xl font-bold mb-4">{service.title}</h2>
+                      <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8">
                         {service.fullDescription}
                       </p>
                       <div className="space-y-3 mb-8">
                         {service.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center gap-3">
                             <Check className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                            <span className="text-white/80">{feature}</span>
+                            <span className="text-white/80 text-sm md:text-base">{feature}</span>
                           </div>
                         ))}
                       </div>
                     </div>
-                    <div className={`h-80 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center`}>
+                    <div className={`h-60 md:h-80 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center`}>
                       <div className="text-center">
                         <div className="text-6xl font-bold text-white/10 mb-4">
                           {service.icon}
