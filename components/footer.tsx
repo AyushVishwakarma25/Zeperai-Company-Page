@@ -11,7 +11,6 @@ export function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-2 font-bold tracking-tighter mb-6">
               <img src="/logo-zeperai.png" alt="ZeperAi" className="h-6 w-auto" />
-              <span>ZeperAi</span>
             </Link>
             <p className="text-white/50 leading-relaxed">
               AI-powered design, video editing, and creative strategy that makes brands stand out.
