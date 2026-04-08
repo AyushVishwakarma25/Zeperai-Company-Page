@@ -1,20 +1,16 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const logos = [
-  { name: "Airbnb", color: "bg-red-500/10" },
-  { name: "Figma", color: "bg-purple-500/10" },
-  { name: "Stripe", color: "bg-blue-500/10" },
-  { name: "Notion", color: "bg-gray-500/10" },
-  { name: "Slack", color: "bg-green-500/10" },
-  { name: "GitHub", color: "bg-orange-500/10" },
-  { name: "Linear", color: "bg-cyan-500/10" },
-  { name: "Vercel", color: "bg-black" },
+  { id: 1, src: "/logo-1.png", alt: "Client Logo 1", isImage: true },
+  { id: 2, src: "/logo-2.png", alt: "UTPERL", isImage: true },
+  { id: 3, src: "/logo-3.svg", alt: "Prustlr", isImage: true },
 ]
 
 export function LogoSlider() {
-  const duplicatedLogos = [...logos, ...logos]
+  const duplicatedLogos = [...logos, ...logos, ...logos]
 
   return (
     <section className="py-24 relative overflow-hidden">
@@ -45,7 +41,7 @@ export function LogoSlider() {
 
           <motion.div
             className="flex gap-8 w-max"
-            animate={{ x: ["0%", "-50%"] }}
+            animate={{ x: ["0%", "-33.333%"] }}
             transition={{
               duration: 20,
               repeat: Infinity,
@@ -58,13 +54,16 @@ export function LogoSlider() {
             {duplicatedLogos.map((logo, index) => (
               <motion.div
                 key={index}
-                className={`min-w-max flex items-center justify-center px-8 py-4 rounded-2xl glass ${logo.color} hover:bg-white/10 transition-all group cursor-pointer`}
+                className="min-w-max flex items-center justify-center px-8 py-4 rounded-2xl glass bg-white/5 hover:bg-white/10 transition-all group cursor-pointer"
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="w-40 h-20 flex items-center justify-center">
-                  <span className="text-sm font-semibold text-white/80 group-hover:text-white transition-colors">
-                    {logo.name}
-                  </span>
+                <div className="w-48 h-24 flex items-center justify-center relative">
+                  <img 
+                    src={logo.src} 
+                    alt={logo.alt}
+                    className="max-w-full max-h-full object-contain filter brightness-95 group-hover:brightness-110 transition-all"
+                    style={{ height: "60px" }}
+                  />
                 </div>
               </motion.div>
             ))}
