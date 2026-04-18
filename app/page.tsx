@@ -120,9 +120,7 @@ export default function Home() {
             <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8 leading-relaxed">
               We help brands turn attention into action with video editing, ad creatives, Shopify websites, and design that makes people stop, watch, and buy.
             </p>
-            <p className="text-base md:text-lg text-white/60 max-w-3xl mx-auto mb-12">
-              From AI ad creatives that look real, to story-style UGC ads, motion graphics, Reels editing, and conversion-focused brand design, we build content that feels native to the platform and performs like it should.
-            </p>
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/booking" className="px-8 py-4 bg-white text-black rounded-full font-semibold text-lg hover:scale-105 transition-transform w-full sm:w-auto text-center">
                 Let's Build Creative That Converts
@@ -140,31 +138,48 @@ export default function Home() {
       {/* Problem Section */}
       <section className="py-32 px-6">
         <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">The Real Problem</h2>
-            <p className="text-xl text-white/60 max-w-3xl mx-auto">
-              Most brands don't have a creative problem. They have a conversion problem.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {problems.map((problem, index) => (
+          {/* Top two cards side by side */}
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            {problems.slice(0, 2).map((problem, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
+                className="rounded-2xl p-8"
+                style={{ backgroundColor: "#4452FB" }}
               >
-                <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-8 hover:bg-red-500/15 transition-all">
-                  <h3 className="text-2xl font-bold mb-3 text-red-400">{problem.title}</h3>
-                  <p className="text-white/70">{problem.description}</p>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-semibold uppercase tracking-widest mb-6">
+                  The Problem
                 </div>
+                <h3 className="text-2xl md:text-3xl font-sofia font-bold text-white mb-4 leading-tight">
+                  {problem.title}
+                </h3>
+                <p className="text-white/80 text-base leading-relaxed">{problem.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Remaining cards revealed on scroll */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {problems.slice(2).map((problem, index) => (
+              <motion.div
+                key={index + 2}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ delay: index * 0.12, duration: 0.55, ease: "easeOut" }}
+                className="rounded-2xl p-8"
+                style={{ backgroundColor: "#4452FB" }}
+              >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-semibold uppercase tracking-widest mb-6">
+                  The Problem
+                </div>
+                <h3 className="text-2xl md:text-3xl font-sofia font-bold text-white mb-4 leading-tight">
+                  {problem.title}
+                </h3>
+                <p className="text-white/80 text-base leading-relaxed">{problem.description}</p>
               </motion.div>
             ))}
           </div>
@@ -173,60 +188,59 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="mt-12 text-center"
+            transition={{ delay: 0.3 }}
+            className="mt-10 text-center"
           >
-            <p className="text-lg text-white/60">
-              That's where most brands get stuck: good-looking content that doesn't move revenue.
+            <p className="text-lg text-white/50">
+              That&apos;s where most brands get stuck: good-looking content that doesn&apos;t move revenue.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Solution Section */}
-      <section className="py-32 px-6 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">The Solution</h2>
-            <p className="text-xl text-white/60 max-w-3xl mx-auto">
-              We create performance-driven content and digital assets that help your brand sell better across every touchpoint.
+      <section className="py-32 px-6">
+        <div className="container mx-auto max-w-5xl">
+          {/* Section header */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+            <div>
+              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">The Solution</span>
+              <h2 className="text-4xl md:text-5xl font-sofia font-bold leading-tight">
+                Performance-driven<br />creative that sells.
+              </h2>
+            </div>
+            <p className="text-white/50 max-w-sm text-base leading-relaxed md:text-right">
+              We don&apos;t just make content look nice. We make it work harder.
             </p>
-          </motion.div>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          {/* Vertical card slideshow — stacked cards that reveal on scroll */}
+          <div className="space-y-4">
             {solutions.map((solution, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-400/30 rounded-2xl p-8 hover:border-blue-400/60 transition-all"
+                initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.55, delay: index * 0.07, ease: "easeOut" }}
+                className="group flex items-center gap-6 bg-white/5 border border-white/10 rounded-2xl px-8 py-6 hover:bg-white/[0.08] hover:border-blue-500/40 transition-all cursor-default"
               >
-                <div className="flex items-start gap-4">
-                  <CheckCircle className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
-                  <p className="text-white/80 text-lg">{solution}</p>
-                </div>
+                {/* Index number */}
+                <span
+                  className="text-4xl font-bold font-sofia tabular-nums flex-shrink-0 w-12 text-right leading-none"
+                  style={{ color: "#4452FB", opacity: 0.5 }}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="w-px h-10 bg-white/10 flex-shrink-0" />
+                {/* Content */}
+                <p className="text-white/80 text-base md:text-lg leading-relaxed flex-1 group-hover:text-white transition-colors">
+                  {solution}
+                </p>
+                <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
               </motion.div>
             ))}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
-            className="mt-12 text-center"
-          >
-            <p className="text-lg font-semibold text-white">
-              We don't just make content look nice. We make it work harder.
-            </p>
-          </motion.div>
         </div>
       </section>
 
