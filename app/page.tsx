@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { KeywordTicker } from "@/components/keyword-ticker"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ChevronDown, CheckCircle } from "lucide-react"
+import { ChevronDown, ArrowRight, CheckCircle } from "lucide-react"
 import { useState } from "react"
 
 export default function Home() {
@@ -101,52 +101,58 @@ export default function Home() {
   ]
 
   return (
-    <main className="min-h-screen bg-white text-black">
+    <main className="min-h-screen bg-black text-white selection:bg-blue-500/30">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-32 px-6 bg-white">
-        <div className="container mx-auto max-w-6xl">
+      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
+        <div className="container mx-auto max-w-5xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-center mb-12"
           >
-            <h1 className="text-5xl md:text-7xl font-bold font-sofia mb-6 leading-tight">
-              We make{" "}
-              <span className="inline-block px-6 py-2 bg-blue-500 text-white rounded-lg">
-                creative
-              </span>
-              {" "}things
-              <br />
-              everyday
+            <h1 className="text-5xl md:text-7xl font-sofia font-bold mb-6 leading-tight">
+              Creative That<br />
+              <span className="text-gradient">Actually Sells</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-              AI-powered designs, real stories, and proven results for brands that want to scale.
+            <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8 leading-relaxed">
+              We help brands turn attention into action with video editing, ad creatives, Shopify websites, and design that makes people stop, watch, and buy.
             </p>
-            <Link
-              href="/booking"
-              className="inline-block px-8 py-4 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition-colors"
-            >
-              Let's Start Today
-            </Link>
+            <p className="text-base md:text-lg text-white/60 max-w-3xl mx-auto mb-12">
+              From AI ad creatives that look real, to story-style UGC ads, motion graphics, Reels editing, and conversion-focused brand design, we build content that feels native to the platform and performs like it should.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/booking" className="px-8 py-4 bg-white text-black rounded-full font-semibold text-lg hover:scale-105 transition-transform w-full sm:w-auto text-center">
+                Let's Build Creative That Converts
+              </Link>
+            </div>
           </motion.div>
         </div>
+
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-80 bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none" />
       </section>
 
-      {/* Problem Section - Dark Background */}
-      <section className="py-24 px-6 bg-black text-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold font-sofia mb-4">
-              Shaping the perfect<br />
-              <span className="block text-blue-400">Solution for your</span>
-              Businesses!
-            </h2>
-          </div>
+      {/* Keyword Ticker */}
+      <KeywordTicker />
 
-          <div className="grid md:grid-cols-2 gap-8">
+      {/* Problem Section */}
+      <section className="py-32 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">The Real Problem</h2>
+            <p className="text-xl text-white/60 max-w-3xl mx-auto">
+              Most brands don't have a creative problem. They have a conversion problem.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
             {problems.map((problem, index) => (
               <motion.div
                 key={index}
@@ -154,44 +160,162 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-blue-500 transition-colors"
               >
-                <h3 className="text-2xl font-bold mb-3">{problem.title}</h3>
-                <p className="text-gray-300">{problem.description}</p>
+                <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-8 hover:bg-red-500/15 transition-all">
+                  <h3 className="text-2xl font-bold mb-3 text-red-400">{problem.title}</h3>
+                  <p className="text-white/70">{problem.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="mt-12 text-center"
+          >
+            <p className="text-lg text-white/60">
+              That's where most brands get stuck: good-looking content that doesn't move revenue.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Solutions Section */}
-      <section className="py-24 px-6 bg-white">
+      {/* Solution Section */}
+      <section className="py-32 px-6 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-bold font-sofia mb-4">
-              Our Solutions
-            </h2>
-            <p className="text-lg text-gray-600">Everything you need to scale your brand.</p>
+            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">The Solution</h2>
+            <p className="text-xl text-white/60 max-w-3xl mx-auto">
+              We create performance-driven content and digital assets that help your brand sell better across every touchpoint.
+            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {solutions.map((solution, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-gradient-to-br from-blue-50 to-gray-50 p-8 rounded-2xl border border-blue-200 hover:shadow-lg transition-shadow"
+                transition={{ delay: index * 0.08 }}
+                className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-400/30 rounded-2xl p-8 hover:border-blue-400/60 transition-all"
               >
-                <div className="flex items-start gap-4 mb-4">
-                  <CheckCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
-                  <p className="text-lg font-semibold">{solution}</p>
+                <div className="flex items-start gap-4">
+                  <CheckCircle className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
+                  <p className="text-white/80 text-lg">{solution}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+            className="mt-12 text-center"
+          >
+            <p className="text-lg font-semibold text-white">
+              We don't just make content look nice. We make it work harder.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Audience Fit Section */}
+      <section className="py-32 px-6">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">Who This Is Built For</h2>
+            <p className="text-xl text-white/60">
+              This is built for brands that want more than random design work.
+            </p>
+          </motion.div>
+
+          <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-white/10 rounded-3xl p-12">
+            <div className="space-y-4 text-white/80 text-lg">
+              <p className="flex items-center gap-3">
+                <span className="text-blue-400 text-2xl">→</span>
+                D2C brands that want better-performing creative
+              </p>
+              <p className="flex items-center gap-3">
+                <span className="text-blue-400 text-2xl">→</span>
+                Founders who need a Shopify store that actually converts
+              </p>
+              <p className="flex items-center gap-3">
+                <span className="text-blue-400 text-2xl">→</span>
+                E-commerce brands that want stronger ads and product visuals
+              </p>
+              <p className="flex items-center gap-3">
+                <span className="text-blue-400 text-2xl">→</span>
+                Startups launching new products and need content fast
+              </p>
+              <p className="flex items-center gap-3">
+                <span className="text-blue-400 text-2xl">→</span>
+                USA and Indian brands that want clean execution and sharper storytelling
+              </p>
+            </div>
+
+            <p className="mt-8 text-xl font-semibold text-white border-t border-white/10 pt-8">
+              If your business depends on attention, trust, and conversions, this is for you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Authority Section */}
+      <section className="py-32 px-6 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">Our Approach</h2>
+            <p className="text-xl text-white/60">
+              Good creative is not about trends. It's about understanding what makes people stop, trust, and take action.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Storytelling",
+                description: "We craft narratives that feel natural and believable, making your brand relatable and human."
+              },
+              {
+                title: "Strategy",
+                description: "We align every asset with your offer and audience, ensuring maximum relevance and impact."
+              },
+              {
+                title: "Design",
+                description: "We create visuals that support sales, not just aesthetics—every pixel serves your conversion goal."
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-8 h-full hover:bg-purple-500/15 transition-all">
+                  <h3 className="text-2xl font-bold mb-4 text-purple-300">{item.title}</h3>
+                  <p className="text-white/70">{item.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -199,55 +323,57 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Process Section - Dark Background */}
-      <section className="py-24 px-6 bg-black text-white">
+      {/* Process Section */}
+      <section className="py-32 px-6">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-bold font-sofia mb-4">
-              How we work
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">Working Together Is Simple</h2>
+            <p className="text-xl text-white/60 max-w-3xl mx-auto">
+              No confusion. No bloated process. Just clear work that helps your brand grow.
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-6">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-900 p-8 rounded-2xl border border-gray-800 hover:border-blue-500 transition-colors"
               >
-                <div className="text-5xl font-bold text-blue-500 mb-4">{step.number}</div>
-                <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
-                <p className="text-gray-300">{step.description}</p>
+                <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-400/30 rounded-2xl p-8 hover:border-green-400/60 transition-all">
+                  <div className="text-5xl font-bold text-green-400/40 mb-4">{step.number}</div>
+                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+                  <p className="text-white/70">{step.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Offerings Grid Section */}
-      <section className="py-24 px-6 bg-white">
-        <div className="container mx-auto max-w-6xl">
+      {/* Offerings Section */}
+      <section className="py-32 px-6 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent">
+        <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-bold font-sofia mb-4">
-              What we{" "}
-              <span className="inline-block px-4 py-2 bg-blue-500 text-white rounded">offer</span>
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">What You Get From Us</h2>
+            <p className="text-xl text-white/60">
+              If you need content, design, and web assets that feel premium and perform well, we can help.
+            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {offerings.map((offering, index) => (
               <motion.div
                 key={index}
@@ -255,29 +381,26 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-gradient-to-br from-gray-50 to-blue-50 p-8 rounded-2xl border border-gray-200 text-center hover:shadow-lg transition-shadow"
+                className="bg-blue-500/10 border border-blue-400/30 rounded-xl p-4 flex items-center gap-3 hover:bg-blue-500/15 transition-all"
               >
-                <p className="text-lg font-semibold">{offering}</p>
+                <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0" />
+                <span className="text-white/80">{offering}</span>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section - Dark Background */}
-      <section className="py-24 px-6 bg-black text-white">
+      {/* FAQ Section */}
+      <section className="py-32 px-6">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16 text-center"
+            className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-bold font-sofia mb-4">
-              Frequently Asked
-              <br />
-              <span className="text-blue-400">Questions</span>
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">Frequently Asked Questions</h2>
           </motion.div>
 
           <div className="space-y-4">
@@ -291,10 +414,10 @@ export default function Home() {
               >
                 <button
                   onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                  className="w-full bg-gray-900 p-6 rounded-xl hover:bg-gray-800 transition-all text-left group border border-gray-800"
+                  className="w-full bg-white/5 border border-white/10 hover:border-blue-400/50 p-6 rounded-xl text-left group transition-all"
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg md:text-xl font-semibold group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-lg font-semibold group-hover:text-blue-300 transition-colors">
                       {faq.question}
                     </h3>
                     <motion.div
@@ -311,7 +434,7 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <div className="p-6 bg-gray-800 text-gray-200 border-t border-gray-700">
+                  <div className="p-6 bg-blue-500/5 border-t border-blue-400/20 text-white/70">
                     {faq.answer}
                   </div>
                 </motion.div>
@@ -321,33 +444,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 px-6 bg-white text-black relative overflow-hidden">
+      {/* Final CTA */}
+      <section className="py-32 px-6 relative">
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-bold font-sofia mb-6 leading-tight"
+            className="text-5xl md:text-6xl font-sofia font-bold mb-8"
           >
-            Let's start working
+            Ready to Make Your Brand
             <br />
-            <span className="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg mt-4">
-              together
-            </span>
-            <br />
-            <span className="text-blue-400">get in touch with us!</span>
+            <span className="text-gradient">Sell Smarter?</span>
           </motion.h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Ready to elevate your brand with creative solutions that actually convert?
-          </p>
-          <Link
-            href="/booking"
-            className="inline-block px-10 py-4 bg-blue-500 text-white font-bold text-lg rounded-lg hover:bg-blue-600 transition-colors shadow-lg"
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-xl text-white/60 mb-12 max-w-2xl mx-auto"
           >
-            Schedule a Call
-          </Link>
+            Let's discuss how we can build creative that converts, not just impresses.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <Link href="/booking" className="inline-flex items-center gap-2 px-10 py-5 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-transform">
+              Schedule a Call <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
         </div>
+
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none" />
       </section>
 
       <Footer />
