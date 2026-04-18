@@ -5,21 +5,11 @@ import { Footer } from "@/components/footer"
 import { KeywordTicker } from "@/components/keyword-ticker"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ChevronDown, ArrowRight, CheckCircle, Sparkles, Film, Edit3, TrendingUp, ShoppingBag, Palette, Image } from "lucide-react"
+import { ChevronDown, ArrowRight, ArrowUpRight, Sparkles, Film, Edit3, TrendingUp } from "lucide-react"
 import { useState } from "react"
 
 export default function Home() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
-
-  const solutions = [
-    "AI advertisement creatives that look real and feel story-driven.",
-    "Product motion graphic ads built for attention and retention.",
-    "Reels editing that keeps people watching.",
-    "Proven scripting and creative strategy designed to improve CTR and ROAS.",
-    "Shopify website design and development built for D2C brands.",
-    "Branding and graphic design from logo to typography.",
-    "Product images and marketplace listing creatives for Amazon, Blinkit, Instacart, and DoorDash."
-  ]
 
   const solutionCards = [
     {
@@ -63,22 +53,8 @@ export default function Home() {
     },
     {
       title: "Weak Marketplace Presence",
-      description: "Maybe your product images are fine, but not strong enough to stand out on Amazon, Blinkit, Instacart, or DoorDash."
+      description: "Maybe your product images are fine, but not strong enough to stand out on Amazon or Blinkit."
     }
-  ]
-
-  const offerings = [
-    "AI ad creatives",
-    "Story-style UGC ads",
-    "Product motion graphic ads",
-    "Reels editing",
-    "Ad scripting and creative strategy",
-    "Shopify website design and development",
-    "Branding and identity design",
-    "Product images",
-    "Amazon listing images",
-    "Blinkit listing images",
-    "Instacart and DoorDash creatives"
   ]
 
   const faqs = [
@@ -100,7 +76,7 @@ export default function Home() {
     },
     {
       question: "Do you design for marketplaces too?",
-      answer: "Yes. We create product images and listing creatives for Amazon, Blinkit, Instacart, and DoorDash."
+      answer: "Yes. We create product images and listing creatives for Amazon and Blinkit."
     }
   ]
 
@@ -131,41 +107,86 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white selection:bg-blue-500/30">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        <div className="container mx-auto max-w-5xl relative z-10">
+      {/* ── Hero ── */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-16">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[60vh] bg-blue-600/10 rounded-full blur-[140px]" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10 text-center max-w-5xl">
           <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/15 bg-white/5 mb-10"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
+            </span>
+            <span className="text-xs font-medium text-white/70 uppercase tracking-widest">
+              AI-Powered Creative Agency
+            </span>
+          </motion.div>
+
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+            className="font-sofia text-6xl md:text-8xl lg:text-9xl font-bold leading-[1.05] tracking-tight mb-8 text-balance"
           >
-            <h1 className="text-5xl md:text-7xl font-sofia font-bold mb-6 leading-tight">
-              Creative That<br />
-              <span className="text-gradient">Actually Sells</span>
-            </h1>
-            <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-8 leading-relaxed">
-              We help brands turn attention into action with video editing, ad creatives, Shopify websites, and design that makes people stop, watch, and buy.
-            </p>
+            We Build Brands
+            <br />
+            <span className="text-white/90">That&nbsp;</span>
+            <span className="relative inline-block px-4" style={{ color: "#4452FB" }}>
+              Actually Sell
+              <span className="absolute inset-0 rounded-xl -z-10 opacity-15" style={{ background: "#4452FB" }} />
+            </span>
+          </motion.h1>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/booking" className="px-8 py-4 bg-white text-black rounded-full font-semibold text-lg hover:scale-105 transition-transform w-full sm:w-auto text-center">
-                Let's Build Creative That Converts
-              </Link>
-            </div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed text-pretty"
+          >
+            Video editing, ad creatives, Shopify websites, and design that makes people stop, watch, and buy.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <Link
+              href="/booking"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-semibold text-base md:text-lg hover:scale-105 transition-transform"
+            >
+              Let&apos;s Build Creative That Converts
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:rotate-45 transition-transform">
+                <ArrowUpRight className="w-4 h-4" />
+              </span>
+            </Link>
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-80 bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none" />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.4, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        >
+          <div className="w-[1px] h-10 bg-gradient-to-b from-white/0 via-white/30 to-white/0" />
+        </motion.div>
       </section>
 
-      {/* Keyword Ticker */}
+      {/* ── Keyword Ticker ── */}
       <KeywordTicker />
 
-      {/* Problem Section */}
+      {/* ── Problem Section ── */}
       <section className="py-32 px-6">
         <div className="container mx-auto max-w-6xl">
-          {/* Top two cards side by side */}
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             {problems.slice(0, 2).map((problem, index) => (
               <motion.div
@@ -185,7 +206,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Remaining cards revealed on scroll */}
           <div className="grid md:grid-cols-2 gap-6">
             {problems.slice(2).map((problem, index) => (
               <motion.div
@@ -219,10 +239,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Solution Section */}
+      {/* ── Solution Section ── */}
       <section className="py-32 px-6">
-        <div className="container mx-auto max-w-5xl">
-          {/* Section header */}
+        <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
             <div>
               <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">The Solution</span>
@@ -235,7 +254,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Slideshow solution cards - 4 cards evenly distributed horizontally */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {solutionCards.map((card, index) => (
               <motion.div
@@ -243,11 +261,10 @@ export default function Home() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                 className="relative flex flex-col justify-between h-80 rounded-3xl p-8 overflow-hidden cursor-default select-none hover:scale-105 transition-transform"
                 style={{ backgroundColor: card.color }}
               >
-                {/* Title + description at top */}
                 <div>
                   <h3 className="text-white font-bold text-xl leading-snug mb-3 font-sofia">
                     {card.title}
@@ -256,8 +273,6 @@ export default function Home() {
                     {card.description}
                   </p>
                 </div>
-
-                {/* Icon area centered at bottom */}
                 <div className="flex justify-center">
                   <div
                     className="w-24 h-24 rounded-3xl flex items-center justify-center"
@@ -272,7 +287,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Audience Fit Section */}
+      {/* ── Audience Fit Section ── */}
       <section className="py-32 px-6">
         <div className="container mx-auto max-w-5xl">
           <motion.div
@@ -289,28 +304,19 @@ export default function Home() {
 
           <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-white/10 rounded-3xl p-12">
             <div className="space-y-4 text-white/80 text-lg">
-              <p className="flex items-center gap-3">
-                <span className="text-blue-400 text-2xl">→</span>
-                D2C brands that want better-performing creative
-              </p>
-              <p className="flex items-center gap-3">
-                <span className="text-blue-400 text-2xl">→</span>
-                Founders who need a Shopify store that actually converts
-              </p>
-              <p className="flex items-center gap-3">
-                <span className="text-blue-400 text-2xl">→</span>
-                E-commerce brands that want stronger ads and product visuals
-              </p>
-              <p className="flex items-center gap-3">
-                <span className="text-blue-400 text-2xl">→</span>
-                Startups launching new products and need content fast
-              </p>
-              <p className="flex items-center gap-3">
-                <span className="text-blue-400 text-2xl">→</span>
-                USA and Indian brands that want clean execution and sharper storytelling
-              </p>
+              {[
+                "D2C brands that want better-performing creative",
+                "Founders who need a Shopify store that actually converts",
+                "E-commerce brands that want stronger ads and product visuals",
+                "Startups launching new products and need content fast",
+                "USA and Indian brands that want clean execution and sharper storytelling",
+              ].map((item, i) => (
+                <p key={i} className="flex items-center gap-3">
+                  <span className="text-blue-400 text-2xl">→</span>
+                  {item}
+                </p>
+              ))}
             </div>
-
             <p className="mt-8 text-xl font-semibold text-white border-t border-white/10 pt-8">
               If your business depends on attention, trust, and conversions, this is for you.
             </p>
@@ -318,8 +324,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Authority Section */}
-      <section className="py-32 px-6 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent">
+      {/* ── Our Approach Section ── */}
+      <section className="py-32 px-6">
         <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -329,7 +335,7 @@ export default function Home() {
           >
             <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">Our Approach</h2>
             <p className="text-xl text-white/60">
-              Good creative is not about trends. It's about understanding what makes people stop, trust, and take action.
+              Good creative is not about trends. It&apos;s about understanding what makes people stop, trust, and take action.
             </p>
           </motion.div>
 
@@ -347,7 +353,7 @@ export default function Home() {
               },
               {
                 title: "Design",
-                description: "We create visuals that support sales, not just aesthetics—every pixel serves your conversion goal.",
+                description: "We create visuals that support sales, not just aesthetics — every pixel serves your conversion goal.",
                 color: "#F5A623"
               }
             ].map((item, index) => (
@@ -357,18 +363,18 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
+                className="rounded-2xl p-8 h-full hover:scale-105 transition-transform"
+                style={{ backgroundColor: item.color }}
               >
-                <div className="rounded-2xl p-8 h-full hover:scale-105 transition-transform" style={{ backgroundColor: item.color }}>
-                  <h3 className="text-2xl font-bold mb-4 text-white font-sofia">{item.title}</h3>
-                  <p className="text-white/80">{item.description}</p>
-                </div>
+                <h3 className="text-2xl font-bold mb-4 text-white font-sofia">{item.title}</h3>
+                <p className="text-white/80">{item.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* ── Discovery & Strategy Section ── */}
       <section className="py-32 px-6">
         <div className="container mx-auto max-w-6xl">
           <motion.div
@@ -391,20 +397,19 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
+                className="rounded-2xl p-8 hover:scale-105 transition-transform"
+                style={{ backgroundColor: "#0f0f1a", border: "1px solid rgba(68,82,251,0.3)" }}
               >
-                <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-400/30 rounded-2xl p-8 hover:border-green-400/60 transition-all">
-                  <div className="text-5xl font-bold text-green-400/40 mb-4">{step.number}</div>
-                  <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                  <p className="text-white/70">{step.description}</p>
-                </div>
+                <div className="text-5xl font-bold mb-4 font-sofia" style={{ color: "#4452FB", opacity: 0.5 }}>{step.number}</div>
+                <h3 className="text-xl font-bold mb-3 text-white">{step.title}</h3>
+                <p className="text-white/70 text-sm leading-relaxed">{step.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-
-      {/* FAQ Section */}
+      {/* ── FAQ Section ── */}
       <section className="py-32 px-6">
         <div className="container mx-auto max-w-4xl">
           <motion.div
@@ -457,7 +462,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* ── Final CTA ── */}
       <section className="py-32 px-6 relative">
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <motion.h2
@@ -468,7 +473,7 @@ export default function Home() {
           >
             Ready to Make Your Brand
             <br />
-            <span className="text-gradient">Sell Smarter?</span>
+            <span style={{ color: "#4452FB" }}>Sell Smarter?</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -477,7 +482,7 @@ export default function Home() {
             transition={{ delay: 0.1 }}
             className="text-xl text-white/60 mb-12 max-w-2xl mx-auto"
           >
-            Let's discuss how we can build creative that converts, not just impresses.
+            Let&apos;s discuss how we can build creative that converts, not just impresses.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -490,7 +495,6 @@ export default function Home() {
             </Link>
           </motion.div>
         </div>
-
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none" />
       </section>
 
