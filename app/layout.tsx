@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
-import { Inter } from 'next/font/google'
+import { Inter, Playfair_Display, Poppins } from 'next/font/google'
 import "./globals.css"
 import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-sofia" })
+const poppins = Poppins({ weight: ["400", "500", "600", "700"], subsets: ["latin"], variable: "--font-poppins" })
 
 export const metadata: Metadata = {
   title: "ZeperAi | Digital Agency Serving Global Markets",
@@ -18,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20", inter.variable)}>
+      <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20", inter.variable, playfair.variable, poppins.variable)}>
         {children}
       </body>
     </html>
