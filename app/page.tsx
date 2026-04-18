@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { KeywordTicker } from "@/components/keyword-ticker"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ChevronDown, ArrowRight, CheckCircle } from "lucide-react"
+import { ChevronDown, ArrowRight, CheckCircle, Sparkles, Film, Edit3, TrendingUp, ShoppingBag, Palette, Image } from "lucide-react"
 import { useState } from "react"
 
 export default function Home() {
@@ -19,6 +19,51 @@ export default function Home() {
     "Shopify website design and development built for D2C brands.",
     "Branding and graphic design from logo to typography.",
     "Product images and marketplace listing creatives for Amazon, Blinkit, Instacart, and DoorDash."
+  ]
+
+  const solutionCards = [
+    {
+      title: "AI Ad Creatives",
+      description: "AI advertisement creatives that look real and feel story-driven.",
+      color: "#4452FB",
+      Icon: Sparkles,
+    },
+    {
+      title: "Motion Graphic Ads",
+      description: "Product motion graphic ads built for attention and retention.",
+      color: "#E8445A",
+      Icon: Film,
+    },
+    {
+      title: "Reels Editing",
+      description: "Reels editing that keeps people watching and drives engagement.",
+      color: "#F5A623",
+      Icon: Edit3,
+    },
+    {
+      title: "Creative Strategy",
+      description: "Scripting and creative strategy designed to improve CTR and ROAS.",
+      color: "#2ECC71",
+      Icon: TrendingUp,
+    },
+    {
+      title: "Shopify Websites",
+      description: "Shopify website design and development built for D2C brands.",
+      color: "#8B5CF6",
+      Icon: ShoppingBag,
+    },
+    {
+      title: "Brand & Design",
+      description: "Branding and graphic design from logo to full typography systems.",
+      color: "#0EA5E9",
+      Icon: Palette,
+    },
+    {
+      title: "Marketplace Creatives",
+      description: "Product images and listing creatives for Amazon, Blinkit, Instacart, and DoorDash.",
+      color: "#F97316",
+      Icon: Image,
+    },
   ]
 
   const problems = [
@@ -208,32 +253,41 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Vertical card slideshow — stacked cards that reveal on scroll */}
-          <div className="space-y-4">
-            {solutions.map((solution, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.55, delay: index * 0.07, ease: "easeOut" }}
-                className="group flex items-center gap-6 bg-white/5 border border-white/10 rounded-2xl px-8 py-6 hover:bg-white/[0.08] hover:border-blue-500/40 transition-all cursor-default"
-              >
-                {/* Index number */}
-                <span
-                  className="text-4xl font-bold font-sofia tabular-nums flex-shrink-0 w-12 text-right leading-none"
-                  style={{ color: "#4452FB", opacity: 0.5 }}
+          {/* Horizontal scrolling colorful cards */}
+          <div className="overflow-x-auto pb-6 -mx-6 px-6">
+            <div className="flex gap-5 w-max">
+              {solutionCards.map((card, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+                  className="relative flex flex-col justify-between w-64 md:w-72 h-80 rounded-3xl p-7 flex-shrink-0 overflow-hidden cursor-default select-none"
+                  style={{ backgroundColor: card.color }}
                 >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div className="w-px h-10 bg-white/10 flex-shrink-0" />
-                {/* Content */}
-                <p className="text-white/80 text-base md:text-lg leading-relaxed flex-1 group-hover:text-white transition-colors">
-                  {solution}
-                </p>
-                <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </motion.div>
-            ))}
+                  {/* Title + description */}
+                  <div>
+                    <h3 className="text-white font-bold text-xl leading-snug mb-3 font-sofia">
+                      {card.title}
+                    </h3>
+                    <p className="text-white/80 text-sm leading-relaxed">
+                      {card.description}
+                    </p>
+                  </div>
+
+                  {/* Decorative shape at bottom */}
+                  <div className="flex justify-center mt-4">
+                    <div
+                      className="w-20 h-20 rounded-2xl flex items-center justify-center rotate-12"
+                      style={{ backgroundColor: "rgba(255,255,255,0.2)" }}
+                    >
+                      <card.Icon className="w-9 h-9 text-white/90 -rotate-12" />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
