@@ -133,14 +133,14 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-            className="font-sofia text-6xl md:text-8xl lg:text-9xl font-bold leading-[1.05] tracking-tight mb-8 text-balance"
+            className="font-poppins text-6xl md:text-8xl lg:text-9xl font-bold leading-[1.05] tracking-tight mb-8 text-balance"
           >
             We Build Brands
             <br />
             <span className="text-white/90">That&nbsp;</span>
-            <span className="relative inline-block px-4" style={{ color: "#4452FB" }}>
+            <span className="relative inline-block px-4" style={{ color: "#ba44fb" }}>
               Actually Sell
-              <span className="absolute inset-0 rounded-xl -z-10 opacity-15" style={{ background: "#4452FB" }} />
+              <span className="absolute inset-0 rounded-xl -z-10 opacity-15" style={{ background: "#ba44fb" }} />
             </span>
           </motion.h1>
 
@@ -198,7 +198,7 @@ export default function Home() {
                 className="rounded-2xl p-8"
                 style={{ backgroundColor: "#4452FB" }}
               >
-                <h3 className="text-2xl md:text-3xl font-sofia font-bold text-white mb-4 leading-tight">
+                <h3 className="text-2xl md:text-3xl font-poppins font-bold text-white mb-4 leading-tight">
                   {problem.title}
                 </h3>
                 <p className="text-white/80 text-base leading-relaxed">{problem.description}</p>
@@ -217,10 +217,18 @@ export default function Home() {
                 className="rounded-2xl p-8"
                 style={{ backgroundColor: "#4452FB" }}
               >
-                <h3 className="text-2xl md:text-3xl font-sofia font-bold text-white mb-4 leading-tight">
+                <h3 
+                  className="text-2xl md:text-3xl font-poppins font-bold mb-4 leading-tight"
+                  style={{ color: index === 1 ? "#120404" : "white" }}
+                >
                   {problem.title}
                 </h3>
-                <p className="text-white/80 text-base leading-relaxed">{problem.description}</p>
+                <p 
+                  className="text-base leading-relaxed" 
+                  style={{ color: index === 1 ? "#000000" : "rgba(255,255,255,0.8)" }}
+                >
+                  {problem.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -245,7 +253,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
             <div>
               <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">The Solution</span>
-              <h2 className="text-4xl md:text-5xl font-sofia font-bold leading-tight">
+              <h2 className="text-4xl md:text-5xl font-poppins font-bold leading-tight">
                 Performance-driven<br />creative that sells.
               </h2>
             </div>
@@ -266,7 +274,7 @@ export default function Home() {
                 style={{ backgroundColor: card.color }}
               >
                 <div>
-                  <h3 className="text-white font-bold text-xl leading-snug mb-3 font-sofia">
+                  <h3 className="text-white font-bold text-xl leading-snug mb-3 font-poppins">
                     {card.title}
                   </h3>
                   <p className="text-white/85 text-sm leading-relaxed">
@@ -296,7 +304,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">Who This Is Built For</h2>
+            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-6">Who This Is Built For</h2>
             <p className="text-xl text-white/60">
               This is built for brands that want more than random design work.
             </p>
@@ -333,7 +341,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">Our Approach</h2>
+            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-6">Our Approach</h2>
             <p className="text-xl text-white/60">
               Good creative is not about trends. It&apos;s about understanding what makes people stop, trust, and take action.
             </p>
@@ -366,7 +374,7 @@ export default function Home() {
                 className="rounded-2xl p-8 h-full hover:scale-105 transition-transform"
                 style={{ backgroundColor: item.color }}
               >
-                <h3 className="text-2xl font-bold mb-4 text-white font-sofia">{item.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 text-white font-poppins">{item.title}</h3>
                 <p className="text-white/80">{item.description}</p>
               </motion.div>
             ))}
@@ -383,7 +391,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">Discovery & Strategy</h2>
+            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-6">Discovery & Strategy</h2>
             <p className="text-xl text-white/60 max-w-3xl mx-auto">
               We dive deep into your brand, audience, and goals to create a strategic foundation.
             </p>
@@ -400,7 +408,7 @@ export default function Home() {
                 className="rounded-2xl p-8 hover:scale-105 transition-transform"
                 style={{ backgroundColor: "#0f0f1a", border: "1px solid rgba(68,82,251,0.3)" }}
               >
-                <div className="text-5xl font-bold mb-4 font-sofia" style={{ color: "#4452FB", opacity: 0.5 }}>{step.number}</div>
+                <div className="text-5xl font-bold mb-4 font-poppins" style={{ color: "#4452FB", opacity: 0.5 }}>{step.number}</div>
                 <h3 className="text-xl font-bold mb-3 text-white">{step.title}</h3>
                 <p className="text-white/70 text-sm leading-relaxed">{step.description}</p>
               </motion.div>
@@ -418,7 +426,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-6">Frequently Asked Questions</h2>
           </motion.div>
 
           <div className="space-y-4">
@@ -469,7 +477,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-sofia font-bold mb-8"
+            className="text-5xl md:text-6xl font-poppins font-bold mb-8"
           >
             Ready to Make Your Brand
             <br />
