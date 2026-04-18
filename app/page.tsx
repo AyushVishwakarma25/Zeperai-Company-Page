@@ -253,41 +253,39 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Horizontal scrolling colorful cards */}
-          <div className="overflow-x-auto pb-6 -mx-6 px-6">
-            <div className="flex gap-5 w-max">
-              {solutionCards.map((card, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
-                  className="relative flex flex-col justify-between w-64 md:w-72 h-80 rounded-3xl p-7 flex-shrink-0 overflow-hidden cursor-default select-none"
-                  style={{ backgroundColor: card.color }}
-                >
-                  {/* Title + description */}
-                  <div>
-                    <h3 className="text-white font-bold text-xl leading-snug mb-3 font-sofia">
-                      {card.title}
-                    </h3>
-                    <p className="text-white/80 text-sm leading-relaxed">
-                      {card.description}
-                    </p>
-                  </div>
+          {/* Colorful solution cards grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {solutionCards.map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+                className="relative flex flex-col justify-between h-80 rounded-3xl p-8 overflow-hidden cursor-default select-none hover:scale-105 transition-transform"
+                style={{ backgroundColor: card.color }}
+              >
+                {/* Title + description at top */}
+                <div>
+                  <h3 className="text-white font-bold text-xl md:text-2xl leading-snug mb-3 font-sofia">
+                    {card.title}
+                  </h3>
+                  <p className="text-white/85 text-sm leading-relaxed">
+                    {card.description}
+                  </p>
+                </div>
 
-                  {/* Decorative shape at bottom */}
-                  <div className="flex justify-center mt-4">
-                    <div
-                      className="w-20 h-20 rounded-2xl flex items-center justify-center rotate-12"
-                      style={{ backgroundColor: "rgba(255,255,255,0.2)" }}
-                    >
-                      <card.Icon className="w-9 h-9 text-white/90 -rotate-12" />
-                    </div>
+                {/* Icon area centered at bottom */}
+                <div className="flex justify-center">
+                  <div
+                    className="w-24 h-24 rounded-3xl flex items-center justify-center"
+                    style={{ backgroundColor: "rgba(255,255,255,0.25)" }}
+                  >
+                    <card.Icon className="w-12 h-12 text-white/90" />
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
