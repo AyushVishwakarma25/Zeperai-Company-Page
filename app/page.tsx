@@ -150,9 +150,6 @@ export default function Home() {
                 className="rounded-2xl p-8"
                 style={{ backgroundColor: "#4452FB" }}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-semibold uppercase tracking-widest mb-6">
-                  The Problem
-                </div>
                 <h3 className="text-2xl md:text-3xl font-sofia font-bold text-white mb-4 leading-tight">
                   {problem.title}
                 </h3>
@@ -173,9 +170,6 @@ export default function Home() {
                 className="rounded-2xl p-8"
                 style={{ backgroundColor: "#4452FB" }}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-semibold uppercase tracking-widest mb-6">
-                  The Problem
-                </div>
                 <h3 className="text-2xl md:text-3xl font-sofia font-bold text-white mb-4 leading-tight">
                   {problem.title}
                 </h3>
