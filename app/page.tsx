@@ -215,17 +215,17 @@ export default function Home() {
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ delay: index * 0.12, duration: 0.55, ease: "easeOut" }}
                 className="rounded-2xl p-8"
-                style={{ backgroundColor: "#4452FB" }}
+                style={{ backgroundColor: index === 0 ? "#148f7f" : "#8006cd" }}
               >
                 <h3 
                   className="text-2xl md:text-3xl font-poppins font-bold mb-4 leading-tight"
-                  style={{ color: index === 1 ? "#120404" : "white" }}
+                  style={{ color: "white" }}
                 >
                   {problem.title}
                 </h3>
                 <p 
                   className="text-base leading-relaxed" 
-                  style={{ color: index === 1 ? "#000000" : "rgba(255,255,255,0.8)" }}
+                  style={{ color: "rgba(255,255,255,0.8)" }}
                 >
                   {problem.description}
                 </p>
@@ -382,7 +382,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Discovery & Strategy Section ── */}
+      {/* ─��� Discovery & Strategy Section ── */}
       <section className="py-32 px-6">
         <div className="container mx-auto max-w-6xl">
           <motion.div
@@ -391,28 +391,32 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-6">Discovery & Strategy</h2>
+            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-6">How We Work</h2>
             <p className="text-xl text-white/60 max-w-3xl mx-auto">
               We dive deep into your brand, audience, and goals to create a strategic foundation.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-6">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="rounded-2xl p-8 hover:scale-105 transition-transform"
-                style={{ backgroundColor: "#0f0f1a", border: "1px solid rgba(68,82,251,0.3)" }}
-              >
-                <div className="text-5xl font-bold mb-4 font-poppins" style={{ color: "#4452FB", opacity: 0.5 }}>{step.number}</div>
-                <h3 className="text-xl font-bold mb-3 text-white">{step.title}</h3>
-                <p className="text-white/70 text-sm leading-relaxed">{step.description}</p>
-              </motion.div>
-            ))}
+            {steps.map((step, index) => {
+              const colors = ["#6e04f0", "#1ca365", "rgb(232, 68, 90)", "rgb(245, 166, 35)"]
+              const stepNumberColors = ["#ffffff", "#f7f7fb", "#fdfdff", "#f8f8fb"]
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="rounded-2xl p-8 hover:scale-105 transition-transform"
+                  style={{ backgroundColor: colors[index] }}
+                >
+                  <div className="text-5xl font-bold mb-4 font-poppins" style={{ color: stepNumberColors[index] }}>{step.number}</div>
+                  <h3 className="text-xl font-bold mb-3 text-white">{step.title}</h3>
+                  <p className="text-white/70 text-sm leading-relaxed">{step.description}</p>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>
