@@ -46,24 +46,6 @@ export default function Home() {
       color: "#2ECC71",
       Icon: TrendingUp,
     },
-    {
-      title: "Shopify Websites",
-      description: "Shopify website design and development built for D2C brands.",
-      color: "#8B5CF6",
-      Icon: ShoppingBag,
-    },
-    {
-      title: "Brand & Design",
-      description: "Branding and graphic design from logo to full typography systems.",
-      color: "#0EA5E9",
-      Icon: Palette,
-    },
-    {
-      title: "Marketplace Creatives",
-      description: "Product images and listing creatives for Amazon, Blinkit, Instacart, and DoorDash.",
-      color: "#F97316",
-      Icon: Image,
-    },
   ]
 
   const problems = [
@@ -253,8 +235,8 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Colorful solution cards grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Slideshow solution cards - 4 cards evenly distributed horizontally */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {solutionCards.map((card, index) => (
               <motion.div
                 key={index}
@@ -267,7 +249,7 @@ export default function Home() {
               >
                 {/* Title + description at top */}
                 <div>
-                  <h3 className="text-white font-bold text-xl md:text-2xl leading-snug mb-3 font-sofia">
+                  <h3 className="text-white font-bold text-xl leading-snug mb-3 font-sofia">
                     {card.title}
                   </h3>
                   <p className="text-white/85 text-sm leading-relaxed">
@@ -355,15 +337,18 @@ export default function Home() {
             {[
               {
                 title: "Storytelling",
-                description: "We craft narratives that feel natural and believable, making your brand relatable and human."
+                description: "We craft narratives that feel natural and believable, making your brand relatable and human.",
+                color: "#4452FB"
               },
               {
                 title: "Strategy",
-                description: "We align every asset with your offer and audience, ensuring maximum relevance and impact."
+                description: "We align every asset with your offer and audience, ensuring maximum relevance and impact.",
+                color: "#E8445A"
               },
               {
                 title: "Design",
-                description: "We create visuals that support sales, not just aesthetics—every pixel serves your conversion goal."
+                description: "We create visuals that support sales, not just aesthetics—every pixel serves your conversion goal.",
+                color: "#F5A623"
               }
             ].map((item, index) => (
               <motion.div
@@ -373,9 +358,9 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-8 h-full hover:bg-purple-500/15 transition-all">
-                  <h3 className="text-2xl font-bold mb-4 text-purple-300">{item.title}</h3>
-                  <p className="text-white/70">{item.description}</p>
+                <div className="rounded-2xl p-8 h-full hover:scale-105 transition-transform" style={{ backgroundColor: item.color }}>
+                  <h3 className="text-2xl font-bold mb-4 text-white font-sofia">{item.title}</h3>
+                  <p className="text-white/80">{item.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -392,9 +377,9 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">Working Together Is Simple</h2>
+            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">Discovery & Strategy</h2>
             <p className="text-xl text-white/60 max-w-3xl mx-auto">
-              No confusion. No bloated process. Just clear work that helps your brand grow.
+              We dive deep into your brand, audience, and goals to create a strategic foundation.
             </p>
           </motion.div>
 
@@ -418,38 +403,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Offerings Section */}
-      <section className="py-32 px-6 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent">
-        <div className="container mx-auto max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-sofia font-bold mb-6">What You Get From Us</h2>
-            <p className="text-xl text-white/60">
-              If you need content, design, and web assets that feel premium and perform well, we can help.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {offerings.map((offering, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-blue-500/10 border border-blue-400/30 rounded-xl p-4 flex items-center gap-3 hover:bg-blue-500/15 transition-all"
-              >
-                <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                <span className="text-white/80">{offering}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section className="py-32 px-6">
