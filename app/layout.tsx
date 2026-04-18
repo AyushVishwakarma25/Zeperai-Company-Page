@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
-import { Inter } from 'next/font/google'
+import { Inter, Sofia_Pro } from 'next/font/google'
 import "./globals.css"
 import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const sofia = Sofia_Pro({ subsets: ["latin"], variable: "--font-sofia" })
 
 export const metadata: Metadata = {
   title: "ZeperAi | Digital Agency Serving Global Markets",
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20", inter.variable)}>
+      <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20", inter.variable, sofia.variable)}>
         {children}
       </body>
     </html>

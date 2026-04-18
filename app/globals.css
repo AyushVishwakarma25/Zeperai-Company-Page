@@ -2,6 +2,7 @@
 
 @theme inline {
   --font-sans: var(--font-sans);
+  --font-sofia: var(--font-sofia);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -84,5 +85,8 @@
   }
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white/80 to-white/50;
+  }
+  .font-sofia {
+    font-family: var(--font-sofia);
   }
 }
