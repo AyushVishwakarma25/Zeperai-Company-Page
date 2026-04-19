@@ -39,7 +39,7 @@ export function Navbar() {
         )}
       >
         <Link href="/" className="flex items-center gap-2 font-bold tracking-tighter relative z-50">
-          <img src="/logo-zeperai.png" alt="ZeperAi" className="h-6 w-auto" />
+          <img src="/logo-zeperai.png" alt="ZeperAi" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Menu */}
