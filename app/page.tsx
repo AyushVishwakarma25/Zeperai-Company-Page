@@ -222,14 +222,14 @@ export default function Home() {
                 className="rounded-2xl p-8"
                 style={{ backgroundColor: index === 0 ? "#148f7f" : "#8006cd" }}
               >
-                <h3 
+                <h3
                   className="text-2xl md:text-3xl font-poppins font-bold mb-4 leading-tight"
                   style={{ color: "white" }}
                 >
                   {problem.title}
                 </h3>
-                <p 
-                  className="text-base leading-relaxed" 
+                <p
+                  className="text-base leading-relaxed"
                   style={{ color: "rgba(255,255,255,0.8)" }}
                 >
                   {problem.description}
@@ -257,7 +257,6 @@ export default function Home() {
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
             <div>
-              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">The Solution</span>
               <h2 className="text-4xl md:text-5xl font-poppins font-bold leading-tight">
                 We Know the Fix Too.
               </h2>
