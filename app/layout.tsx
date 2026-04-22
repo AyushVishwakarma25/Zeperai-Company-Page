@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Inter, Playfair_Display, Poppins } from 'next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import "./globals.css"
 import { cn } from "@/lib/utils"
 
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20", inter.variable, playfair.variable, poppins.variable)}>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   )
