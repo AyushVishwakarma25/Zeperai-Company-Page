@@ -1,6 +1,5 @@
 "use client"
 
-import { Metadata } from "next"
 import { useState, useRef } from "react"
 import { AnnouncementBar } from "@/components/funnel/announcement-bar"
 import { FunnelNav } from "@/components/funnel/funnel-nav"
