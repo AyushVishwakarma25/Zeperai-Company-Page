@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Inter, Playfair_Display, Poppins } from 'next/font/google'
+import Script from "next/script"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import { SchemaMarkup } from "@/components/schema-markup"
@@ -67,6 +68,20 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
         <SchemaMarkup />
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-MY0962XWG5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MY0962XWG5');
+          `}
+        </Script>
       </head>
       <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20", inter.variable, playfair.variable, poppins.variable)}>
         {children}
