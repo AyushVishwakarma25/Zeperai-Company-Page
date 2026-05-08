@@ -1,30 +1,24 @@
+"use client"
+
 import Link from "next/link"
 import { Linkedin, Mail, Phone } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer className="relative bg-black text-white pt-20 pb-8 overflow-hidden">
-      {/* Top accent circle */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </div>
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10 pt-12">
+    <footer className="relative bg-black text-white pt-16 pb-8 overflow-hidden">
+
+      <div className="container mx-auto px-6 relative z-10">
         {/* Main footer grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 pb-12 border-b border-white/10">
-          {/* About Us */}
+          {/* About */}
           <div>
-            <h3 className="text-2xl font-bold mb-4 pb-3 border-b-2 border-blue-500 inline-block">
-              About Us
+            <h3 className="text-xl font-bold mb-4 pb-3 border-b-2 border-blue-500 inline-block">
+              About
             </h3>
             <p className="text-white/70 text-sm leading-relaxed mt-6 mb-6">
-              AI-powered design, video editing, and creative strategy that makes brands stand out. Delivering exceptional results for companies worldwide.
+              We are an AI-native creative agency helping brands tell better stories, build stronger presence, and create content that actually gets noticed.
             </p>
-            <p className="text-white/50 text-sm mb-6">© 2025 ZeperAi. All rights reserved.</p>
+            <p className="text-white/50 text-sm mb-4">© 2025 ZeperAi. All rights reserved.</p>
             <div className="flex gap-4">
               <a href="https://www.linkedin.com/in/vishwakarma-ayush/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-blue-500 transition-colors">
                 <Linkedin className="w-5 h-5" />
@@ -34,7 +28,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-2xl font-bold mb-4 pb-3 border-b-2 border-blue-500 inline-block">
+            <h3 className="text-xl font-bold mb-4 pb-3 border-b-2 border-blue-500 inline-block">
               Quick Links
             </h3>
             <ul className="space-y-3 mt-6 text-white/70">
@@ -48,7 +42,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-2xl font-bold mb-4 pb-3 border-b-2 border-blue-500 inline-block">
+            <h3 className="text-xl font-bold mb-4 pb-3 border-b-2 border-blue-500 inline-block">
               Services
             </h3>
             <ul className="space-y-3 mt-6 text-white/70">
@@ -62,7 +56,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4 pb-3 border-b-2 border-blue-500 inline-block">
+            <h3 className="text-xl font-bold mb-4 pb-3 border-b-2 border-blue-500 inline-block">
               Get in Touch
             </h3>
             <div className="space-y-4 mt-6">
@@ -88,18 +82,50 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom footer */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8">
-          <Link href="/" className="flex items-center gap-2 mb-6 md:mb-0">
-            <img src="/logo-zeperai.png" alt="ZeperAi" className="h-6 w-auto" />
-          </Link>
-          <div className="flex items-center gap-8 text-white/60 text-sm">
-            <Link href="/privacy" className="hover:text-blue-500 transition-colors">Privacy</Link>
-            <Link href="/terms" className="hover:text-blue-500 transition-colors">Terms</Link>
-            <div className="flex gap-6">
-              <a href="/privacy" className="hover:text-blue-500 transition-colors">Privacy Policy</a>
-              <a href="/terms" className="hover:text-blue-500 transition-colors">Terms of Service</a>
+        {/* Payment Methods */}
+        <div className="mb-10 pb-10 border-b border-white/10">
+          <p className="text-white/40 text-xs uppercase tracking-widest mb-4">Accepted Payment Methods</p>
+          <div className="flex flex-wrap items-center gap-3">
+            {/* Visa */}
+            <div className="flex items-center justify-center bg-white rounded-lg px-3 py-2 h-9">
+              <svg viewBox="0 0 48 16" className="h-4 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="13" fontFamily="Arial" fontWeight="bold" fontSize="13" fill="#1A1F71">VISA</text>
+              </svg>
             </div>
+            {/* Mastercard */}
+            <div className="flex items-center justify-center bg-white rounded-lg px-3 py-2 h-9 gap-1">
+              <div className="w-5 h-5 rounded-full bg-red-500 opacity-90" />
+              <div className="w-5 h-5 rounded-full bg-yellow-400 opacity-90 -ml-2.5" />
+            </div>
+            {/* UPI */}
+            <div className="flex items-center justify-center bg-white rounded-lg px-3 py-2 h-9">
+              <span className="text-xs font-extrabold tracking-tight" style={{ color: "#097939" }}>UPI</span>
+            </div>
+            {/* Google Pay */}
+            <div className="flex items-center justify-center bg-white rounded-lg px-4 py-2 h-9 gap-1">
+              <span className="text-xs font-bold" style={{ color: "#4285F4" }}>G</span>
+              <span className="text-xs font-semibold text-gray-700">Pay</span>
+            </div>
+            {/* PayPal */}
+            <div className="flex items-center justify-center bg-white rounded-lg px-3 py-2 h-9">
+              <span className="text-xs font-extrabold" style={{ color: "#003087" }}>Pay</span>
+              <span className="text-xs font-extrabold" style={{ color: "#009cde" }}>Pal</span>
+            </div>
+            {/* Skydo */}
+            <div className="flex items-center justify-center bg-white rounded-lg px-3 py-2 h-9">
+              <span className="text-xs font-bold text-gray-800">Skydo</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom footer */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <Link href="/" className="flex items-center gap-2">
+            <img src="/logo-zeperai.png" alt="ZeperAi" className="h-9 w-auto" />
+          </Link>
+          <div className="flex items-center gap-6 text-white/50 text-sm">
+            <Link href="/privacy" className="hover:text-blue-500 transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-blue-500 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
