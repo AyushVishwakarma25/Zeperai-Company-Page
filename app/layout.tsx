@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter, Playfair_Display, Poppins } from 'next/font/google'
 import "./globals.css"
 import { cn } from "@/lib/utils"
+import { SchemaMarkup } from "@/components/schema-markup"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-sofia" })
@@ -64,6 +65,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <SchemaMarkup />
+      </head>
       <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20", inter.variable, playfair.variable, poppins.variable)}>
         {children}
       </body>
