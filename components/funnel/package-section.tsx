@@ -64,23 +64,23 @@ const packages = [
 
 export function PackageSection() {
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-purple-950/10 to-transparent">
+    <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-purple-950/10 to-transparent">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-4 text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-3 md:mb-4 text-white">
             Our Growth Packages
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto px-2">
             Start with a free audit. Then choose the package that matches your growth stage.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {packages.map((pkg, i) => (
             <motion.div
               key={i}
@@ -88,14 +88,14 @@ export function PackageSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`rounded-2xl p-8 transition-all hover:scale-105 ${
+              className={`rounded-2xl p-6 md:p-8 transition-all hover:scale-105 ${
                 pkg.highlighted
                   ? "bg-gradient-to-br from-purple-600 to-blue-600 border-2 border-purple-400 shadow-2xl shadow-purple-500/50"
                   : "bg-white/5 border border-white/10 hover:border-white/20"
               }`}
             >
               <div className="mb-6">
-                <h3 className={`text-2xl font-poppins font-bold mb-1 ${
+                <h3 className={`text-xl md:text-2xl font-poppins font-bold mb-1 ${
                   pkg.highlighted ? "text-white" : "text-white"
                 }`}>
                   {pkg.name}

@@ -102,29 +102,30 @@ export function FormSection({ onSubmitSuccess }: FormSectionProps) {
   }
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-transparent to-purple-950/10">
+    <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-transparent to-purple-950/10">
       <div className="container mx-auto max-w-5xl">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-start md:items-center">
           {/* Left side - Copy */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="order-2 md:order-1"
           >
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-white mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins font-bold text-white mb-4 md:mb-6 leading-tight">
               Ready to Scale Your D2C Brand?
             </h2>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 md:mb-8 leading-relaxed">
               Fill out this quick form and book your free brand audit. We&apos;ll analyze your current strategy and show you exactly where the opportunities are.
             </p>
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {[
                 "✓ No credit card needed",
                 "✓ 30-minute strategy call",
                 "✓ Custom growth recommendation",
                 "✓ Competitive analysis included",
               ].map((item, i) => (
-                <p key={i} className="text-emerald-400 flex items-center gap-2">
+                <p key={i} className="text-emerald-400 flex items-center gap-2 text-sm md:text-base">
                   {item}
                 </p>
               ))}
@@ -136,10 +137,10 @@ export function FormSection({ onSubmitSuccess }: FormSectionProps) {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8"
+            className="bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-6 md:p-8 order-1 md:order-2"
           >
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
                 {/* Name */}
                 <FormField
                   control={form.control}
