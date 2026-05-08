@@ -85,7 +85,6 @@ export default function RootLayout({
       </head>
       <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20", inter.variable, playfair.variable, poppins.variable)}>
         {children}
-        <SpeedInsights />
       </body>
     </html>
   )
