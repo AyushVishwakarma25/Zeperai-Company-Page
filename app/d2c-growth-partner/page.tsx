@@ -1,0 +1,42 @@
+'use client'
+
+import { useRef } from 'react'
+import { PartnerHero } from '@/components/partner/partner-hero'
+import { PartnerProblems } from '@/components/partner/partner-problems'
+import { PartnerHowItWorks } from '@/components/partner/partner-how-it-works'
+import { PartnerServices } from '@/components/partner/partner-services'
+import { PartnerWho } from '@/components/partner/partner-who'
+import { PartnerProcess } from '@/components/partner/partner-process'
+import { PartnerPricing } from '@/components/partner/partner-pricing'
+import { PartnerComparison } from '@/components/partner/partner-comparison'
+import { PartnerCaseStudies } from '@/components/partner/partner-case-studies'
+import { PartnerFaq } from '@/components/partner/partner-faq'
+import { PartnerForm } from '@/components/partner/partner-form'
+import { PartnerFooter } from '@/components/partner/partner-footer'
+
+export default function D2CGrowthPartner() {
+  const formRef = useRef<HTMLDivElement>(null)
+
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  return (
+    <main className="min-h-screen bg-black">
+      <PartnerHero onCtaClick={scrollToForm} />
+      <PartnerProblems />
+      <PartnerHowItWorks />
+      <PartnerServices />
+      <PartnerWho />
+      <PartnerProcess />
+      <PartnerPricing onCtaClick={scrollToForm} />
+      <PartnerComparison />
+      <PartnerCaseStudies />
+      <PartnerFaq />
+      <div ref={formRef}>
+        <PartnerForm />
+      </div>
+      <PartnerFooter />
+    </main>
+  )
+}
