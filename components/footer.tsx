@@ -37,7 +37,6 @@ export function Footer() {
               <li><Link href="/services" className="hover:text-blue-500 transition-colors">Services</Link></li>
               <li><Link href="/contact" className="hover:text-blue-500 transition-colors">Contact</Link></li>
               <li><Link href="/booking" className="hover:text-blue-500 transition-colors">Book a Call</Link></li>
-              <li><Link href="/d2c-growth-system" className="hover:text-blue-500 transition-colors">D2C Growth System</Link></li>
               <li><Link href="/d2c-growth-partner" className="hover:text-blue-500 transition-colors">D2C Growth Partner</Link></li>
             </ul>
           </div>
