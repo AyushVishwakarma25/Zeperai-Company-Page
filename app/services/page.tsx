@@ -4,70 +4,56 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "framer-motion"
-import { Palette, Smartphone, Code2, Rocket, Check } from 'lucide-react'
+import { Palette, Smartphone, Code2, Rocket, Check, Video, Layout } from 'lucide-react'
 import Link from "next/link"
 
 export default function ServicesPage() {
-  const services = [
+  const serviceCategories = [
     {
-      icon: <Palette className="w-12 h-12 text-blue-400" />,
-      title: "Digital Architecture",
-      shortDescription: "Strategic website design and development",
-      fullDescription: "We create user-centric websites optimized for conversions. From WordPress design to custom development, we build digital experiences that elevate your brand globally.",
-      features: [
-        "Responsive web design",
-        "WordPress & CMS customization",
-        "Landing page optimization",
-        "E-commerce solutions",
-        "SEO optimization",
-        "Performance enhancement"
-      ],
-      color: "from-blue-500/20 to-cyan-500/20"
+      categoryTitle: "Video Editing",
+      icon: <Video className="w-12 h-12 text-purple-400" />,
+      description: "Professional video content creation and editing for all formats",
+      color: "from-purple-500/20 to-pink-500/20",
+      services: [
+        "Talking Head Videos",
+        "SaaS Product Intro Videos",
+        "D2C Product Animations",
+        "Short Form Reels",
+        "Motion Graphics",
+        "UGC Style Ads",
+        "YouTube & Podcast Editing",
+        "Social Media Content Editing",
+        "Brand Promo Videos"
+      ]
     },
     {
-      icon: <Smartphone className="w-12 h-12 text-purple-400" />,
-      title: "High-Impact Video Editing",
-      shortDescription: "Cinematic content for social campaigns",
-      fullDescription: "From short-form social content to long-form brand narratives, we craft videos that captivate and convert. Our video editing combines storytelling with strategic marketing.",
-      features: [
-        "Social media video content",
-        "Ad video production",
-        "Brand story videos",
-        "Product demos",
-        "Motion graphics",
-        "Color grading & effects"
-      ],
-      color: "from-purple-500/20 to-pink-500/20"
+      categoryTitle: "Website Development",
+      icon: <Layout className="w-12 h-12 text-blue-400" />,
+      description: "Custom web development and design solutions for modern brands",
+      color: "from-blue-500/20 to-cyan-500/20",
+      services: [
+        "Shopify Development",
+        "MVP Building",
+        "UX/UI Design",
+        "Landing Pages",
+        "CRO Focused Design"
+      ]
     },
     {
-      icon: <Code2 className="w-12 h-12 text-indigo-400" />,
-      title: "AI-Generated Ad Creatives",
-      shortDescription: "Data-driven creative automation",
-      fullDescription: "Leverage AI to generate high-converting ad creative at scale. We combine intelligent design algorithms with strategic copywriting for maximum ROI.",
-      features: [
-        "AI ad design generation",
-        "Copy optimization",
-        "Multi-variant testing",
-        "A/B testing frameworks",
-        "Performance analytics",
-        "Automated scaling"
-      ],
-      color: "from-indigo-500/20 to-blue-500/20"
-    },
-    {
-      icon: <Rocket className="w-12 h-12 text-pink-400" />,
-      title: "Strategic Graphic Design",
-      shortDescription: "Custom visual identities & brand systems",
-      fullDescription: "We build cohesive visual identities that resonate internationally. From logos to complete design systems, every element is crafted for impact.",
-      features: [
-        "Logo & brand identity",
-        "Design systems",
-        "Marketing collateral",
-        "Social media templates",
-        "Presentation design",
-        "Print & digital assets"
-      ],
-      color: "from-pink-500/20 to-red-500/20"
+      categoryTitle: "Design & Branding",
+      icon: <Palette className="w-12 h-12 text-pink-400" />,
+      description: "Complete visual identity and design system creation",
+      color: "from-pink-500/20 to-red-500/20",
+      services: [
+        "Graphic Designing",
+        "Brand Identity Design",
+        "Logo Design",
+        "Food Packaging Design",
+        "Static Ad Creatives",
+        "Product Listing Designs",
+        "Social Media Creatives",
+        "Banner & Marketing Designs"
+      ]
     }
   ]
 
@@ -118,45 +104,45 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services Categories Grid */}
       <section className="py-32 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="space-y-12">
-            {services.map((service, index) => (
+          <div className="space-y-16">
+            {serviceCategories.map((category, categoryIndex) => (
               <motion.div
-                key={index}
+                key={categoryIndex}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
               >
-                <GlassCard className="p-6 md:p-12 group hover:bg-white/5 transition-all">
-                  <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div className="mb-8">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors">
+                      {category.icon}
+                    </div>
                     <div>
-                      <div className="mb-6 p-5 rounded-2xl bg-white/5 w-fit group-hover:bg-white/10 transition-colors">
-                        {service.icon}
-                      </div>
-                      <h2 className="text-2xl md:text-4xl font-bold mb-4">{service.title}</h2>
-                      <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8">
-                        {service.fullDescription}
-                      </p>
-                      <div className="space-y-3 mb-8">
-                        {service.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center gap-3">
-                            <Check className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                            <span className="text-white/80 text-sm md:text-base">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
+                      <h2 className="text-3xl md:text-4xl font-bold">{category.categoryTitle}</h2>
+                      <p className="text-white/60 text-sm md:text-base mt-1">{category.description}</p>
                     </div>
-                    <div className={`h-60 md:h-80 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center`}>
-                      <div className="text-center">
-                        <div className="text-6xl font-bold text-white/10 mb-4">
-                          {service.icon}
-                        </div>
-                        <p className="text-white/40 font-medium">{service.shortDescription}</p>
-                      </div>
-                    </div>
+                  </div>
+                </div>
+
+                <GlassCard className={`p-8 md:p-10 bg-gradient-to-br ${category.color} hover:bg-white/10 transition-all`}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {category.services.map((service, serviceIndex) => (
+                      <motion.div
+                        key={serviceIndex}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: serviceIndex * 0.05 }}
+                        className="flex items-start gap-3 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-all group cursor-pointer"
+                      >
+                        <Check className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                        <span className="text-white/80 group-hover:text-white transition-colors font-medium">{service}</span>
+                      </motion.div>
+                    ))}
                   </div>
                 </GlassCard>
               </motion.div>
