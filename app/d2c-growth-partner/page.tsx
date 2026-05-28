@@ -7,9 +7,8 @@ import { PartnerHowItWorks } from '@/components/partner/partner-how-it-works'
 import { PartnerServices } from '@/components/partner/partner-services'
 import { PartnerWho } from '@/components/partner/partner-who'
 import { PartnerProcess } from '@/components/partner/partner-process'
-import { PartnerPricing } from '@/components/partner/partner-pricing'
+import { PartnerVsl } from '@/components/partner/partner-vsl'
 import { PartnerComparison } from '@/components/partner/partner-comparison'
-import { PartnerCaseStudies } from '@/components/partner/partner-case-studies'
 import { PartnerFaq } from '@/components/partner/partner-faq'
 import { PartnerForm } from '@/components/partner/partner-form'
 import { PartnerFooter } from '@/components/partner/partner-footer'
@@ -29,9 +28,8 @@ export default function D2CGrowthPartner() {
       <PartnerServices />
       <PartnerWho />
       <PartnerProcess />
-      <PartnerPricing onCtaClick={scrollToForm} />
+      <PartnerVsl />
       <PartnerComparison />
-      <PartnerCaseStudies />
       <PartnerFaq />
       <div ref={formRef}>
         <PartnerForm />

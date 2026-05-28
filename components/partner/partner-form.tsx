@@ -76,10 +76,10 @@ export function PartnerForm() {
           {/* Left Side */}
           <div className="order-2 md:order-1">
             <h2 className="text-3xl md:text-4xl font-poppins font-bold text-white mb-6">
-              Ready to Scale Your D2C Brand?
+              Claim Your Package
             </h2>
             <p className="text-gray-300 mb-8">
-              Fill out this quick form and book your free strategy call. We\'ll show you exactly where the opportunities are for your brand.
+              Fill out this quick qualification form and book your free strategy call. We analyze your brand and show you exactly where the growth opportunities are.
             </p>
             <ul className="space-y-3">
               {[
@@ -160,7 +160,7 @@ export function PartnerForm() {
                 disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-2.5 rounded-lg disabled:opacity-50"
               >
-                {isSubmitting ? 'Submitting...' : 'Book Your Strategy Call'}
+                {isSubmitting ? 'Submitting...' : 'Claim Your Package'}
               </Button>
 
               <p className="text-xs text-gray-400 text-center">
