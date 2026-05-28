@@ -1,33 +1,34 @@
 import { motion } from 'framer-motion'
+import { TrendingDown, Zap, Palette, AlertCircle, DollarSign, BarChart3 } from 'lucide-react'
 
 const problems = [
   {
-    icon: '📉',
+    icon: <TrendingDown className="w-8 h-8 text-red-400" />,
     title: 'Your CTR is Dropping',
     description: 'Ad hooks aren\'t strong enough. Your creatives blend in instead of standing out.',
   },
   {
-    icon: '🔄',
+    icon: <Zap className="w-8 h-8 text-yellow-400" />,
     title: 'ROAS is Inconsistent',
     description: 'You\'re scaling slowly. Can\'t find the pattern that works. Campaigns are hard to scale.',
   },
   {
-    icon: '🎨',
+    icon: <Palette className="w-8 h-8 text-blue-400" />,
     title: 'Your Brand Feels Scattered',
     description: 'Listings, ads, website, content — nothing feels aligned. The brand experience is inconsistent.',
   },
   {
-    icon: '⏰',
+    icon: <AlertCircle className="w-8 h-8 text-orange-400" />,
     title: 'You\'re Exhausted',
     description: 'Managing Shopify, hiring freelancers, editing videos, writing copy. Too many vendors.',
   },
   {
-    icon: '💰',
+    icon: <DollarSign className="w-8 h-8 text-red-500" />,
     title: 'Burning Cash on Freelancers',
     description: 'Paying $50-100/hour for below-average work. No cohesion. No brand strategy.',
   },
   {
-    icon: '🚀',
+    icon: <BarChart3 className="w-8 h-8 text-purple-400" />,
     title: 'Growth Has Plateaued',
     description: 'You\'ve maxed out what you can do alone. Ready to scale but don\'t know how.',
   },

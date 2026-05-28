@@ -32,10 +32,10 @@ export function PartnerPricing({ onCtaClick }: PartnerPricingProps) {
         >
           <div className="mb-8">
             <h2 className="text-xs font-semibold uppercase tracking-widest text-emerald-400 mb-3">
-              Simple Pricing
+              Your Investment
             </h2>
             <h3 className="text-3xl md:text-4xl font-poppins font-bold text-white mb-3">
-              The D2C Growth Partner Package
+              Claim Your Package
             </h3>
             <p className="text-base text-gray-300">
               Everything you need to scale your D2C brand. Store, content, ads, video, everything done for you.
@@ -52,7 +52,7 @@ export function PartnerPricing({ onCtaClick }: PartnerPricingProps) {
                   <span className="text-xl text-gray-400">/mo</span>
                 </p>
               </div>
-              <p className="text-sm text-emerald-400 font-semibold">No setup fee</p>
+              <p className="text-sm text-emerald-400 font-semibold">No setup fee · Cancel anytime</p>
             </div>
           </div>
 

@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: 'How do we communicate?',
-    a: 'Dedicated Slack channel, weekly performance calls, and direct access to your creative lead.',
+    a: 'Dedicated Notion workspace, weekly performance calls, and direct access to your creative lead.',
   },
 ]
 
