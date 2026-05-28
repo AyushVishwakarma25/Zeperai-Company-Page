@@ -142,13 +142,23 @@ export function PartnerPricing({ onCtaClick }: PartnerPricingProps) {
               transition={{ delay: 0.5 }}
               className="flex justify-between items-center text-base font-bold py-4 pt-6 border-t-2 border-emerald-400/30"
             >
-              <span className="text-white">Total Market Value</span>
-              <span className="text-emerald-400 text-lg">${totalValue.toLocaleString()}</span>
+              <span className="text-white">You can get all deliverables at just</span>
+              <div className="relative">
+                <span className="line-through text-gray-600" style={{ opacity: 0.2 }}>$900</span>
+                <span className="text-emerald-400 text-lg ml-2">$1,997/mo</span>
+              </div>
             </motion.div>
 
-            <p className="text-xs text-gray-400 mt-4 text-center">
-              All deliverables valued at market rates. You get it all for $1,997/month.
-            </p>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.7 }}
+              className="mt-6 p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-400/50 rounded-lg text-center"
+            >
+              <p className="text-sm text-yellow-300 font-semibold">✨ Surprise Element Unlocked</p>
+              <p className="text-xs text-yellow-200/80 mt-1">Complete your profile to see exclusive bonuses worth $2,000+</p>
+            </motion.div>
           </div>
         </motion.div>
       </div>
