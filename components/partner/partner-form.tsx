@@ -75,6 +75,8 @@ export function PartnerForm() {
       })
 
       if (response.ok) {
+        setSubmittedEmail(data.email)
+        setSubmittedName(data.name)
         setSubmitted(true)
       }
     } catch (error) {
@@ -97,18 +99,24 @@ export function PartnerForm() {
               </div>
             </div>
             <h2 className="text-3xl md:text-4xl font-poppins font-bold text-white mb-4">
-              Perfect! Let&apos;s Schedule Your Discovery Call
+              Profile Completed! ✨
             </h2>
-            <p className="text-gray-300 mb-8">
-              Click the button below to book a time that works for you. We&apos;ll discuss your brand and create a custom growth plan.
+            <p className="text-gray-300 mb-3">
+              Thank you for sharing your brand details. We're excited to help you scale.
+            </p>
+            <div className="bg-emerald-950/30 border border-emerald-400/50 rounded-lg p-4 text-emerald-200 text-sm mb-6">
+              A confirmation email has been sent to <span className="font-semibold">{formData.email}</span>
+            </div>
+            <p className="text-gray-400 text-sm mb-6">
+              Next step: Choose your preferred time for a 30-minute discovery call where we'll discuss your growth strategy.
             </p>
             <Button
               onClick={() => {
                 window.location.href = `https://cal.com/zeperai?email=${encodeURIComponent(formData.email || '')}&name=${encodeURIComponent(formData.fullName || '')}`
               }}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-base"
+              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-base"
             >
-              Book Discovery Call
+              Book Your Slot
             </Button>
           </motion.div>
         </div>
@@ -389,9 +397,10 @@ export function PartnerForm() {
             <p className="text-xs text-gray-400 text-center">
               We respect your privacy. No spam, just growth strategies.
             </p>
-          </form>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
+            </form>
+            )}
+          </motion.div>
+        </div>
+      </section>
+    )
+  }
