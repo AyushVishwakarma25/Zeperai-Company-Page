@@ -32,10 +32,10 @@ export function PartnerPricing({ onCtaClick }: PartnerPricingProps) {
         >
           <div className="mb-8">
             <h2 className="text-xs font-semibold uppercase tracking-widest text-emerald-400 mb-3">
-              Simple Pricing
+              Your Investment
             </h2>
             <h3 className="text-3xl md:text-4xl font-poppins font-bold text-white mb-3">
-              The D2C Growth Partner Package
+              Claim Your Package
             </h3>
             <p className="text-base text-gray-300">
               Everything you need to scale your D2C brand. Store, content, ads, video, everything done for you.
@@ -44,15 +44,12 @@ export function PartnerPricing({ onCtaClick }: PartnerPricingProps) {
 
           {/* Pricing */}
           <div className="mb-10 pb-10 border-b border-white/10">
-            <div className="flex items-end gap-4">
-              <div>
-                <p className="text-sm text-gray-400 mb-1">Starting at</p>
-                <p className="text-5xl font-poppins font-bold text-white">
-                  $1,997
-                  <span className="text-xl text-gray-400">/mo</span>
-                </p>
-              </div>
-              <p className="text-sm text-emerald-400 font-semibold">No setup fee</p>
+            <div>
+              <p className="text-sm text-gray-400 mb-2">Starting at</p>
+              <p className="text-5xl font-poppins font-bold text-white">
+                $1,997
+                <span className="text-xl text-gray-400">/mo</span>
+              </p>
             </div>
           </div>
 
@@ -63,16 +60,16 @@ export function PartnerPricing({ onCtaClick }: PartnerPricingProps) {
               <p className="text-xs text-gray-400 mt-1">Deliverables/mo</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-emerald-400">7</p>
-              <p className="text-xs text-gray-400 mt-1">Days to launch</p>
+              <p className="text-2xl font-bold text-emerald-400">21</p>
+              <p className="text-xs text-gray-400 mt-1">Days Average Launch Time</p>
             </div>
             <div>
               <p className="text-2xl font-bold text-emerald-400">6x</p>
               <p className="text-xs text-gray-400 mt-1">Better than agencies</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-emerald-400">0</p>
-              <p className="text-xs text-gray-400 mt-1">Lock-in contracts</p>
+              <p className="text-lg font-bold text-emerald-400">✓</p>
+              <p className="text-xs text-gray-400 mt-1">No Generic Templates</p>
             </div>
           </div>
 
@@ -142,13 +139,12 @@ export function PartnerPricing({ onCtaClick }: PartnerPricingProps) {
               transition={{ delay: 0.5 }}
               className="flex justify-between items-center text-base font-bold py-4 pt-6 border-t-2 border-emerald-400/30"
             >
-              <span className="text-white">Total Market Value</span>
-              <span className="text-emerald-400 text-lg">${totalValue.toLocaleString()}</span>
+              <span className="text-white">You can get all deliverables at just</span>
+              <div className="relative">
+                <span className="line-through blur-sm" style={{ opacity: 0.3 }}>$900</span>
+                <span className="text-emerald-400 text-lg ml-2">$1,997/mo</span>
+              </div>
             </motion.div>
-
-            <p className="text-xs text-gray-400 mt-4 text-center">
-              All deliverables valued at market rates. You get it all for $1,997/month.
-            </p>
           </div>
         </motion.div>
       </div>

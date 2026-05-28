@@ -30,38 +30,28 @@ export function PartnerHero({ onCtaClick }: PartnerHeroProps) {
             One system. Store. Content. Ads. Video. Everything you need to scale from $0 to $100k+/month — all done for you by our AI-native team.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button
               onClick={onCtaClick}
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3 rounded-lg flex items-center gap-2 justify-center"
             >
               Get Started <ArrowRight className="w-4 h-4" />
             </Button>
-            <Button
-              variant="outline"
-              className="border border-white/20 text-white hover:bg-white/10 font-semibold px-8 py-3 rounded-lg"
-            >
-              See Our Work
-            </Button>
           </div>
-
-          <p className="text-sm text-gray-400 mb-8">
-            ✓ Start at $1,997/mo · ✓ Launch in 7 days · ✓ No lock-in
-          </p>
 
           {/* Social Proof */}
           <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto text-center">
             <div>
               <p className="text-2xl md:text-3xl font-bold text-emerald-400">50+</p>
-              <p className="text-xs md:text-sm text-gray-400 mt-1">D2C Brands Scaled</p>
+              <p className="text-xs md:text-sm text-gray-400 mt-1">Clients Served</p>
             </div>
             <div>
-              <p className="text-2xl md:text-3xl font-bold text-emerald-400">3-5x</p>
-              <p className="text-xs md:text-sm text-gray-400 mt-1">Revenue Growth</p>
+              <p className="text-2xl md:text-3xl font-bold text-emerald-400">500+</p>
+              <p className="text-xs md:text-sm text-gray-400 mt-1">Ad Creatives Delivered</p>
             </div>
             <div>
-              <p className="text-2xl md:text-3xl font-bold text-emerald-400">$50M+</p>
-              <p className="text-xs md:text-sm text-gray-400 mt-1">Generated in Sales</p>
+              <p className="text-2xl md:text-3xl font-bold text-emerald-400">21</p>
+              <p className="text-xs md:text-sm text-gray-400 mt-1">Days Average Delivery</p>
             </div>
           </div>
         </motion.div>

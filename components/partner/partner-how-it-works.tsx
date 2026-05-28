@@ -32,7 +32,7 @@ const steps = [
       'Weekly performance analysis',
       'Monthly optimization reports',
       'Continuous creative refresh',
-      'Dedicated Slack channel',
+      'Dedicated Notion workspace',
     ],
   },
 ]
