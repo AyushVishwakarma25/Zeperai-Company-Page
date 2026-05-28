@@ -44,15 +44,12 @@ export function PartnerPricing({ onCtaClick }: PartnerPricingProps) {
 
           {/* Pricing */}
           <div className="mb-10 pb-10 border-b border-white/10">
-            <div className="flex items-end gap-4">
-              <div>
-                <p className="text-sm text-gray-400 mb-1">Starting at</p>
-                <p className="text-5xl font-poppins font-bold text-white">
-                  $1,997
-                  <span className="text-xl text-gray-400">/mo</span>
-                </p>
-              </div>
-              <p className="text-sm text-emerald-400 font-semibold">No setup fee · Cancel anytime</p>
+            <div>
+              <p className="text-sm text-gray-400 mb-2">Starting at</p>
+              <p className="text-5xl font-poppins font-bold text-white">
+                $1,997
+                <span className="text-xl text-gray-400">/mo</span>
+              </p>
             </div>
           </div>
 
@@ -63,16 +60,16 @@ export function PartnerPricing({ onCtaClick }: PartnerPricingProps) {
               <p className="text-xs text-gray-400 mt-1">Deliverables/mo</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-emerald-400">7</p>
-              <p className="text-xs text-gray-400 mt-1">Days to launch</p>
+              <p className="text-2xl font-bold text-emerald-400">21</p>
+              <p className="text-xs text-gray-400 mt-1">Days Average Launch Time</p>
             </div>
             <div>
               <p className="text-2xl font-bold text-emerald-400">6x</p>
               <p className="text-xs text-gray-400 mt-1">Better than agencies</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-emerald-400">0</p>
-              <p className="text-xs text-gray-400 mt-1">Lock-in contracts</p>
+              <p className="text-lg font-bold text-emerald-400">✓</p>
+              <p className="text-xs text-gray-400 mt-1">No Generic Templates</p>
             </div>
           </div>
 
@@ -144,20 +141,9 @@ export function PartnerPricing({ onCtaClick }: PartnerPricingProps) {
             >
               <span className="text-white">You can get all deliverables at just</span>
               <div className="relative">
-                <span className="line-through text-gray-600" style={{ opacity: 0.2 }}>$900</span>
+                <span className="line-through blur-sm" style={{ opacity: 0.3 }}>$900</span>
                 <span className="text-emerald-400 text-lg ml-2">$1,997/mo</span>
               </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.7 }}
-              className="mt-6 p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-400/50 rounded-lg text-center"
-            >
-              <p className="text-sm text-yellow-300 font-semibold">✨ Surprise Element Unlocked</p>
-              <p className="text-xs text-yellow-200/80 mt-1">Complete your profile to see exclusive bonuses worth $2,000+</p>
             </motion.div>
           </div>
         </motion.div>
