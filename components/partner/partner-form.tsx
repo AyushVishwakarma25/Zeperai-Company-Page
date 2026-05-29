@@ -439,4 +439,5 @@ export function PartnerForm() {
         </motion.div>
       </div>
     </section>
-  }
+  )
+}
