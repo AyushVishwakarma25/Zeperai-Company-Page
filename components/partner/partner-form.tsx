@@ -28,6 +28,10 @@ type FormData = z.infer<typeof schema>
 export function PartnerForm() {
   const [step, setStep] = useState(1)
   const [submitted, setSubmitted] = useState(false)
+  const [submittedData, setSubmittedData] = useState<Partial<FormData>>({
+    fullName: '',
+    email: '',
+  })
   const [formData, setFormData] = useState<Partial<FormData>>({
     branding: [],
     helpWith: [],
@@ -75,17 +79,19 @@ export function PartnerForm() {
           website: data.website,
           productType: data.productType,
           brandStage: data.brandStage,
-          brandingStatus: data.brandingStatus,
-          needs: data.needs,
-          launchTimeline: data.launchTimeline,
+          brandingStatus: data.branding,
+          needs: data.helpWith,
+          launchTimeline: data.timeline,
           budget: data.budget,
-          biggestChallenge: data.biggestChallenge,
+          biggestChallenge: data.challenge,
         }),
       })
 
       if (response.ok) {
-        setSubmittedEmail(data.email)
-        setSubmittedName(data.fullName)
+        setSubmittedData({
+          fullName: data.fullName,
+          email: data.email,
+        })
         setSubmitted(true)
       } else {
         console.error('Form submission failed:', await response.text())
@@ -115,6 +121,47 @@ export function PartnerForm() {
     )
   }
 
+  // Success screen
+  if (submitted) {
+    return (
+      <section className="py-24 px-4 bg-gradient-to-b from-purple-950/10 to-transparent">
+        <div className="container mx-auto max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-center space-y-8"
+          >
+            <div className="flex justify-center">
+              <div className="text-6xl">✨</div>
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-white mb-4">
+                Profile Completed!
+              </h2>
+              <p className="text-gray-300 mb-6">
+                Thank you for sharing your brand details. We&apos;re excited to help you scale.
+              </p>
+            </div>
+            <div className="bg-emerald-950/30 border border-emerald-400/50 rounded-lg p-4 text-emerald-200 text-sm max-w-md mx-auto">
+              A confirmation email has been sent to <span className="font-semibold">{submittedData.email}</span>
+            </div>
+            <p className="text-gray-400 text-sm max-w-lg mx-auto">
+              Next step: Choose your preferred time for a 30-minute discovery call where we&apos;ll discuss your growth strategy.
+            </p>
+            <Button
+              onClick={() => {
+                window.location.href = `https://cal.com/zeperai?email=${encodeURIComponent(submittedData.email || '')}&name=${encodeURIComponent(submittedData.fullName || '')}`
+              }}
+              className="w-full md:w-auto bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-base"
+            >
+              Book Discovery Call
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-purple-950/10 to-transparent">
       <div className="container mx-auto max-w-3xl">
@@ -132,33 +179,8 @@ export function PartnerForm() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8"
+          className="bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-6 md:p-8"
         >
-          {submitted ? (
-            <div className="text-center space-y-6 py-8">
-              <div className="text-6xl">✨</div>
-              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-white mb-4">
-                Profile Completed!
-              </h2>
-              <p className="text-gray-300 mb-3">
-                Thank you for sharing your brand details. We&apos;re excited to help you scale.
-              </p>
-              <div className="bg-emerald-950/30 border border-emerald-400/50 rounded-lg p-4 text-emerald-200 text-sm mb-6">
-                A confirmation email has been sent to <span className="font-semibold">{formData.email}</span>
-              </div>
-              <p className="text-gray-400 text-sm mb-6">
-                Next step: Choose your preferred time for a 30-minute discovery call where we&apos;ll discuss your growth strategy.
-              </p>
-              <Button
-                onClick={() => {
-                  window.location.href = `https://cal.com/zeperai?email=${encodeURIComponent(formData.email || '')}&name=${encodeURIComponent(formData.fullName || '')}`
-                }}
-                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-base"
-              >
-                Book Discovery Call
-              </Button>
-            </div>
-          ) : (
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* Step 1: Basic Information */}
             {step === 1 && (
@@ -167,13 +189,13 @@ export function PartnerForm() {
                 animate={{ opacity: 1, y: 0 }}
                 className="space-y-4"
               >
-                <h3 className="text-lg font-poppins font-bold text-white">Basic Information</h3>
+                <h3 className="text-base md:text-lg font-poppins font-bold text-white">Basic Information</h3>
                 <div>
                   <label className="block text-xs text-gray-300 mb-2">Full Name *</label>
                   <input
                     {...register('fullName')}
                     placeholder="Your full name"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-white placeholder:text-gray-500 focus:outline-none focus:border-emerald-400"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-3 md:px-4 py-2 md:py-2.5 text-sm md:text-base text-white placeholder:text-gray-500 focus:outline-none focus:border-emerald-400"
                   />
                   {errors.fullName && <p className="text-red-400 text-xs mt-1">{errors.fullName.message}</p>}
                 </div>
@@ -414,9 +436,8 @@ export function PartnerForm() {
               We respect your privacy. No spam, just growth strategies.
             </p>
           </form>
-          )}
         </motion.div>
-        </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )
+}
