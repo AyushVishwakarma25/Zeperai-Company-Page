@@ -155,7 +155,7 @@ export function PartnerForm() {
                 }}
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-base"
               >
-                Book Your Slot
+                Book Discovery Call
               </Button>
             </div>
           ) : (
