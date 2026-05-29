@@ -34,23 +34,9 @@ export function PartnerPricing({ onCtaClick }: PartnerPricingProps) {
             <h2 className="text-xs font-semibold uppercase tracking-widest text-emerald-400 mb-3">
               Your Investment
             </h2>
-            <h3 className="text-3xl md:text-4xl font-poppins font-bold text-white mb-3">
-              Claim Your Package
-            </h3>
             <p className="text-base text-gray-300">
               Everything you need to scale your D2C brand. Store, content, ads, video, everything done for you.
             </p>
-          </div>
-
-          {/* Pricing */}
-          <div className="mb-10 pb-10 border-b border-white/10">
-            <div>
-              <p className="text-sm text-gray-400 mb-2">Starting at</p>
-              <p className="text-5xl font-poppins font-bold text-white">
-                $1,997
-                <span className="text-xl text-gray-400">/mo</span>
-              </p>
-            </div>
           </div>
 
           {/* Key Metrics */}
@@ -140,10 +126,7 @@ export function PartnerPricing({ onCtaClick }: PartnerPricingProps) {
               className="flex justify-between items-center text-base font-bold py-4 pt-6 border-t-2 border-emerald-400/30"
             >
               <span className="text-white">You can get all deliverables at just</span>
-              <div className="relative">
-                <span className="line-through blur-sm" style={{ opacity: 0.3 }}>$900</span>
-                <span className="text-emerald-400 text-lg ml-2">$1,997/mo</span>
-              </div>
+              <span className="text-emerald-400 text-lg" style={{ filter: 'blur(4px)', opacity: 0.4 }}>$900</span>
             </motion.div>
           </div>
         </motion.div>

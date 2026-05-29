@@ -64,20 +64,31 @@ export function PartnerForm() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      const response = await fetch('/api/leads', {
+      const response = await fetch('/api/leads/d2c-partner', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          ...data,
-          source: 'd2c-growth-partner',
-          referralSource: 'd2c-growth-partner',
+          fullName: data.fullName,
+          brandName: data.brandName,
+          email: data.email,
+          phone: data.phone,
+          website: data.website,
+          productType: data.productType,
+          brandStage: data.brandStage,
+          brandingStatus: data.brandingStatus,
+          needs: data.needs,
+          launchTimeline: data.launchTimeline,
+          budget: data.budget,
+          biggestChallenge: data.biggestChallenge,
         }),
       })
 
       if (response.ok) {
         setSubmittedEmail(data.email)
-        setSubmittedName(data.name)
+        setSubmittedName(data.fullName)
         setSubmitted(true)
+      } else {
+        console.error('Form submission failed:', await response.text())
       }
     } catch (error) {
       console.error('Form submission error:', error)
@@ -144,7 +155,7 @@ export function PartnerForm() {
                 }}
                 className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-base"
               >
-                Book Your Slot
+                Book Discovery Call
               </Button>
             </div>
           ) : (
