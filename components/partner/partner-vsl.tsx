@@ -35,17 +35,7 @@ export function PartnerVsl() {
           />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="text-center mt-8"
-        >
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Replace <code className="bg-white/10 px-2 py-1 rounded text-emerald-400">YOUR_LOOM_VIDEO_ID</code> with your actual Loom video ID
-          </p>
-        </motion.div>
+
       </div>
     </section>
   )
