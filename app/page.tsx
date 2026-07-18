@@ -367,17 +367,7 @@ export default function Home() {
       </section>
 
       {/* ─��� Discovery & Strategy Section ── */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
 
-        </div>
-      </section>
 
       {/* ── Detailed Process Section ── */}
       <section className="py-32 px-6">
