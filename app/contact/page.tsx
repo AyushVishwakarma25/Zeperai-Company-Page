@@ -20,8 +20,8 @@ export default function ContactPage() {
     {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
-      value: "reahtoayush25@gmail.com",
-      href: "mailto:reahtoayush25@gmail.com"
+      value: "growth@zeperai.com",
+      href: "mailto:growth@zeperai.com"
     },
     {
       icon: <Linkedin className="w-6 h-6" />,

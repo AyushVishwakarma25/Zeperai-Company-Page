@@ -73,8 +73,8 @@ export function Footer() {
                 <Mail className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white/70 text-sm">Email</p>
-                  <a href="mailto:reahtoayush25@gmail.com" className="text-white hover:text-blue-500 transition-colors">
-                    reahtoayush25@gmail.com
+                  <a href="mailto:growth@zeperai.com" className="text-white hover:text-blue-500 transition-colors">
+                    growth@zeperai.com
                   </a>
                 </div>
               </div>
