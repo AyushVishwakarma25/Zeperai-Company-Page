@@ -481,28 +481,32 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                name: "Aurelia Skincare",
-                tags: ["Brand Identity", "Packaging Design"],
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-9DCcpVrTXPyP5GqqlVNiV1trmOdTEJ.png",
-                position: "left"
+                name: "Prustlr | Protein Oats Brand",
+                tags: ["Brand Identity", "Packaging Design", "Shopify Website Designing", "Ad Creatives"],
+                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0759-e9D1mUNhdMXGjiohDazfAYuviP7HiD.png",
+                position: "left",
+                hasImage: true
               },
               {
-                name: "North Roast",
+                name: "Coming Soon",
+                tags: ["Brand Identity"],
+                image: null,
+                position: "right",
+                hasImage: false
+              },
+              {
+                name: "Coming Soon",
                 tags: ["Packaging Design"],
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-9DCcpVrTXPyP5GqqlVNiV1trmOdTEJ.png",
-                position: "right"
+                image: null,
+                position: "left",
+                hasImage: false
               },
               {
-                name: "Verdant Organics",
-                tags: ["Brand Identity", "Packaging Design"],
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-9DCcpVrTXPyP5GqqlVNiV1trmOdTEJ.png",
-                position: "left"
-              },
-              {
-                name: "Lumière Candle Co.",
-                tags: ["Brand Identity", "Art Direction"],
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-9DCcpVrTXPyP5GqqlVNiV1trmOdTEJ.png",
-                position: "right"
+                name: "Coming Soon",
+                tags: ["Art Direction"],
+                image: null,
+                position: "right",
+                hasImage: false
               }
             ].map((project, index) => (
               <motion.div
@@ -513,12 +517,20 @@ export default function Home() {
                 transition={{ delay: index * 0.1 }}
                 className="group cursor-pointer"
               >
-                <div className="relative h-80 rounded-2xl overflow-hidden mb-4 bg-white/5 border border-white/10">
-                  <img 
-                    src={project.image} 
-                    alt={project.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+                <div className={`relative rounded-2xl overflow-hidden mb-4 border border-white/10 ${project.hasImage ? 'h-96' : 'h-80'} bg-gradient-to-br from-purple-900/30 to-blue-900/30 flex items-center justify-center`}>
+                  {project.hasImage ? (
+                    <img 
+                      src={project.image} 
+                      alt={project.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="text-center p-8">
+                      <div className="text-6xl mb-4 opacity-20">🎨</div>
+                      <p className="text-white/50 font-semibold">Case Study Coming Soon</p>
+                      <p className="text-white/30 text-sm mt-2">New project showcase</p>
+                    </div>
+                  )}
                 </div>
                 <div className="flex flex-wrap gap-2 mb-3">
                   {project.tags.map((tag, i) => (
