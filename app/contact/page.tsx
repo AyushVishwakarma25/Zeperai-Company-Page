@@ -2,9 +2,9 @@
 
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { GlassCard } from "@/components/ui/glass-card"
+import { MaskReveal } from "@/components/mask-reveal"
 import { motion } from "framer-motion"
-import { Mail, Linkedin, Phone, MapPin } from 'lucide-react'
+import { Mail, Linkedin } from 'lucide-react'
 import Cal, { getCalApi } from "@calcom/embed-react"
 import { useEffect } from "react"
 
@@ -17,124 +17,100 @@ export default function ContactPage() {
   }, [])
 
   const contactInfo = [
-    {
-      icon: <Mail className="w-6 h-6" />,
-      label: "Email",
-      value: "growth@zeperai.com",
-      href: "mailto:growth@zeperai.com"
-    },
-    {
-      icon: <Linkedin className="w-6 h-6" />,
-      label: "LinkedIn",
-      value: "Ayush Vishwakarma",
-      href: "https://www.linkedin.com/in/vishwakarma-ayush/"
-    }
+    { Icon: Mail, label: "Email", value: "growth@zeperai.com", href: "mailto:growth@zeperai.com" },
+    { Icon: Linkedin, label: "LinkedIn", value: "Ayush Vishwakarma", href: "https://www.linkedin.com/in/vishwakarma-ayush/" },
   ]
 
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-blue-500/30">
+    <main className="min-h-screen bg-[#F5F5F7] text-[#0A0A0B]">
       <Navbar />
 
-      {/* Contact Hero */}
-      <section className="pt-40 pb-20 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+      {/* Hero */}
+      <section className="pt-40 pb-16 px-6">
+        <div className="container mx-auto max-w-3xl text-center">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
+            transition={{ duration: 0.5 }}
+            className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-5"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gradient">
-              Get In Touch
-            </h1>
-            <p className="text-xl text-white/60 leading-relaxed">
-              Let&apos;s discuss your project and explore how ZeperAi can elevate your brand. 
-              Reach out through any of the channels below or schedule a call.
-            </p>
-          </motion.div>
+            Contact
+          </motion.span>
+          <MaskReveal
+            delayStart={0.1}
+            className="font-poppins text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8"
+            lines={["Get in touch."]}
+          />
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-lg md:text-xl text-[#6B6B72] leading-relaxed max-w-xl mx-auto"
+          >
+            Tell us about your brand and let&apos;s explore how ZeperAI Studio can help you sell more.
+          </motion.p>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl font-bold mb-8">Contact Information</h2>
-            <div className="space-y-4">
-              {contactInfo.map((info, index) => (
-                <a
-                  key={index}
-                  href={info.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <GlassCard className="p-6 hover:bg-white/10 transition-all cursor-pointer group">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-lg bg-white/5 group-hover:bg-white/10 transition-colors text-blue-400">
-                        {info.icon}
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1">{info.label}</h3>
-                        <p className="text-white/70 group-hover:text-white transition-colors">{info.value}</p>
-                      </div>
-                    </div>
-                  </GlassCard>
-                </a>
-              ))}
-            </div>
-          </motion.div>
+      {/* Contact Info */}
+      <section className="py-14 px-6">
+        <div className="container mx-auto max-w-3xl">
+          <div className="grid sm:grid-cols-2 gap-4">
+            {contactInfo.map((info, index) => (
+              <motion.a
+                key={index}
+                href={info.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="block bg-white rounded-2xl border border-black/[0.06] p-6 hover:border-[#4452FB]/40 transition-colors group"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-xl bg-[#F5F5F7] text-[#4452FB] group-hover:bg-[#4452FB] group-hover:text-white transition-colors">
+                    <info.Icon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1 text-sm text-[#6B6B72]">{info.label}</h3>
+                    <p className="text-[#0A0A0B] font-medium">{info.value}</p>
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Cal Embed */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-4xl">
+      <section className="py-14 px-6">
+        <div className="container mx-auto max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="text-center mb-8"
           >
-            <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4">Schedule a Call</h2>
-              <p className="text-white/60 text-lg">
-                Ready to discuss your project? Book a time that works best for you.
-              </p>
-            </div>
-            
-            <GlassCard className="p-8 md:p-12 overflow-hidden">
-              <div style={{ height: "600px", width: "100%" }}>
-                <Cal 
-                  namespace="discovery-call"
-                  calLink="ayush-vishwakarma-alzvnh/discovery-call"
-                  style={{width:"100%",height:"100%",overflow:"scroll"}}
-                  config={{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}}
-                />
-              </div>
-            </GlassCard>
+            <h2 className="text-2xl md:text-3xl font-poppins font-bold mb-3">Schedule a Call</h2>
+            <p className="text-[#6B6B72]">Book a time that works best for you.</p>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Additional CTA */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="bg-white rounded-2xl border border-black/[0.06] p-4 md:p-6 overflow-hidden"
           >
-            <h2 className="text-4xl font-bold mb-8">Questions?</h2>
-            <p className="text-xl text-white/60 mb-12">
-              Check out our services or learn more about how we work. We&apos;re excited to help 
-              you elevate your brand.
-            </p>
+            <div style={{ height: "600px", width: "100%" }}>
+              <Cal
+                namespace="discovery-call"
+                calLink="ayush-vishwakarma-alzvnh/discovery-call"
+                style={{ width: "100%", height: "100%", overflow: "scroll" }}
+                config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
+              />
+            </div>
           </motion.div>
         </div>
       </section>

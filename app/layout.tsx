@@ -10,9 +10,9 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-sofia"
 const poppins = Poppins({ weight: ["400", "500", "600", "700"], subsets: ["latin"], variable: "--font-poppins" })
 
 export const metadata: Metadata = {
-  title: "ZeperAI — AI-Powered Creative Agency | Ad Creatives, Video Editing & Shopify Design",
-  description: "ZeperAI is an AI-powered creative agency helping D2C and e-commerce brands sell more. We build high-converting ad creatives, Reels editing, Shopify websites, motion graphics, and brand strategy — for USA and Indian brands.",
-  keywords: ["AI ad creatives", "creative agency D2C", "Shopify website design", "video editing agency", "Reels editing", "motion graphics ads", "e-commerce creative agency", "UGC ads", "ROAS-focused creative", "brand design agency India"],
+  title: "ZeperAI Studio — Design & Growth Studio for Brands That Sell Online",
+  description: "ZeperAI Studio builds Shopify stores, ad creatives, and content that turn browsers into buyers. Meta ads management, Shopify development, AI ad creatives, video and brand design — for brands in India and abroad.",
+  keywords: ["Shopify website design", "Meta ads management", "AI ad creatives", "video editing agency", "brand design agency", "D2C creative studio", "e-commerce creative agency", "conversion focused website design"],
   robots: "index, follow",
   authors: [{ name: "ZeperAI" }],
   creator: "ZeperAI",
@@ -65,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <SchemaMarkup />
         {/* Google Analytics */}
@@ -83,7 +83,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={cn("min-h-screen bg-black font-sans antialiased selection:bg-white/20", inter.variable, playfair.variable, poppins.variable)}>
+      <body className={cn("min-h-screen bg-[#F5F5F7] font-sans antialiased", inter.variable, playfair.variable, poppins.variable)}>
         {children}
       </body>
     </html>

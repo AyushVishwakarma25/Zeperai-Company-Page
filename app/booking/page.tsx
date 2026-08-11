@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { MaskReveal } from "@/components/mask-reveal"
 import { motion } from "framer-motion"
 import Cal, { getCalApi } from "@calcom/embed-react"
 import { useEffect } from "react"
@@ -14,83 +15,94 @@ export default function BookingPage() {
     })();
   }, [])
 
+  const expectations = [
+    { value: "30 mins", label: "We'll discuss your project, goals, and timeline" },
+    { value: "No Pressure", label: "This is a conversation, not a sales pitch" },
+    { value: "Free", label: "Completely complimentary consultation" },
+  ]
+
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-blue-500/30">
+    <main className="min-h-screen bg-[#F5F5F7] text-[#0A0A0B]">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-40 pb-20 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+      {/* Hero */}
+      <section className="pt-40 pb-14 px-6">
+        <div className="container mx-auto max-w-3xl text-center">
+          <MaskReveal
+            delayStart={0.1}
+            className="font-poppins text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8"
+            lines={["Let's talk."]}
+          />
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-lg md:text-xl text-[#6B6B72] leading-relaxed max-w-xl mx-auto mb-8"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gradient">
-              Let&apos;s Talk
-            </h1>
-            <p className="text-xl text-white/60 leading-relaxed mb-8">
-              Ready to transform your vision into reality? Schedule a call with our team to discuss 
-              your project, goals, and how we can help elevate your brand through creative excellence and AI-driven solutions.
-            </p>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-              </span>
-              <span className="text-sm font-medium text-white/80">We typically respond within 24 hours</span>
-            </div>
+            Schedule a call to discuss your project, goals, and how ZeperAI Studio can help your brand sell more.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-black/[0.08]"
+          >
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4452FB] opacity-75" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#4452FB]" />
+            </span>
+            <span className="text-xs font-medium text-[#6B6B72]">We typically respond within 24 hours</span>
           </motion.div>
         </div>
       </section>
 
-      {/* Calendly Embed */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-4xl">
+      {/* Cal Embed */}
+      <section className="py-10 px-6">
+        <div className="container mx-auto max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="glass rounded-2xl p-8"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl border border-black/[0.06] p-4 md:p-6"
           >
             <div style={{ height: "600px", width: "100%" }}>
-              <Cal 
+              <Cal
                 namespace="discovery-call"
                 calLink="ayush-vishwakarma-alzvnh/discovery-call"
-                style={{width:"100%",height:"100%",overflow:"scroll"}}
-                config={{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}}
+                style={{ width: "100%", height: "100%", overflow: "scroll" }}
+                config={{ layout: "month_view", useSlotsViewOnSmallScreen: "true" }}
               />
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Info Section */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-center"
+      {/* What to Expect */}
+      <section className="py-24 md:py-32 px-6">
+        <div className="container mx-auto max-w-3xl text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-2xl md:text-3xl font-poppins font-bold mb-14"
           >
-            <h2 className="text-3xl font-bold mb-8">What to Expect</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="space-y-3">
-                <div className="text-4xl font-bold text-blue-400">30 mins</div>
-                <p className="text-white/60">We&apos;ll discuss your project, goals, and timeline</p>
-              </div>
-              <div className="space-y-3">
-                <div className="text-4xl font-bold text-blue-400">No Pressure</div>
-                <p className="text-white/60">This is a conversation, not a sales pitch</p>
-              </div>
-              <div className="space-y-3">
-                <div className="text-4xl font-bold text-blue-400">Free</div>
-                <p className="text-white/60">Completely complimentary consultation</p>
-              </div>
-            </div>
-          </motion.div>
+            What to Expect
+          </motion.h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {expectations.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="space-y-3"
+              >
+                <div className="text-3xl font-poppins font-bold text-[#4452FB]">{item.value}</div>
+                <p className="text-[#6B6B72] text-sm">{item.label}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

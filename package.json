@@ -8,6 +8,9 @@
     "lint": "eslint .",
     "start": "next start"
   },
+  "overrides": {
+    "motion-dom": "12.23.23"
+  },
   "dependencies": {
     "@calcom/embed-react": "^1.4.1",
     "@emotion/is-prop-valid": "latest",

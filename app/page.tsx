@@ -3,581 +3,262 @@
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { KeywordTicker } from "@/components/keyword-ticker"
+import { ProofStrip } from "@/components/proof-strip"
+import { CaseStudies } from "@/components/case-studies"
+import { ScrollFillText } from "@/components/scroll-fill-text"
+import { MaskReveal } from "@/components/mask-reveal"
+import { ProcessSteps } from "@/components/process-steps"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ChevronDown, ArrowRight, ArrowUpRight, Sparkles, Film, Edit3, TrendingUp } from "lucide-react"
+import { ChevronDown, ArrowRight, ArrowUpRight, Megaphone, ShoppingBag, Sparkles, Clapperboard, PenTool } from "lucide-react"
 import { useState } from "react"
 
 export default function Home() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 
-  const solutionCards = [
-    {
-      title: "AI Ad Creatives",
-      description: "AI advertisement creatives that look real and feel story-driven.",
-      color: "#4452FB",
-      Icon: Sparkles,
-    },
-    {
-      title: "Motion Graphic Ads",
-      description: "Product motion graphic ads built for attention and retention.",
-      color: "#E8445A",
-      Icon: Film,
-    },
-    {
-      title: "Reels Editing",
-      description: "Reels editing that keeps people watching and drives engagement.",
-      color: "#F5A623",
-      Icon: Edit3,
-    },
-    {
-      title: "Creative Strategy",
-      description: "Scripting and creative strategy designed to improve CTR and ROAS.",
-      color: "#2ECC71",
-      Icon: TrendingUp,
-    },
+  const services = [
+    { title: "Meta Ads Management", description: "Campaigns built around what converts, not what looks nice in a deck.", Icon: Megaphone },
+    { title: "Shopify Development", description: "Stores designed to hold attention and close the sale.", Icon: ShoppingBag },
+    { title: "AI Ad Creatives", description: "Scroll-stopping creative, produced fast, without a production crew.", Icon: Sparkles },
+    { title: "Video & Content Production", description: "Reels and content built for retention, not just views.", Icon: Clapperboard },
+    { title: "Brand Design", description: "Identity and visuals that make a brand look like it belongs at a higher price point.", Icon: PenTool },
   ]
 
   const problems = [
-    {
-      title: "Ads Don't Feel Native",
-      description: "Maybe your ads look polished, but they don't feel native."
-    },
-    {
-      title: "Views Without Sales",
-      description: "Maybe your Reels get views, but not sales."
-    },
-    {
-      title: "High Traffic, Low Conversions",
-      description: "Maybe your Shopify store looks good, but visitors still leave without buying."
-    },
-    {
-      title: "Weak Marketplace Presence",
-      description: "Maybe your product images are fine, but not strong enough to stand out on Amazon or Blinkit."
-    }
+    { title: "Ads that don't convert", description: "Your ads get impressions, not sales. The creative isn't built around what actually makes people buy." },
+    { title: "A store that looks amateur", description: "Traffic lands, then leaves. A Shopify store built on templates can't hold trust the way a designed one can." },
+    { title: "Content that blends in", description: "Reels and posts that look fine, but say nothing different from every other brand in your category." },
+    { title: "No one owning the whole picture", description: "A freelancer for ads, another for design, another for the store — and nobody making sure it all sells together." },
   ]
 
   const faqs = [
-    {
-      question: "Do you work with both USA and Indian brands?",
-      answer: "Yes. We work with both and tailor the creative to the market, platform, and audience."
-    },
-    {
-      question: "Can you make ads that look like real stories?",
-      answer: "Yes. We create story-based ad creatives that feel natural, human, and platform-friendly."
-    },
-    {
-      question: "Do you only do video editing?",
-      answer: "No. We also handle motion graphics, Reels editing, scripting, Shopify design, branding, and listing creatives."
-    },
-    {
-      question: "Can you help improve CTR and ROAS?",
-      answer: "Yes. Our creative approach is built around better hooks, stronger storytelling, and sharper execution."
-    },
-    {
-      question: "Do you design for marketplaces too?",
-      answer: "Yes. We create product images and listing creatives for Amazon and Blinkit."
-    }
-  ]
-
-  const steps = [
-    {
-      number: "01",
-      title: "Share Your Brand",
-      description: "You share your brand, product, and goal."
-    },
-    {
-      number: "02",
-      title: "Strategic Review",
-      description: "We review what's working, what's missing, and what needs to change."
-    },
-    {
-      number: "03",
-      title: "Build Solutions",
-      description: "We build the right creative, design, or website solution for your brand."
-    },
-    {
-      number: "04",
-      title: "Ready to Scale",
-      description: "You get assets that are ready to launch, test, and scale."
-    }
+    { question: "Do you work with brands outside India?", answer: "Yes. We work with brands in India and abroad, tailoring the creative to the platform, market, and audience." },
+    { question: "Do you only run ads, or do you build the store too?", answer: "Both. We handle Shopify development, ad creatives, and campaign management — either as a full package or standalone." },
+    { question: "How fast can you turn around creative?", answer: "Most ad creative sets are delivered within days, not weeks — we use AI-assisted production to move faster without cutting quality." },
+    { question: "What if I already have a Shopify store?", answer: "We can redesign specific sections, audit conversion issues, or take over the full build — whatever the store needs." },
+    { question: "How do we start?", answer: "Book a call. We'll look at your brand and tell you honestly where the biggest opportunity is." },
   ]
 
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-blue-500/30">
+    <main className="min-h-screen bg-[#F5F5F7] text-[#0A0A0B]">
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 pb-16">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[60vh] bg-blue-600/10 rounded-full blur-[140px]" />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10 text-center max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/15 bg-white/5 mb-10"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
-            </span>
-            <span className="text-xs font-medium text-white/70 uppercase tracking-widest">
-              AI Powered Creative Studio
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-            className="font-poppins text-6xl md:text-8xl lg:text-9xl font-bold leading-[1.05] tracking-tight mb-8 text-balance"
-          >
-            We Build Brands
-            <br />
-            <span className="text-white/90">That&nbsp;</span>
-            <span className="relative inline-block px-4" style={{ color: "#ba44fb" }}>
-              Actually Sell
-              <span className="absolute inset-0 rounded-xl -z-10 opacity-15" style={{ background: "#ba44fb" }} />
-            </span>
-          </motion.h1>
+      <section className="relative min-h-[92vh] flex flex-col items-center justify-center overflow-hidden pt-32 pb-20 px-6">
+        <div className="container mx-auto relative z-10 text-center max-w-4xl">
+          <MaskReveal
+            delayStart={0.15}
+            className="font-poppins text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.04] tracking-tight text-[#0A0A0B] mb-8"
+            lines={["Brands that look good.", "Ads that sell better."]}
+          />
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed text-pretty"
+            transition={{ duration: 0.7, delay: 0.55, ease: "easeOut" }}
+            className="text-lg md:text-xl text-[#6B6B72] max-w-xl mx-auto mb-11 leading-relaxed text-pretty"
           >
-            Video editing, ad creatives, Shopify websites, and design that makes people stop, watch, and buy.
+            We build Shopify stores, ad creatives, and content that turn browsers into buyers — wherever your brand sells.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
           >
             <Link
               href="/booking"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-semibold text-base md:text-lg hover:scale-105 transition-transform"
+              className="group inline-flex items-center gap-3 pl-8 pr-3 py-3 bg-[#0A0A0B] text-white rounded-full font-semibold text-base hover:scale-[1.03] transition-transform"
             >
-              Let&apos;s Build Creative That Converts
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:rotate-45 transition-transform">
+              Start Your Project
+              <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#4452FB] text-white group-hover:rotate-45 transition-transform">
                 <ArrowUpRight className="w-4 h-4" />
               </span>
             </Link>
           </motion.div>
         </div>
-
-
       </section>
 
-      {/* ── Keyword Ticker ── */}
-      <KeywordTicker />
+      <ProofStrip />
+
+      <div className="mt-16">
+        <KeywordTicker />
+      </div>
 
       {/* ── Problem Section ── */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
-            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">The Problem</span>
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold leading-tight">
-              We Know the Problem
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            {problems.slice(0, 2).map((problem, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="rounded-2xl p-8"
-                style={{ backgroundColor: "#4452FB" }}
-              >
-                <h3 className="text-2xl md:text-3xl font-poppins font-bold text-white mb-4 leading-tight">
-                  {problem.title}
-                </h3>
-                <p className="text-white/80 text-base leading-relaxed">{problem.description}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {problems.slice(2).map((problem, index) => (
-              <motion.div
-                key={index + 2}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ delay: index * 0.12, duration: 0.55, ease: "easeOut" }}
-                className="rounded-2xl p-8"
-                style={{ backgroundColor: index === 0 ? "#148f7f" : "#8006cd" }}
-              >
-                <h3
-                  className="text-2xl md:text-3xl font-poppins font-bold mb-4 leading-tight"
-                  style={{ color: "white" }}
-                >
-                  {problem.title}
-                </h3>
-                <p
-                  className="text-base leading-relaxed"
-                  style={{ color: "rgba(255,255,255,0.8)" }}
-                >
-                  {problem.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="mt-10 text-center"
-          >
-            <p className="text-lg text-white/50">
-              That&apos;s where most brands get stuck: good-looking content that doesn&apos;t move revenue.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Solution Section ── */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-poppins font-bold leading-tight">
-                We Know the Fix Too.
-              </h2>
-            </div>
-            <p className="text-white/50 max-w-sm text-base leading-relaxed md:text-right">
-              We don&apos;t just make content look nice. We make it work harder.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {solutionCards.map((card, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                className="relative flex flex-col justify-between h-80 rounded-3xl p-8 overflow-hidden cursor-default select-none hover:scale-105 transition-transform"
-                style={{ backgroundColor: card.color }}
-              >
-                <div>
-                  <h3 className="text-white font-bold text-xl leading-snug mb-3 font-poppins">
-                    {card.title}
-                  </h3>
-                  <p className="text-white/85 text-sm leading-relaxed">
-                    {card.description}
-                  </p>
-                </div>
-                <div className="flex justify-center">
-                  <div
-                    className="w-24 h-24 rounded-3xl flex items-center justify-center"
-                    style={{ backgroundColor: "rgba(255,255,255,0.25)" }}
-                  >
-                    <card.Icon className="w-12 h-12 text-white/90" />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Our Philosophy Section ── */}
-      <section className="py-32 px-6">
+      <section className="py-28 md:py-36 px-6">
         <div className="container mx-auto max-w-4xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-8 text-white">Our Philosophy</h2>
-            <p className="text-lg md:text-xl text-white/70 leading-relaxed">
-              We believe the strongest brands are built through clarity, intention, and meaningful storytelling. Every decision—from typography and color to packaging structure and material choices—should serve a purpose and strengthen the connection between a brand and its audience.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Our Approach Section ── */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-6">Our Approach</h2>
-            <p className="text-xl text-white/60">
-              Good creative is not about trends. It&apos;s about understanding what makes people stop, trust, and take action.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Storytelling",
-                description: "We craft narratives that feel natural and believable, making your brand relatable and human.",
-                color: "#4452FB"
-              },
-              {
-                title: "Strategy",
-                description: "We align every asset with your offer and audience, ensuring maximum relevance and impact.",
-                color: "#E8445A"
-              },
-              {
-                title: "Design",
-                description: "We create visuals that support sales, not just aesthetics — every pixel serves your conversion goal.",
-                color: "#F5A623"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="rounded-2xl p-8 h-full hover:scale-105 transition-transform"
-                style={{ backgroundColor: item.color }}
-              >
-                <h3 className="text-2xl font-bold mb-4 text-white font-poppins">{item.title}</h3>
-                <p className="text-white/80">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─��� Discovery & Strategy Section ── */}
-
-
-      {/* ── Detailed Process Section ── */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">Our Process</span>
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-6">A Thoughtful Process Behind Every Brand</h2>
-            <p className="text-lg text-white/60 max-w-3xl mx-auto">
-              Every successful identity and packaging project begins with understanding the brand at its core. Our process balances strategic thinking, creative exploration, and meticulous refinement to create solutions that are both meaningful and commercially effective.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="rounded-3xl overflow-hidden h-96 md:h-full"
-            >
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-QyRizeDsc0pbDLJbo95FLw8Kfg9KAn.png" 
-                alt="Brand Process" 
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-4"
-            >
-              {[
-                {
-                  step: "1.Discovery",
-                  description: "We begin by learning about your business, audience, goals, and market landscape to establish a clear strategic foundation."
-                },
-                {
-                  step: "2.Strategy",
-                  description: "We develop a comprehensive creative strategy aligned with your vision, positioning, and market opportunities."
-                },
-                {
-                  step: "3.Concept Development",
-                  description: "Our team creates multiple conceptual directions, exploring different visual approaches and messaging strategies."
-                },
-                {
-                  step: "4.Design Refinement",
-                  description: "We refine the selected concept, perfecting every detail from typography to color to ensure maximum impact and clarity."
-                },
-                {
-                  step: "5.Final Delivery",
-                  description: "You receive comprehensive brand guidelines and all deliverables ready for production and implementation."
-                }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="border border-white/10 rounded-xl p-4 hover:bg-white/5 transition-colors"
-                >
-                  <h3 className="text-lg font-semibold text-white mb-2">{item.step}</h3>
-                  <p className="text-white/60 text-sm">{item.description}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-black border border-white/10 rounded-3xl p-12 text-center"
-          >
-            <p className="text-lg text-white/70 mb-6">
-              Our goal is not simply to create attractive visuals, but to build brand systems that perform effectively, scale confidently, and leave a lasting impression.
-            </p>
-            <Link
-              href="/booking"
-              className="inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full font-semibold transition-all"
-            >
-              Start A Project
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Case Studies Section ── */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-16"
           >
-            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-4">Selected Case Studies</span>
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-4">Designing Brands That Leave A Lasting Impression</h2>
-            <p className="text-lg text-white/60">
-              Explore a curated selection of identity and packaging projects crafted to help brands stand out, connect with their audience, and create memorable experiences across every touchpoint.
-            </p>
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-3">The Problem</span>
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold leading-tight max-w-2xl">
+              Most brands don&apos;t have a marketing problem.
+              <br />They have a creative problem.
+            </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                name: "Prustlr | Protein Oats Brand",
-                tags: ["Brand Identity", "Packaging Design", "Shopify Website Designing", "Ad Creatives"],
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0759-e9D1mUNhdMXGjiohDazfAYuviP7HiD.png",
-                position: "left",
-                hasImage: true
-              },
-              {
-                name: "Varan Jewellers",
-                tags: ["Shopify Website", "Ad Creatives", "AI Ads"],
-                image: null,
-                position: "right",
-                hasImage: false
-              }
-            ].map((project, index) => (
+          <div>
+            {problems.map((problem, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group cursor-pointer"
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: index * 0.06, ease: "easeOut" }}
+                className="grid grid-cols-[auto_1fr] md:grid-cols-[80px_1fr] gap-5 md:gap-8 py-7 border-t border-black/10 last:border-b"
               >
-                <div className={`relative rounded-2xl overflow-hidden mb-4 border border-white/10 ${project.hasImage ? 'h-96' : 'h-80'} bg-gradient-to-br from-purple-900/30 to-blue-900/30 flex items-center justify-center`}>
-                  {project.hasImage ? (
-                    <img 
-                      src={project.image} 
-                      alt={project.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                  ) : (
-                    <div className="text-center p-8">
-                      <div className="text-6xl mb-4 opacity-20">🎨</div>
-                      <p className="text-white/50 font-semibold">Case Study Coming Soon</p>
-                      <p className="text-white/30 text-sm mt-2">New project showcase</p>
-                    </div>
-                  )}
+                <span className="font-poppins text-sm font-semibold text-[#0A0A0B]/30 pt-1">
+                  0{index + 1}
+                </span>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-poppins font-semibold text-[#0A0A0B] mb-2">
+                    {problem.title}
+                  </h3>
+                  <p className="text-[#6B6B72] text-base leading-relaxed max-w-lg">{problem.description}</p>
                 </div>
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.tags.map((tag, i) => (
-                    <span key={i} className="text-xs px-3 py-1 bg-white/10 border border-white/20 rounded-full text-white/70">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
-                  {project.name}
-                </h3>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── FAQ Section ── */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto max-w-4xl">
+      {/* ── What We Do ── */}
+      <section className="py-28 md:py-36 px-6 bg-white border-y border-black/[0.06]">
+        <div className="container mx-auto max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-14 md:mb-20 max-w-2xl"
           >
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-6">Frequently Asked Questions</h2>
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-3">What We Do</span>
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold leading-tight">
+              One studio. Every piece your brand needs to sell.
+            </h2>
           </motion.div>
 
-          <div className="space-y-4">
+          <div>
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="group flex items-center justify-between gap-6 py-6 md:py-7 px-4 md:px-6 -mx-4 md:-mx-6 rounded-xl border-t border-black/10 last:border-b hover:bg-[#4452FB] transition-colors duration-300 cursor-default"
+              >
+                <div className="flex items-center gap-4 md:gap-6">
+                  <service.Icon className="w-5 h-5 md:w-6 md:h-6 text-[#4452FB] group-hover:text-white transition-colors flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg md:text-xl font-poppins font-semibold text-[#0A0A0B] group-hover:text-white transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-[#6B6B72] group-hover:text-white/80 transition-colors mt-1 max-w-md hidden sm:block">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-5 h-5 text-[#0A0A0B]/20 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all flex-shrink-0" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Case Studies ── */}
+      <section id="work" className="py-28 md:py-36 px-6 scroll-mt-24">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-4"
+          >
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-4">Selected Work</span>
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold leading-tight max-w-2xl">
+              Two brands. Full-stack execution.
+            </h2>
+          </motion.div>
+
+          <CaseStudies />
+        </div>
+      </section>
+
+      {/* ── Process ── */}
+      <section className="py-28 md:py-36 px-6 bg-white border-y border-black/[0.06]">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16 md:mb-20"
+          >
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-3">How We Work</span>
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold mb-5">
+              A process built to move fast without breaking the brand
+            </h2>
+          </motion.div>
+
+          <ProcessSteps />
+        </div>
+      </section>
+
+      {/* ── Philosophy ── */}
+      <section className="py-28 md:py-40 px-6">
+        <div className="container mx-auto max-w-3xl">
+          <ScrollFillText text="We don't believe in content that just looks nice. Every ad, every page, every frame is built to move someone from scrolling to buying. If it doesn't sell, it doesn't ship." />
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="py-28 md:py-36 px-6">
+        <div className="container mx-auto max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-14"
+          >
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold">Frequently Asked Questions</h2>
+          </motion.div>
+
+          <div className="space-y-3">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
+                transition={{ delay: index * 0.04 }}
               >
                 <button
                   onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                  className="w-full bg-white/5 border border-white/10 hover:border-blue-400/50 p-6 rounded-xl text-left group transition-all"
+                  className="w-full bg-white border border-black/[0.08] hover:border-[#4452FB]/40 p-5 md:p-6 rounded-xl text-left group transition-colors"
                 >
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold group-hover:text-blue-300 transition-colors">
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="text-base md:text-lg font-semibold text-[#0A0A0B]">
                       {faq.question}
                     </h3>
                     <motion.div
                       animate={{ rotate: openFAQ === index ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
+                      className="flex-shrink-0"
                     >
-                      <ChevronDown className="w-5 h-5 text-blue-400" />
+                      <ChevronDown className="w-5 h-5 text-[#4452FB]" />
                     </motion.div>
                   </div>
                 </button>
                 <motion.div
-                  initial={{ opacity: 0, height: 0 }}
+                  initial={false}
                   animate={openFAQ === index ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <div className="p-6 bg-blue-500/5 border-t border-blue-400/20 text-white/70">
+                  <div className="p-5 md:p-6 text-[#6B6B72] text-sm md:text-base leading-relaxed">
                     {faq.answer}
                   </div>
                 </motion.div>
@@ -588,39 +269,35 @@ export default function Home() {
       </section>
 
       {/* ── Final CTA ── */}
-      <section className="py-32 px-6 relative">
-        <div className="container mx-auto max-w-4xl text-center relative z-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-poppins font-bold mb-8"
+      <section className="px-4 sm:px-6 pb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative container mx-auto max-w-5xl bg-[#4452FB] rounded-3xl overflow-hidden text-center px-6 py-20 md:py-28"
+        >
+          <div
+            className="absolute inset-0 opacity-[0.06] pointer-events-none"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+            }}
+          />
+          <h2 className="relative font-poppins text-4xl md:text-6xl font-bold text-white mb-6 leading-[1.1]">
+            Ready to build a brand
+            <br />that actually sells?
+          </h2>
+          <p className="relative text-white/80 text-lg md:text-xl mb-10 max-w-xl mx-auto">
+            Let&apos;s talk about what&apos;s holding your creative back.
+          </p>
+          <Link
+            href="/booking"
+            className="relative inline-flex items-center gap-2 px-9 py-4 bg-white text-[#0A0A0B] rounded-full font-bold text-base md:text-lg hover:scale-105 transition-transform"
           >
-            Ready to Make Your Brand
-            <br />
-            <span style={{ color: "#4452FB" }}>Sell Smarter?</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-white/60 mb-12 max-w-2xl mx-auto"
-          >
-            Let&apos;s discuss how we can build creative that converts, not just impresses.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <Link href="/booking" className="inline-flex items-center gap-2 px-10 py-5 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-transform">
-              Schedule a Call <ArrowRight className="w-5 h-5" />
-            </Link>
-          </motion.div>
-        </div>
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none" />
+            Book a Call <ArrowRight className="w-5 h-5" />
+          </Link>
+        </motion.div>
       </section>
 
       <Footer />

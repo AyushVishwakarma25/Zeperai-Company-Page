@@ -2,229 +2,208 @@
 
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { GlassCard } from "@/components/ui/glass-card"
+import { MaskReveal } from "@/components/mask-reveal"
+import { ProcessSteps } from "@/components/process-steps"
 import { motion } from "framer-motion"
-import { Palette, Smartphone, Code2, Rocket, Check, Video, Layout } from 'lucide-react'
+import { Check, ArrowUpRight } from 'lucide-react'
 import Link from "next/link"
 
 export default function ServicesPage() {
   const serviceCategories = [
     {
-      categoryTitle: "Video Editing",
-      icon: <Video className="w-12 h-12 text-purple-400" />,
-      description: "Professional video content creation and editing for all formats",
-      color: "from-purple-500/20 to-pink-500/20",
+      index: "01",
+      categoryTitle: "Meta Ads Management",
+      description: "Campaigns built around what converts, not what looks nice in a deck.",
       services: [
-        "Talking Head Videos",
-        "SaaS Product Intro Videos",
-        "D2C Product Animations",
-        "Short Form Reels",
-        "Motion Graphics",
-        "UGC Style Ads",
-        "YouTube & Podcast Editing",
-        "Social Media Content Editing",
-        "Brand Promo Videos"
-      ]
+        "Campaign Strategy & Setup",
+        "Creative Testing & Iteration",
+        "Audience Targeting",
+        "Retargeting Funnels",
+        "Performance Reporting",
+        "Budget & Scaling Strategy",
+      ],
     },
     {
-      categoryTitle: "Website Development",
-      icon: <Layout className="w-12 h-12 text-blue-400" />,
-      description: "Custom web development and design solutions for modern brands",
-      color: "from-blue-500/20 to-cyan-500/20",
+      index: "02",
+      categoryTitle: "Shopify Development",
+      description: "Stores designed to hold attention and close the sale.",
       services: [
-        "Shopify Development",
-        "MVP Building",
-        "UX/UI Design",
-        "Landing Pages",
-        "CRO Focused Design"
-      ]
+        "Full Store Build & Theme Design",
+        "Conversion-Focused UX",
+        "Landing Page Design",
+        "Speed & CRO Optimization",
+        "Product Page Design",
+        "Store Migration",
+      ],
     },
     {
-      categoryTitle: "Design & Branding",
-      icon: <Palette className="w-12 h-12 text-pink-400" />,
-      description: "Complete visual identity and design system creation",
-      color: "from-pink-500/20 to-red-500/20",
+      index: "03",
+      categoryTitle: "AI Ad Creatives",
+      description: "Scroll-stopping creative, produced fast, without a production crew.",
       services: [
-        "Graphic Designing",
-        "Brand Identity Design",
-        "Logo Design",
-        "Food Packaging Design",
+        "AI-Generated Product Shots",
         "Static Ad Creatives",
-        "Product Listing Designs",
-        "Social Media Creatives",
-        "Banner & Marketing Designs"
-      ]
-    }
+        "Motion Graphic Ads",
+        "UGC-Style Ads",
+        "Listing & Marketplace Creative",
+        "Creative Strategy & Scripting",
+      ],
+    },
+    {
+      index: "04",
+      categoryTitle: "Video & Content Production",
+      description: "Reels and content built for retention, not just views.",
+      services: [
+        "Reels & Short-Form Editing",
+        "Product Motion Videos",
+        "Talking Head & UGC Videos",
+        "Brand Promo Videos",
+        "Podcast & Long-Form Editing",
+        "Social Content Calendars",
+      ],
+    },
+    {
+      index: "05",
+      categoryTitle: "Brand Design",
+      description: "Identity and visuals that make a brand look like it belongs at a higher price point.",
+      services: [
+        "Brand Identity & Logo Design",
+        "Packaging Design",
+        "Visual Guidelines",
+        "Social Media Templates",
+        "Print & Marketing Collateral",
+        "Brand Strategy",
+      ],
+    },
   ]
 
   const process = [
-    {
-      step: "01",
-      title: "Discovery & Strategy",
-      description: "We dive deep into your brand, audience, and goals to create a strategic foundation."
-    },
-    {
-      step: "02",
-      title: "Creative Development",
-      description: "Our team designs and develops solutions that balance aesthetics with functionality."
-    },
-    {
-      step: "03",
-      title: "Optimization & Testing",
-      description: "Data-driven refinements ensure maximum performance and ROI."
-    },
-    {
-      step: "04",
-      title: "Launch & Support",
-      description: "We don't just deliver—we support and optimize your solution continuously."
-    }
+    { step: "Discovery & Strategy", description: "We dive into your brand, audience, and goals to create a strategic foundation." },
+    { step: "Creative Development", description: "Our team designs and produces solutions that balance aesthetics with performance." },
+    { step: "Optimization & Testing", description: "Data-driven refinements ensure maximum performance and ROI." },
+    { step: "Launch & Support", description: "We don't just deliver — we support and optimize continuously." },
   ]
 
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-blue-500/30">
+    <main className="min-h-screen bg-[#F5F5F7] text-[#0A0A0B]">
       <Navbar />
 
-      {/* Services Hero */}
+      {/* Hero */}
       <section className="pt-40 pb-20 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+        <div className="container mx-auto max-w-3xl text-center">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
+            transition={{ duration: 0.5 }}
+            className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-5"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gradient">
-              Our Services
-            </h1>
-            <p className="text-xl text-white/60 leading-relaxed">
-              Comprehensive solutions to elevate your brand through creative intelligence, 
-              strategic design, and AI-driven innovation.
-            </p>
-          </motion.div>
+            Services
+          </motion.span>
+          <MaskReveal
+            delayStart={0.1}
+            className="font-poppins text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8"
+            lines={["Everything your brand", "needs to sell online."]}
+          />
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-lg md:text-xl text-[#6B6B72] leading-relaxed max-w-xl mx-auto"
+          >
+            One studio, five disciplines — ads, stores, creative, content, and brand — working from the same playbook.
+          </motion.p>
         </div>
       </section>
 
-      {/* Services Categories Grid */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="space-y-16">
-            {serviceCategories.map((category, categoryIndex) => (
-              <motion.div
-                key={categoryIndex}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
-              >
-                <div className="mb-8">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors">
-                      {category.icon}
-                    </div>
-                    <div>
-                      <h2 className="text-3xl md:text-4xl font-bold">{category.categoryTitle}</h2>
-                      <p className="text-white/60 text-sm md:text-base mt-1">{category.description}</p>
-                    </div>
-                  </div>
-                </div>
+      {/* Service Categories */}
+      <section className="px-6">
+        <div className="container mx-auto max-w-5xl divide-y divide-black/[0.08] border-t border-black/[0.08]">
+          {serviceCategories.map((category) => (
+            <div key={category.index} className="grid md:grid-cols-[minmax(0,220px)_1fr] gap-8 md:gap-16 py-14 md:py-20">
+              <div className="md:sticky md:top-32 self-start h-fit">
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  className="font-poppins text-6xl md:text-7xl font-bold text-[#0A0A0B]/[0.08] block leading-none mb-4"
+                >
+                  {category.index}
+                </motion.span>
+                <motion.h2
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="font-poppins text-2xl md:text-3xl font-bold leading-tight mb-3"
+                >
+                  {category.categoryTitle}
+                </motion.h2>
+                <motion.p
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.05 }}
+                  className="text-sm text-[#6B6B72] leading-relaxed max-w-[220px]"
+                >
+                  {category.description}
+                </motion.p>
+              </div>
 
-                <GlassCard className={`p-8 md:p-10 bg-gradient-to-br ${category.color} hover:bg-white/10 transition-all`}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {category.services.map((service, serviceIndex) => (
-                      <motion.div
-                        key={serviceIndex}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: serviceIndex * 0.05 }}
-                        className="flex items-start gap-3 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-all group cursor-pointer"
-                      >
-                        <Check className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                        <span className="text-white/80 group-hover:text-white transition-colors font-medium">{service}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </GlassCard>
-              </motion.div>
-            ))}
-          </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 content-start">
+                {category.services.map((service, serviceIndex) => (
+                  <motion.div
+                    key={serviceIndex}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ delay: serviceIndex * 0.04, duration: 0.4 }}
+                    className="flex items-start gap-3 p-4 rounded-xl bg-white border border-black/[0.06] hover:border-[#4452FB]/40 transition-colors"
+                  >
+                    <Check className="w-4 h-4 text-[#4452FB] flex-shrink-0 mt-0.5" />
+                    <span className="text-sm font-medium text-[#0A0A0B]">{service}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Our Process */}
-      <section className="py-32 px-6 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent">
+      {/* Process */}
+      <section className="py-28 md:py-36 px-6 bg-white border-y border-black/[0.06]">
         <div className="container mx-auto max-w-5xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-16 text-center"
+            className="text-center mb-16 md:mb-20"
           >
-            How We Work Our Magic
-          </motion.h2>
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-3">How We Work</span>
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold">A process built to move fast without breaking the brand</h2>
+          </motion.div>
 
-          <div className="grid md:grid-cols-4 gap-6">
-            {process.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15, duration: 0.6, type: "spring", stiffness: 100 }}
-                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-              >
-                <GlassCard className="h-full hover:bg-white/10 transition-all duration-300 group cursor-pointer relative overflow-hidden">
-                  {/* Animated background gradient on hover */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-blue-500/10 to-purple-500/10 pointer-events-none" />
-                  
-                  <div className="relative z-10">
-                    <motion.div 
-                      className="text-6xl font-bold text-blue-400/30 mb-4 group-hover:text-blue-400/60 transition-colors"
-                      animate={{ y: [0, -5, 0] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      {item.step}
-                    </motion.div>
-                    <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-300 transition-colors">{item.title}</h3>
-                    <p className="text-white/60 group-hover:text-white/80 transition-colors leading-relaxed">{item.description}</p>
-                    
-                    {/* Connection arrow indicator */}
-                    {index < process.length - 1 && (
-                      <motion.div 
-                        className="hidden md:block absolute -right-8 top-1/2 -translate-y-1/2 text-blue-400/40 group-hover:text-blue-400 transition-colors"
-                        animate={{ x: [0, 3, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                      >
-                        →
-                      </motion.div>
-                    )}
-                  </div>
-                </GlassCard>
-              </motion.div>
-            ))}
-          </div>
+          <ProcessSteps steps={process} />
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
+      {/* CTA */}
+      <section className="py-28 md:py-36 px-6">
+        <div className="container mx-auto max-w-3xl text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Let&apos;s Build Something Amazing
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold mb-6">
+              Let&apos;s build something that sells
             </h2>
-            <p className="text-xl text-white/60 mb-12">
-              Ready to level up your brand? Schedule a discovery call and let&apos;s talk about your vision.
+            <p className="text-lg md:text-xl text-[#6B6B72] mb-10">
+              Schedule a discovery call and let&apos;s talk about which of these your brand needs first.
             </p>
-            <Link 
+            <Link
               href="/booking"
-              className="inline-block px-10 py-5 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-transform"
+              className="inline-flex items-center gap-2 px-9 py-4 bg-[#0A0A0B] text-white rounded-full font-bold text-base md:text-lg hover:scale-105 transition-transform"
             >
-              Schedule a Call
+              Schedule a Call <ArrowUpRight className="w-5 h-5" />
             </Link>
           </motion.div>
         </div>
