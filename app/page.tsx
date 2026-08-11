@@ -284,8 +284,19 @@ export default function Home() {
                 "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
             }}
           />
-          <h2 className="relative font-poppins text-4xl md:text-6xl font-bold text-white mb-6 leading-[1.1]">
-            Ready to build a brand
+          <p className="relative text-white/80 text-sm sm:text-base mb-4">
+            The road to a stronger D2C brand starts here.
+          </p>
+          <h2 className="relative font-poppins text-4xl md:text-6xl font-bold text-white mb-6 leading-[1.1] text-balance">
+            <motion.span
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: "auto", opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.8, ease: "easeOut" }}
+              className="inline-block overflow-hidden align-bottom whitespace-nowrap"
+            >
+              Ready to build a brand
+            </motion.span>
             <br />that actually sells?
           </h2>
           <p className="relative text-white/80 text-lg md:text-xl mb-10 max-w-xl mx-auto">
