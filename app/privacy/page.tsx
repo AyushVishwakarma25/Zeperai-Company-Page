@@ -114,7 +114,7 @@ export default function PrivacyPage() {
               <li>The right to data portability</li>
               <li>The right to withdraw consent</li>
             </ul>
-            <p className="mt-4">To exercise these rights, please contact us at <a href="mailto:reahtoayush25@gmail.com" className="text-[#4452FB] hover:text-[#3A46D6]">reahtoayush25@gmail.com</a>.</p>
+            <p className="mt-4">To exercise these rights, please contact us at <a href="mailto:growth@zeperai.com" className="text-[#4452FB] hover:text-[#3A46D6]">growth@zeperai.com</a>.</p>
           </motion.div>
         </div>
       </section>
