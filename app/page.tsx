@@ -488,22 +488,8 @@ export default function Home() {
                 hasImage: true
               },
               {
-                name: "Coming Soon",
-                tags: ["Brand Identity"],
-                image: null,
-                position: "right",
-                hasImage: false
-              },
-              {
-                name: "Coming Soon",
-                tags: ["Packaging Design"],
-                image: null,
-                position: "left",
-                hasImage: false
-              },
-              {
-                name: "Coming Soon",
-                tags: ["Art Direction"],
+                name: "Varan Jewellers",
+                tags: ["Shopify Website", "Ad Creatives", "AI Ads"],
                 image: null,
                 position: "right",
                 hasImage: false
