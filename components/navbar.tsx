@@ -38,7 +38,6 @@ export function Navbar() {
         )}
       >
         <Link href="/" className="flex items-center gap-2 relative z-50">
-          <img src="/logo-zeperai.png" alt="ZeperAI Studio" className="h-7 w-auto" />
           <span className="font-poppins font-semibold text-[15px] tracking-tight text-[#0A0A0B]">
             ZeperAI <span className="text-[#4452FB]">Studio</span>
           </span>

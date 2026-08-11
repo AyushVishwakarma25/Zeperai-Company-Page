@@ -17,7 +17,7 @@ const caseStudies: CaseStudy[] = [
   {
     index: "01",
     name: "Prustlr — Protein Oats",
-    headline: "Turning a protein oats brand into a full D2C system",
+    headline: "Building the brand, creatives, and digital experience behind PRUSTLR.",
     body: "Brand identity, packaging design, a rebuilt Shopify store, and ad creatives — designed and executed end to end so every touchpoint sold the same story.",
     tags: ["Brand Identity", "Packaging Design", "Shopify Development", "Ad Creatives"],
     image: "/case-studies/prustlr.jpg",

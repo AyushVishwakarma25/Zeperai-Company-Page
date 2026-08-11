@@ -30,7 +30,7 @@ export default function BookingPage() {
         <div className="container mx-auto max-w-3xl text-center">
           <MaskReveal
             delayStart={0.1}
-            className="font-poppins text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8"
+            className="font-poppins text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8"
             lines={["Let's talk."]}
           />
           <motion.p

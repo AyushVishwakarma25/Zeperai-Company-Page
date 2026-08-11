@@ -48,7 +48,7 @@ export default function Home() {
         <div className="container mx-auto relative z-10 text-center max-w-4xl">
           <MaskReveal
             delayStart={0.15}
-            className="font-poppins text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.04] tracking-tight text-[#0A0A0B] mb-8"
+            className="font-poppins text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.04] tracking-tight text-[#0A0A0B] mb-8 max-w-[95vw] mx-auto"
             lines={["Brands that look good.", "Ads that sell better."]}
           />
 
@@ -95,7 +95,7 @@ export default function Home() {
             className="mb-16"
           >
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-3">The Problem</span>
-            <h2 className="text-3xl md:text-5xl font-poppins font-bold leading-tight max-w-2xl">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-poppins font-bold leading-tight max-w-2xl">
               Most brands don&apos;t have a marketing problem.
               <br />They have a creative problem.
             </h2>
@@ -136,7 +136,7 @@ export default function Home() {
             className="mb-14 md:mb-20 max-w-2xl"
           >
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-3">What We Do</span>
-            <h2 className="text-3xl md:text-5xl font-poppins font-bold leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-poppins font-bold leading-tight">
               One studio. Every piece your brand needs to sell.
             </h2>
           </motion.div>
@@ -179,8 +179,8 @@ export default function Home() {
             className="mb-4"
           >
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-4">Selected Work</span>
-            <h2 className="text-3xl md:text-5xl font-poppins font-bold leading-tight max-w-2xl">
-              Two brands. Full-stack execution.
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-poppins font-bold leading-tight max-w-2xl">
+              From Product to D2C Brand
             </h2>
           </motion.div>
 
@@ -198,7 +198,7 @@ export default function Home() {
             className="text-center mb-16 md:mb-20"
           >
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-3">How We Work</span>
-            <h2 className="text-3xl md:text-5xl font-poppins font-bold mb-5">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-poppins font-bold mb-5">
               A process built to move fast without breaking the brand
             </h2>
           </motion.div>
@@ -223,7 +223,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-14"
           >
-            <h2 className="text-3xl md:text-5xl font-poppins font-bold">Frequently Asked Questions</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-poppins font-bold">Frequently Asked Questions</h2>
           </motion.div>
 
           <div className="space-y-3">
@@ -284,8 +284,19 @@ export default function Home() {
                 "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
             }}
           />
-          <h2 className="relative font-poppins text-4xl md:text-6xl font-bold text-white mb-6 leading-[1.1]">
-            Ready to build a brand
+          <p className="relative text-white/80 text-sm sm:text-base mb-4">
+            The road to a stronger D2C brand starts here.
+          </p>
+          <h2 className="relative font-poppins text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 leading-[1.1] text-balance">
+            <motion.span
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: "auto", opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.8, ease: "easeOut" }}
+              className="inline-block overflow-hidden align-bottom whitespace-nowrap"
+            >
+              Ready to build a brand
+            </motion.span>
             <br />that actually sells?
           </h2>
           <p className="relative text-white/80 text-lg md:text-xl mb-10 max-w-xl mx-auto">

@@ -101,7 +101,7 @@ export default function ServicesPage() {
           </motion.span>
           <MaskReveal
             delayStart={0.1}
-            className="font-poppins text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8"
+            className="font-poppins text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8"
             lines={["Everything your brand", "needs to sell online."]}
           />
           <motion.p
