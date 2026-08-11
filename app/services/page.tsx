@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { MaskReveal } from "@/components/mask-reveal"
 import { ProcessSteps } from "@/components/process-steps"
+import { ServicesMenu } from "@/components/ui/navbar-menu"
 import { motion } from "framer-motion"
 import { Check, ArrowUpRight } from 'lucide-react'
 import Link from "next/link"
@@ -112,6 +113,13 @@ export default function ServicesPage() {
           >
             One studio, five disciplines — ads, stores, creative, content, and brand — working from the same playbook.
           </motion.p>
+        </div>
+      </section>
+
+      {/* Interactive service navigation */}
+      <section className="px-6 pb-16" aria-label="Explore services">
+        <div className="container mx-auto max-w-5xl">
+          <ServicesMenu items={serviceCategories.map((category) => ({ title: category.categoryTitle, description: category.description }))} />
         </div>
       </section>
 
