@@ -5,6 +5,7 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-
 import { Menu, X } from 'lucide-react'
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import { ServicesMenu } from "@/components/ui/navbar-menu"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -17,9 +18,16 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Work", href: "/#work" },
-    { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
+  ]
+
+  const serviceItems = [
+    { title: "Meta Ads Management", description: "Campaigns built around what converts." },
+    { title: "Shopify Development", description: "Stores designed to hold attention and close the sale." },
+    { title: "AI Ad Creatives", description: "Scroll-stopping creative, produced fast." },
+    { title: "Video & Content Production", description: "Reels and content built for retention." },
+    { title: "Brand Design", description: "Identity and visuals built for a higher price point." },
   ]
 
   return (
@@ -55,6 +63,9 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
+          <div className="relative -mx-2">
+            <ServicesMenu items={serviceItems} compact />
+          </div>
           <Link
             href="/booking"
             className="group relative inline-flex items-center gap-2 bg-[#0A0A0B] text-white pl-4 pr-3.5 py-2 rounded-full text-[13px] font-semibold overflow-hidden transition-transform hover:scale-[1.03]"
