@@ -180,7 +180,7 @@ export default function Home() {
           >
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-4">Selected Work</span>
             <h2 className="text-3xl md:text-5xl font-poppins font-bold leading-tight max-w-2xl">
-              Two brands. Full-stack execution.
+              From Product to D2C Brand
             </h2>
           </motion.div>
 
