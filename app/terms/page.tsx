@@ -4,14 +4,14 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Terms of Service | ZeperAI Studio",
-  description: "Terms and conditions for using ZeperAI Studio services.",
+  title: "Terms of Service | ZeperAI Media",
+  description: "Terms and conditions for using ZeperAI Media services.",
 }
 
 const sections = [
   {
     title: "1. Services",
-    body: "ZeperAI Studio provides creative, design, Shopify development, advertising, content production, and related growth services as agreed in writing with each client.",
+    body: "ZeperAI Media provides creative, design, Shopify development, advertising, content production, and related growth services as agreed in writing with each client.",
   },
   {
     title: "2. Engagements and payment",
@@ -23,11 +23,11 @@ const sections = [
   },
   {
     title: "4. Intellectual property",
-    body: "After full payment, final approved deliverables created specifically for the client transfer to the client unless otherwise agreed. ZeperAI Studio retains ownership of working files, unused concepts, internal methods, and pre-existing materials.",
+    body: "After full payment, final approved deliverables created specifically for the client transfer to the client unless otherwise agreed. ZeperAI Media retains ownership of working files, unused concepts, internal methods, and pre-existing materials.",
   },
   {
     title: "5. Third-party platforms",
-    body: "Shopify, Meta, Google, hosting providers, and other third-party platforms are governed by their own terms. ZeperAI Studio cannot guarantee uninterrupted availability, approval, reach, or performance from those platforms.",
+    body: "Shopify, Meta, Google, hosting providers, and other third-party platforms are governed by their own terms. ZeperAI Media cannot guarantee uninterrupted availability, approval, reach, or performance from those platforms.",
   },
   {
     title: "6. Results and limitations",
@@ -52,7 +52,7 @@ export default function TermsPage() {
           <Link href="/" className="text-sm font-semibold text-[#4452FB] hover:underline">Back to home</Link>
           <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-[#4452FB]">Legal</p>
           <h1 className="mt-4 font-poppins text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">Terms and Conditions</h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#6B6B72]">These terms outline how engagements with ZeperAI Studio work. By working with us, you agree to the terms below.</p>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#6B6B72]">These terms outline how engagements with ZeperAI Media work. By working with us, you agree to the terms below.</p>
           <div className="mt-16 divide-y divide-black/10 border-y border-black/10">
             {sections.map((section) => (
               <section key={section.title} className="py-8">

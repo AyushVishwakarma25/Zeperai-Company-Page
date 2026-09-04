@@ -47,7 +47,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg md:text-xl text-[#6B6B72] leading-relaxed max-w-xl mx-auto"
           >
-            Tell us about your brand and let&apos;s explore how ZeperAI Studio can help you sell more.
+            Tell us about your brand and let&apos;s explore how ZeperAI Media can help you sell more.
           </motion.p>
         </div>
       </section>

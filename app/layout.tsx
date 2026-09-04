@@ -10,8 +10,8 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-sofia"
 const poppins = Poppins({ weight: ["400", "500", "600", "700"], subsets: ["latin"], variable: "--font-poppins" })
 
 export const metadata: Metadata = {
-  title: "ZeperAI Studio — Design & Growth Studio for Brands That Sell Online",
-  description: "ZeperAI Studio builds Shopify stores, ad creatives, and content that turn browsers into buyers. Meta ads management, Shopify development, AI ad creatives, video and brand design — for brands in India and abroad.",
+  title: "ZeperAI Media — Design & Growth Studio for Brands That Sell Online",
+  description: "ZeperAI Media builds Shopify stores, ad creatives, and content that turn browsers into buyers. Meta ads management, Shopify development, AI ad creatives, video and brand design — for brands in India and abroad.",
   keywords: ["Shopify website design", "Meta ads management", "AI ad creatives", "video editing agency", "brand design agency", "D2C creative studio", "e-commerce creative agency", "conversion focused website design"],
   robots: "index, follow",
   authors: [{ name: "ZeperAI" }],
