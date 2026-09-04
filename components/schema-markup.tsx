@@ -5,7 +5,7 @@ export function SchemaMarkup() {
     name: "ZeperAI",
     url: "https://zeperai.com",
     logo: "https://zeperai.com/logo-zeperai.png",
-    description: "AI-powered creative agency helping D2C and e-commerce brands sell more with high-converting ad creatives, Reels editing, and Shopify design.",
+    description: "AI-powered creative agency helping D2C, e-commerce, and B2B brands and firms sell more with high-converting ad creatives, Reels editing, and website design.",
     sameAs: [
       "https://twitter.com/zeperai",
       "https://linkedin.com/company/zeperai",
@@ -61,7 +61,16 @@ export function SchemaMarkup() {
       {
         "@type": "Service",
         name: "Shopify Website Design",
-        description: "Shopify website design and development built for D2C brands",
+        description: "Shopify website design and development built for D2C and e-commerce brands",
+        provider: {
+          "@type": "Organization",
+          name: "ZeperAI",
+        },
+      },
+      {
+        "@type": "Service",
+        name: "Website Design for Service Businesses",
+        description: "Websites and brand design for B2B firms and service businesses, such as interior designers, built to win higher-value clients",
         provider: {
           "@type": "Organization",
           name: "ZeperAI",

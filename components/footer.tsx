@@ -13,7 +13,7 @@ export function Footer() {
               ZeperAI <span className="text-[#6C78FF]">Media</span>
             </span>
             <p className="text-white/50 text-sm leading-relaxed mt-5 max-w-xs">
-              A design and growth studio building Shopify stores, ad creatives, and content for brands in India and abroad.
+              A design and growth studio building websites, ad creatives, and content for D2C and B2B brands in India and abroad.
             </p>
             <div className="flex gap-4 mt-6">
               <a href="https://www.linkedin.com/in/vishwakarma-ayush/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#6C78FF] transition-colors">
@@ -33,6 +33,7 @@ export function Footer() {
             <ul className="space-y-3 text-white/70 text-sm">
               <li><Link href="/#work" className="hover:text-[#6C78FF] transition-colors">Work</Link></li>
               <li><Link href="/services" className="hover:text-[#6C78FF] transition-colors">Services</Link></li>
+              <li><Link href="/tools" className="hover:text-[#6C78FF] transition-colors">Tools</Link></li>
               <li><Link href="/about" className="hover:text-[#6C78FF] transition-colors">About</Link></li>
               <li><Link href="/booking" className="hover:text-[#6C78FF] transition-colors">Book a Call</Link></li>
             </ul>

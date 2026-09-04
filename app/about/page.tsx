@@ -91,7 +91,7 @@ export default function AboutPage() {
             className="mt-10 space-y-5 text-[#6B6B72] text-base md:text-lg leading-relaxed"
           >
             <p>
-              I&apos;ve spent my career at the front lines of digital growth — building products from scratch, scaling D2C brands, and refining creative that actually moves the needle, not just what looks good in a deck.
+              I&apos;ve spent my career at the front lines of digital growth — building products from scratch, scaling D2C and B2B brands alike, and refining creative that actually moves the needle, not just what looks good in a deck.
             </p>
             <p>
               Today, ZeperAI Media doesn&apos;t just deliver assets — we deliver a full-stack advantage. The same AI-assisted workflows we build for our own SaaS products, we bring into agency work: faster turnarounds, without cutting the strategy or craft.
