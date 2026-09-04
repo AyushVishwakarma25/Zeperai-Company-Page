@@ -49,7 +49,7 @@ export default function Home() {
         <div className="container mx-auto relative z-10 text-center max-w-4xl">
           <MaskReveal
             delayStart={0.15}
-            className="font-poppins text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.04] tracking-tight text-[#0A0A0B] mb-8 max-w-[95vw] mx-auto"
+            className="font-poppins text-[clamp(1.7rem,7.5vw,4rem)] font-bold leading-[1.08] tracking-tight text-[#0A0A0B] mb-8 w-full max-w-none mx-auto whitespace-nowrap"
             lines={["Make Them Stop Scrolling.", "Then Make Them Buy."]}
           />
 
@@ -97,8 +97,8 @@ export default function Home() {
           >
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-3">The Problem</span>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-poppins font-bold leading-tight max-w-2xl">
-              Most brands don&apos;t have a marketing problem.
-              <br />They have a creative problem.
+              Your Brand Has a Problem.
+              <br />It&apos;s Not the Product.
             </h2>
           </motion.div>
 
