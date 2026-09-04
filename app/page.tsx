@@ -18,24 +18,25 @@ export default function Home() {
 
   const services = [
     { title: "Meta Ads Management", description: "Campaigns built around what converts, not what looks nice in a deck.", Icon: Megaphone },
-    { title: "Shopify Development", description: "Stores designed to hold attention and close the sale.", Icon: ShoppingBag },
+    { title: "Shopify & Web Development", description: "Stores and business websites designed to hold attention and close the sale — or the lead.", Icon: ShoppingBag },
     { title: "AI Ad Creatives", description: "Scroll-stopping creative, produced fast, without a production crew.", Icon: Sparkles },
     { title: "Video & Content Production", description: "Reels and content built for retention, not just views.", Icon: Clapperboard },
     { title: "Brand Design", description: "Identity and visuals that make a brand look like it belongs at a higher price point.", Icon: PenTool },
   ]
 
   const problems = [
-    { title: "Ads that don't convert", description: "Your ads get impressions, not sales. The creative isn't built around what actually makes people buy." },
-    { title: "A store that looks amateur", description: "Traffic lands, then leaves. A Shopify store built on templates can't hold trust the way a designed one can." },
-    { title: "Content that blends in", description: "Reels and posts that look fine, but say nothing different from every other brand in your category." },
-    { title: "No one owning the whole picture", description: "A freelancer for ads, another for design, another for the store — and nobody making sure it all sells together." },
+    { title: "Ads that don't convert", description: "Your ads get impressions, not sales or inquiries. The creative isn't built around what actually makes people act." },
+    { title: "A website that looks amateur", description: "Traffic lands, then leaves. A site built on generic templates can't hold trust the way a designed one can — whether it's a storefront or a firm's portfolio." },
+    { title: "Content that blends in", description: "Reels, posts, and case studies that look fine, but say nothing different from everyone else in your space." },
+    { title: "No one owning the whole picture", description: "A freelancer for ads, another for design, another for the site — and nobody making sure it all sells together." },
   ]
 
   const faqs = [
-    { question: "Do you work with brands outside India?", answer: "Yes. We work with brands in India and abroad, tailoring the creative to the platform, market, and audience." },
-    { question: "Do you only run ads, or do you build the store too?", answer: "Both. We handle Shopify development, ad creatives, and campaign management — either as a full package or standalone." },
+    { question: "Do you work with brands outside India?", answer: "Yes. We work with brands and firms in India and abroad, tailoring the creative to the platform, market, and audience." },
+    { question: "Do you only work with D2C and e-commerce brands?", answer: "No. We started there, but we also work with B2B businesses and service firms — like interior designers and design studios — that need a stronger website, brand, and content to win higher-value clients." },
+    { question: "Do you only run ads, or do you build the website too?", answer: "Both. We handle Shopify and website development, ad creatives, and campaign management — either as a full package or standalone." },
     { question: "How fast can you turn around creative?", answer: "Most ad creative sets are delivered within days, not weeks — we use AI-assisted production to move faster without cutting quality." },
-    { question: "What if I already have a Shopify store?", answer: "We can redesign specific sections, audit conversion issues, or take over the full build — whatever the store needs." },
+    { question: "What if I already have a Shopify store or website?", answer: "We can redesign specific sections, audit conversion issues, or take over the full build — whatever the site needs." },
     { question: "How do we start?", answer: "Book a call. We'll look at your brand and tell you honestly where the biggest opportunity is." },
   ]
 
@@ -58,7 +59,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.55, ease: "easeOut" }}
             className="text-lg md:text-xl text-[#6B6B72] max-w-xl mx-auto mb-11 leading-relaxed text-pretty"
           >
-            We build Shopify stores, ad creatives, and content that turn browsers into buyers — wherever your brand sells.
+            We build websites, ad creatives, and content that turn visitors into buyers and leads — wherever your brand sells.
           </motion.p>
 
           <motion.div
@@ -180,7 +181,7 @@ export default function Home() {
           >
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-4">Selected Work</span>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-poppins font-bold leading-tight max-w-2xl">
-              From Product to D2C Brand
+              From Product to Brand
             </h2>
           </motion.div>
 
@@ -285,7 +286,7 @@ export default function Home() {
             }}
           />
           <p className="relative text-white/80 text-sm sm:text-base mb-4">
-            The road to a stronger D2C brand starts here.
+            The road to a stronger, higher-converting brand starts here.
           </p>
           <h2 className="relative font-poppins text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 leading-[1.1] text-balance">
             <motion.span
