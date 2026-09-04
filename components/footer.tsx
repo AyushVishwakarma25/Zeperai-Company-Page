@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16 pb-16 border-b border-white/10">
           <div className="md:col-span-5">
             <span className="font-poppins font-semibold text-xl tracking-tight">
-              ZeperAI <span className="text-[#6C78FF]">Studio</span>
+              ZeperAI <span className="text-[#6C78FF]">Media</span>
             </span>
             <p className="text-white/50 text-sm leading-relaxed mt-5 max-w-xs">
               A design and growth studio building Shopify stores, ad creatives, and content for brands in India and abroad.

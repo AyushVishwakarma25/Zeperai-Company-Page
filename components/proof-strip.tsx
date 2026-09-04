@@ -12,7 +12,7 @@ interface Stat {
 const stats: Stat[] = [
   { value: 500, suffix: "+", label: "Pieces of content shipped and live" },
   { value: 6, suffix: " mo", label: "Average client retainer length" },
-  { value: 100, suffix: "%", label: "Of clients still with us since day one" },
+  { value: 50, suffix: "+", label: "Brands & projects worked with" },
 ]
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {

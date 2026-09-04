@@ -64,7 +64,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-lg md:text-xl text-[#6B6B72] leading-relaxed max-w-xl mx-auto"
           >
-            ZeperAI Studio blends design, strategy, and AI-assisted production to help brands sell — without the fragmented freelancer chaos most agencies leave behind.
+            ZeperAI Media blends design, strategy, and AI-assisted production to help brands sell — without the fragmented freelancer chaos most agencies leave behind.
           </motion.p>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function AboutPage() {
             From the Founder
           </motion.span>
 
-          <ScrollFillText text="Most brands are slowed down by fragmented workflows and outdated creative processes. I built ZeperAI Studio to be the agency I wished I had — one team that balances design excellence with the speed AI-assisted production makes possible." />
+          <ScrollFillText text="Most brands are slowed down by fragmented workflows and outdated creative processes. I built ZeperAI Media to be the agency I wished I had — one team that balances design excellence with the speed AI-assisted production makes possible." />
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -94,7 +94,7 @@ export default function AboutPage() {
               I&apos;ve spent my career at the front lines of digital growth — building products from scratch, scaling D2C brands, and refining creative that actually moves the needle, not just what looks good in a deck.
             </p>
             <p>
-              Today, ZeperAI Studio doesn&apos;t just deliver assets — we deliver a full-stack advantage. The same AI-assisted workflows we build for our own SaaS products, we bring into agency work: faster turnarounds, without cutting the strategy or craft.
+              Today, ZeperAI Media doesn&apos;t just deliver assets — we deliver a full-stack advantage. The same AI-assisted workflows we build for our own SaaS products, we bring into agency work: faster turnarounds, without cutting the strategy or craft.
             </p>
           </motion.div>
         </div>

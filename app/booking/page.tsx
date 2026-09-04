@@ -39,7 +39,7 @@ export default function BookingPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg md:text-xl text-[#6B6B72] leading-relaxed max-w-xl mx-auto mb-8"
           >
-            Schedule a call to discuss your project, goals, and how ZeperAI Studio can help your brand sell more.
+            Schedule a call to discuss your project, goals, and how ZeperAI Media can help your brand sell more.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 14 }}

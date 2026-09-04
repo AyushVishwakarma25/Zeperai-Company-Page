@@ -14,7 +14,7 @@ export function SchemaMarkup() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Support",
-      email: "hello@zeperai.com",
+      email: "growth@zeperai.com",
     },
   };
 

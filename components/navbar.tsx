@@ -38,8 +38,8 @@ export function Navbar() {
         )}
       >
         <Link href="/" className="flex items-center gap-2 relative z-50">
-          <span className="font-poppins font-semibold text-[15px] tracking-tight text-[#0A0A0B]">
-            ZeperAI <span className="text-[#4452FB]">Studio</span>
+          <span className="font-poppins font-bold text-[15px] tracking-tight text-[#0A0A0B]">
+            ZeperAI <span className="text-[#4452FB]">Media</span>
           </span>
         </Link>
 

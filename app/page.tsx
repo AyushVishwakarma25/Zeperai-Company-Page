@@ -49,7 +49,7 @@ export default function Home() {
           <MaskReveal
             delayStart={0.15}
             className="font-poppins text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.04] tracking-tight text-[#0A0A0B] mb-8 max-w-[95vw] mx-auto"
-            lines={["Brands that look good.", "Ads that sell better."]}
+            lines={["Make Them Stop Scrolling.", "Then Make Them Buy."]}
           />
 
           <motion.p
