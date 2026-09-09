@@ -52,7 +52,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-white/40 text-xs">
-          <p>© 2026 ZeperAI Media — a Falcon Canvas AI venture</p>
+          <p>© 2026 ZeperAI Media — A Falcon Canvas AI venture</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white/70 transition-colors">Terms of Service</Link>
