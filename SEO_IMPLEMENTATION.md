@@ -115,6 +115,31 @@
 
 ---
 
+### 📝 Blog SEO Content Structure
+
+Every new blog post should use the same structure as the latest optimized articles:
+
+- YAML frontmatter with `title`, `slug`, `category`, `metaTitle`, `metaDescription`, `keywords`, `excerpt`, `featuredImage`, `featuredImageAlt`, `author`, `publishedDate`, and `readTime`.
+- One clear H1 matching the article promise, followed by scannable H2 sections that answer the searcher's questions in sequence.
+- A short opening that names the audience problem before introducing the framework or workflow.
+- Practical examples, checklists, or case-style walkthroughs instead of generic advice.
+- Internal links to relevant existing or planned posts, plus one contextual booking CTA near the conclusion.
+- Target length, audience, primary keyword, and secondary keywords should be defined before drafting and reflected naturally in the article.
+- Keep paragraphs short, use bold emphasis sparingly, and finish with a specific next action.
+
+#### Next D2C Article: Brand Identity Content System
+
+- **Title:** From 0 to Recognizable: The Content System Behind Building a D2C Brand Identity
+- **Meta title:** How to Build a D2C Brand Identity From Scratch [Content System]
+- **Meta description:** Brand identity isn't a logo — it's a repeatable content system. The actual framework we use to take a D2C brand from generic to recognizable.
+- **Primary keyword:** D2C brand identity
+- **Secondary keywords:** how to build a brand identity, D2C content strategy, building a recognizable brand
+- **Audience:** D2C/Shopify founder, early-to-growth stage
+- **Target length:** 1,100–1,300 words
+- **Required sections:** the Canva-template problem, four identity layers, one-day visual system, recurring formats, case-style walkthrough, monthly operating rhythm, and how ZeperAI Media builds the system.
+- **Internal link:** Post 5, AI photography for D2C product feeds.
+- **CTA:** “See the brand system in action — book a call” linking to `/booking`.
+
 ### 📊 Target SEO Metrics (6 months)
 
 | Metric | Target | Timeline |
