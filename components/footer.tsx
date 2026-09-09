@@ -13,7 +13,7 @@ export function Footer() {
               ZeperAI <span className="text-[#6C78FF]">Media</span>
             </span>
             <p className="text-white/50 text-sm leading-relaxed mt-5 max-w-xs">
-              A design and growth studio building websites, ad creatives, and content for D2C and B2B brands in India and abroad.
+              A creative and marketing agency building websites, ad creatives, and content for D2C and B2B brands in India and abroad.
             </p>
             <div className="flex gap-4 mt-6">
               <a href="https://www.linkedin.com/in/vishwakarma-ayush/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#6C78FF] transition-colors">
@@ -29,7 +29,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-5">Studio</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-5">Quick Links</h3>
             <ul className="space-y-3 text-white/70 text-sm">
               <li><Link href="/#work" className="hover:text-[#6C78FF] transition-colors">Work</Link></li>
               <li><Link href="/services" className="hover:text-[#6C78FF] transition-colors">Services</Link></li>
@@ -52,7 +52,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-white/40 text-xs">
-          <p>© 2026 ZeperAI Studio — a Falcon Canvas AI venture</p>
+          <p>© 2026 ZeperAI Media — a Falcon Canvas AI venture</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white/70 transition-colors">Terms of Service</Link>

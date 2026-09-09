@@ -22,7 +22,7 @@ export default function AboutPage() {
     },
     {
       Icon: Layers,
-      title: "One Studio, Full Stack",
+      title: "One Agency, Full Stack",
       description: "Ads, store, content, brand — handled by one team that keeps every piece consistent, instead of five freelancers pulling in different directions.",
     },
   ]
@@ -51,12 +51,12 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-5"
           >
-            About the Studio
+            About the Agency
           </motion.span>
           <MaskReveal
             delayStart={0.1}
             className="font-poppins text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8"
-            lines={["We build the studio", "we wished existed."]}
+            lines={["We built the agency", "we wished existed."]}
           />
           <motion.p
             initial={{ opacity: 0, y: 14 }}
