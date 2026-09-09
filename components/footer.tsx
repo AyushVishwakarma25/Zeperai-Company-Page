@@ -13,7 +13,7 @@ export function Footer() {
               ZeperAI <span className="text-[#6C78FF]">Media</span>
             </span>
             <p className="text-white/50 text-sm leading-relaxed mt-5 max-w-xs">
-              A creative and marketing agency building websites, ad creatives, and content for D2C and B2B brands in India and abroad.
+              Less boring marketing. More “damn, that’s good.”
             </p>
             <div className="flex gap-4 mt-6">
               <a href="https://www.linkedin.com/in/vishwakarma-ayush/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#6C78FF] transition-colors">
