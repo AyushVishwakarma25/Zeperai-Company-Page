@@ -34,6 +34,8 @@ export function ScrollFillText({ text }: { text: string }) {
       ref={containerRef}
       className="font-poppins text-2xl md:text-4xl lg:text-[2.75rem] font-semibold leading-[1.35] text-[#0A0A0B] flex flex-wrap"
     >
+      <span className="sr-only">{text}</span>
+      <span aria-hidden="true" className="contents">
       {words.map((word, i) => {
         const start = i / words.length
         const end = (i + 1) / words.length
@@ -43,6 +45,7 @@ export function ScrollFillText({ text }: { text: string }) {
           </Word>
         )
       })}
+      </span>
     </p>
   )
 }
