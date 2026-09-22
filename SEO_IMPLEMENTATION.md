@@ -140,6 +140,22 @@ Every new blog post should use the same structure as the latest optimized articl
 - **Internal link:** Post 5, AI photography for D2C product feeds.
 - **CTA:** “See the brand system in action — book a call” linking to `/booking`.
 
+#### D2C Article: AI Product Photography vs Traditional Shoots
+
+- **Title:** AI Product Photography vs Traditional Shoots: Cost and Quality Compared
+- **Slug:** `/ai-product-photography-vs-traditional-shoots`
+- **Category:** D2C
+- **Meta title:** AI Product Photography vs Traditional Shoots: Cost & Quality
+- **Meta description:** Compare AI product photography with traditional shoots for ecommerce. See how AI + human creative direction helped Prustlr create 200+ product creatives.
+- **Primary keyword:** AI product photography
+- **Secondary keywords:** AI ad creatives for ecommerce, AI product photography for ecommerce, ecommerce product photography, AI-generated product images, AI creative production, ecommerce ad creatives
+- **Required H1:** AI Product Photography vs Traditional Shoots: Cost and Quality Compared
+- **Required sections:** The Traditional Product Photography Problem; A Real Client Example: Prustlr; Is AI Product Photography Cheaper?; What Actually Changes With AI?; The New Ecommerce Creative Workflow.
+- **Internal link:** ZeperAI Studio at `https://zeperai.in/`.
+- **External link:** Prustlr at `https://prustlr.com/`.
+- **Suggested image alt:** AI product photography and ecommerce ad creatives for Prustlr protein oats.
+- **Content rule:** Explain AI as part of a human-led creative workflow rather than presenting it as a replacement for photographers or designers. Cost examples must be framed as project-specific estimates, not guarantees.
+
 ### 📊 Target SEO Metrics (6 months)
 
 | Metric | Target | Timeline |
