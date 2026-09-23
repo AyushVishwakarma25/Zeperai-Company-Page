@@ -30,6 +30,11 @@ export function StrategySections({ onCta }: { onCta: () => void }) {
             <motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .08 }} className="max-w-4xl font-poppins text-5xl font-bold leading-[.98] tracking-[-0.06em] sm:text-6xl md:text-8xl">Turn your interior projects into a <span className="text-[#4452FB]">client acquisition system.</span></motion.h1>
           </div>
           <div className="mx-auto mt-8 max-w-2xl">
+            <div className="mb-8 overflow-hidden rounded-3xl border border-black/[0.08] bg-black shadow-[0_24px_80px_rgba(10,10,11,0.14)]">
+              <div className="aspect-video">
+                <iframe src="https://www.loom.com/embed/REPLACE_WITH_LOOM_VIDEO_ID" title="Interior design client acquisition system overview" className="h-full w-full" allow="autoplay; fullscreen; picture-in-picture" />
+              </div>
+            </div>
             <p className="text-lg leading-relaxed text-[#6B6B72]">ZeperAI Studio helps interior designers turn portfolio, content, website, and advertising into one system built to generate and convert qualified enquiries.</p>
             <button onClick={onCta} className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#0A0A0B] px-5 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.03]">Build my client acquisition system <ArrowUpRight className="h-4 w-4" /></button>
             <p className="mt-4 text-xs text-[#6B6B72]">Tell us about your studio. We will show you where the biggest opportunities are.</p>
