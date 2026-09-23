@@ -2,23 +2,14 @@
 
 import { useState } from "react"
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion"
-import { ChevronDown, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isServicesOpen, setIsServicesOpen] = useState(false)
   const { scrollY } = useScroll()
-
-  const serviceLinks = [
-    { name: "Meta Ads Management", href: "/services#meta-ads" },
-    { name: "Shopify Development", href: "/services#shopify" },
-    { name: "AI Ad Creatives", href: "/services#ai-creatives" },
-    { name: "Video & Content Production", href: "/services#video-content" },
-    { name: "Brand Design", href: "/services#brand-design" },
-  ]
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 40)
@@ -56,22 +47,14 @@ export function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-9">
-          {navLinks.map((link) => link.name === "Services" ? (
-            <div key={link.name} className="relative" onMouseEnter={() => setIsServicesOpen(true)} onMouseLeave={() => setIsServicesOpen(false)}>
-              <div className="flex items-center gap-1">
-                <Link href={link.href} className="text-[13px] font-medium text-[#0A0A0B]/65 hover:text-[#0A0A0B] transition-colors">{link.name}</Link>
-                <button type="button" aria-label="Toggle services menu" aria-expanded={isServicesOpen} onClick={() => setIsServicesOpen((open) => !open)} className="text-[#0A0A0B]/65 hover:text-[#0A0A0B]">
-                  <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", isServicesOpen && "rotate-180")} />
-                </button>
-              </div>
-              <AnimatePresence>
-                {isServicesOpen && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} className="absolute left-1/2 top-full mt-3 w-64 -translate-x-1/2 rounded-2xl border border-black/[0.08] bg-white p-2 shadow-xl" onFocus={() => setIsServicesOpen(true)}>
-                  {serviceLinks.map((service) => <Link key={service.name} href={service.href} className="block rounded-xl px-3 py-2.5 text-xs font-medium text-[#0A0A0B]/70 hover:bg-[#F5F5F7] hover:text-[#0A0A0B]">{service.name}</Link>)}
-                </motion.div>}
-              </AnimatePresence>
-            </div>
-          ) : (
-            <Link key={link.name} href={link.href} className="text-[13px] font-medium text-[#0A0A0B]/65 hover:text-[#0A0A0B] transition-colors">{link.name}</Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-[13px] font-medium text-[#0A0A0B]/65 hover:text-[#0A0A0B] transition-colors"
+            >
+              {link.name}
+            </Link>
           ))}
           <Link
             href="/booking"
@@ -103,9 +86,20 @@ export function Navbar() {
           >
             <div className="flex flex-col items-center gap-2 w-full px-6">
               {navLinks.map((link, i) => (
-                <motion.div key={link.name} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 + i * 0.06 }} className="w-full">
-                  <Link href={link.href} onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-poppins font-semibold text-[#0A0A0B] hover:text-[#4452FB] transition-colors w-full text-center py-3 block">{link.name}</Link>
-                  {link.name === "Services" && <div className="mx-auto grid max-w-xs gap-1 pb-2 text-center">{serviceLinks.map((service) => <Link key={service.name} href={service.href} onClick={() => setIsMobileMenuOpen(false)} className="py-1 text-sm text-[#0A0A0B]/55 hover:text-[#4452FB]">{service.name}</Link>)}</div>}
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.06 }}
+                  className="w-full"
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-3xl font-poppins font-semibold text-[#0A0A0B] hover:text-[#4452FB] transition-colors w-full text-center py-4 block"
+                  >
+                    {link.name}
+                  </Link>
                 </motion.div>
               ))}
               <motion.div
