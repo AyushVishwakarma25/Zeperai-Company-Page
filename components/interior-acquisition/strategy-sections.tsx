@@ -24,12 +24,12 @@ export function StrategySections({ onCta }: { onCta: () => void }) {
   return (
     <>
       <section className="border-b border-black/[0.08] px-6 py-24 md:py-36">
-        <div className="mx-auto grid max-w-6xl gap-16 md:grid-cols-[1.05fr_.95fr] md:items-end">
+        <div className="mx-auto max-w-4xl text-center">
           <div>
             <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="mb-6 text-xs font-semibold uppercase tracking-[0.28em] text-[#4452FB]">For interior designers & studios</motion.p>
             <motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .08 }} className="max-w-4xl font-poppins text-5xl font-bold leading-[.98] tracking-[-0.06em] sm:text-6xl md:text-8xl">Turn your interior projects into a <span className="text-[#4452FB]">client acquisition system.</span></motion.h1>
           </div>
-          <div className="max-w-md md:pb-2">
+          <div className="mx-auto mt-8 max-w-2xl">
             <p className="text-lg leading-relaxed text-[#6B6B72]">ZeperAI Studio helps interior designers turn portfolio, content, website, and advertising into one system built to generate and convert qualified enquiries.</p>
             <button onClick={onCta} className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#0A0A0B] px-5 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.03]">Build my client acquisition system <ArrowUpRight className="h-4 w-4" /></button>
             <p className="mt-4 text-xs text-[#6B6B72]">Tell us about your studio. We will show you where the biggest opportunities are.</p>
