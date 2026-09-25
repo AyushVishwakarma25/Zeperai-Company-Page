@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
+import Link from "next/link"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 interface CaseStudy {
@@ -11,6 +12,7 @@ interface CaseStudy {
   tags: string[]
   image: string
   imagePosition: "left" | "right"
+  href?: string
 }
 
 const caseStudies: CaseStudy[] = [
@@ -22,6 +24,7 @@ const caseStudies: CaseStudy[] = [
     tags: ["Brand Identity", "Packaging Design", "Shopify Development", "Ad Creatives"],
     image: "/case-studies/prustlr.jpg",
     imagePosition: "right",
+    href: "/case-studies/prustlr",
   },
   {
     index: "02",
@@ -46,6 +49,7 @@ function CaseStudyBlock({ study }: { study: CaseStudy }) {
   const y = useTransform(scrollYProgress, [0, 1], [-40, 40])
 
   const imageBlock = (
+    <Link href={study.href ?? "#"} aria-label={`View case study: ${study.name}`}>
     <motion.div
       className="relative w-full aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden bg-[#EAEAEE] cursor-pointer"
       onMouseEnter={() => setHovered(true)}
@@ -75,6 +79,7 @@ function CaseStudyBlock({ study }: { study: CaseStudy }) {
         </motion.div>
       )}
     </motion.div>
+    </Link>
   )
 
   const textBlock = (
@@ -98,7 +103,7 @@ function CaseStudyBlock({ study }: { study: CaseStudy }) {
           </span>
         ))}
       </div>
-      <p className="mt-6 text-sm font-semibold text-[#0A0A0B]">{study.name}</p>
+      <Link href={study.href ?? "#"} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#0A0A0B] hover:text-[#4452FB]">View Case Study <span aria-hidden="true">↗</span></Link>
     </div>
   )
 
