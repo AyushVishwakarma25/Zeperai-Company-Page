@@ -12,26 +12,26 @@ export default function AboutPage() {
   const values = [
     {
       Icon: Sparkles,
-      title: "AI as a Tool, Not a Shortcut",
-      description: "We use AI to move faster, not to cut corners. Every output is directed, reviewed, and refined by a human before it reaches your brand.",
+      title: "AI isn't the creative director.",
+      description: "We use AI for speed. Humans still decide what deserves to ship.",
     },
     {
       Icon: Target,
-      title: "Built to Convert, Not Just Impress",
-      description: "Every asset we ship is judged on one thing: does it move someone closer to buying. Aesthetics matter, but only in service of that.",
+      title: "Pretty isn't enough.",
+      description: "If it looks good but doesn&apos;t help the brand, what&apos;s the point?",
     },
     {
       Icon: Layers,
-      title: "One Agency, Full Stack",
-      description: "Ads, store, content, brand — handled by one team that keeps every piece consistent, instead of five freelancers pulling in different directions.",
+      title: "No freelancer relay race.",
+      description: "Strategy, design, website, content and ads stay connected under one roof.",
     },
   ]
 
   const expertise = [
-    "Meta Ads Management",
-    "Shopify Development",
+    "Meta Ads",
+    "Shopify",
     "AI Ad Creatives",
-    "Video & Reels Editing",
+    "Reels",
     "Brand Identity Design",
     "Packaging Design",
     "Content Strategy",
@@ -56,7 +56,7 @@ export default function AboutPage() {
           <MaskReveal
             delayStart={0.1}
             className="font-poppins text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8"
-            lines={["We built the agency", "we wished existed."]}
+            lines={["We got tired of how agencies work.", "So we built our own."]}
           />
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -64,7 +64,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-lg md:text-xl text-[#6B6B72] leading-relaxed max-w-xl mx-auto"
           >
-            ZeperAI Media blends design, strategy, and AI-assisted production to help brands sell — without the fragmented freelancer chaos most agencies leave behind.
+            One team for strategy, design, content, websites and the AI-powered production in between.
           </motion.p>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function AboutPage() {
             From the Founder
           </motion.span>
 
-          <ScrollFillText text="Most brands are slowed down by fragmented workflows and outdated creative processes. I built ZeperAI Media to be the agency I wished I had — one team that balances design excellence with the speed AI-assisted production makes possible." />
+          <ScrollFillText text="Hey, I&apos;m Ayush. I started ZeperAI because I didn&apos;t want to build another agency. I wanted to build the kind of team I&apos;d want to hire." />
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -91,10 +91,10 @@ export default function AboutPage() {
             className="mt-10 space-y-5 text-[#6B6B72] text-base md:text-lg leading-relaxed"
           >
             <p>
-              I&apos;ve spent my career at the front lines of digital growth — building products from scratch, scaling D2C and B2B brands alike, and refining creative that actually moves the needle, not just what looks good in a deck.
+              Small, fast, design-obsessed and comfortable using AI without letting AI do the thinking. We work with brands that need more than random creatives every week. We help turn products, ideas and campaigns into things people actually notice.
             </p>
             <p>
-              Today, ZeperAI Media doesn&apos;t just deliver assets — we deliver a full-stack advantage. The same AI-assisted workflows we build for our own SaaS products, we bring into agency work: faster turnarounds, without cutting the strategy or craft.
+              I&apos;m still figuring things out. We&apos;re building in public, learning fast and shipping a lot. That&apos;s kind of the point.
             </p>
           </motion.div>
         </div>
@@ -109,9 +109,9 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="mb-14 max-w-xl"
           >
-            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-3">How We Work</span>
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-3">Our rules. Pretty simple.</span>
             <h2 className="text-3xl md:text-5xl font-poppins font-bold leading-tight">
-              Three things that don&apos;t change per project
+              The stuff we don&apos;t compromise on.
             </h2>
           </motion.div>
 
@@ -134,6 +134,21 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Agency Philosophy */}
+      <section className="py-28 md:py-36 px-6 bg-[#0A0A0B] text-white">
+        <div className="container mx-auto max-w-5xl">
+          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#8B96FF] mb-5">The ZeperAI way</span>
+          <div className="grid md:grid-cols-[1.1fr_.9fr] gap-10 md:gap-20 items-start">
+            <h2 className="text-4xl md:text-6xl font-poppins font-bold leading-[1.05]">We&apos;re not trying to look like a big agency.</h2>
+            <div className="space-y-5 text-white/65 text-base md:text-lg leading-relaxed">
+              <p>We don&apos;t have 47 people on a Zoom call to change a headline.</p>
+              <p>We keep the team lean, use technology where it actually helps, and spend more time making the work better.</p>
+              <p className="text-white font-semibold">Less process theatre. More actual work.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Expertise */}
       <section className="py-28 md:py-36 px-6 bg-white border-y border-black/[0.06]">
         <div className="container mx-auto max-w-5xl">
@@ -145,7 +160,7 @@ export default function AboutPage() {
           >
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-3">Core Expertise</span>
             <h2 className="text-3xl md:text-5xl font-poppins font-bold leading-tight">
-              What we actually do, day to day
+              What we get our hands dirty with
             </h2>
           </motion.div>
 
@@ -174,9 +189,9 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-poppins font-bold mb-6">Let&apos;s Connect</h2>
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold mb-6">Got a brand? Let&apos;s make it harder to ignore.</h2>
             <p className="text-lg md:text-xl text-[#6B6B72] mb-10">
-              Ready to build something that sells? Let&apos;s schedule a call and talk about your brand.
+              Tell us what you&apos;re building, what isn&apos;t working, and where you want to go.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
@@ -191,7 +206,7 @@ export default function AboutPage() {
                 href="/booking"
                 className="px-8 py-3.5 bg-[#0A0A0B] text-white rounded-full font-semibold hover:scale-[1.03] transition-transform flex items-center gap-2"
               >
-                Book a Call <ArrowRight className="w-4 h-4" />
+                Let&apos;s Talk <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </motion.div>
