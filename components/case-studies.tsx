@@ -76,6 +76,7 @@ export function CaseStudies() {
         <span className="text-xs font-semibold uppercase tracking-[.2em] text-[#4452FB]">Selected Work</span>
         <h2 className="mt-5 max-w-sm font-poppins text-4xl font-bold leading-[1.05] md:text-5xl">Work that had a job to do.</h2>
         <p className="mt-6 max-w-sm text-base leading-relaxed text-[#6B6B72]">We don't create pretty visuals just to fill a portfolio. We build websites, campaigns, product content, and creative systems around what the brand actually needs.</p>
+        <p className="mt-6 text-xs font-semibold uppercase tracking-[.2em] text-[#6B6B72]">01 / 04 — Selected Projects</p>
         <Link href="/case-studies/prustlr" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#0A0A0B] px-5 py-3 text-sm font-semibold text-white hover:bg-[#4452FB]">View Case Study <span aria-hidden="true">→</span></Link>
       </aside>
       <div className="space-y-12">{caseStudies.map((study) => <WorkCard key={study.index} study={study} />)}<Link href="/case-studies/prustlr" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0A0A0B] hover:text-[#4452FB]">See what went into the work <span aria-hidden="true">→</span></Link></div>
