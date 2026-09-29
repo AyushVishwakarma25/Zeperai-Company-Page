@@ -56,8 +56,9 @@ export default function AboutPage() {
           <MaskReveal
             delayStart={0.1}
             className="font-poppins text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-8"
-            lines={["We got tired of how agencies work.", "So we built our own."]}
+            lines={["Fall seven times,", "stand up eight."]}
           />
+          <p className="mb-8 text-sm font-medium text-[#6B6B72]">— Japanese Proverb</p>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,7 +95,7 @@ export default function AboutPage() {
               Small, fast, design-obsessed and comfortable using AI without letting AI do the thinking. We work with brands that need more than random creatives every week. We help turn products, ideas and campaigns into things people actually notice.
             </p>
             <p>
-              I&apos;m still figuring things out. We&apos;re building in public, learning fast and shipping a lot. That&apos;s kind of the point.
+              After years of building brands and shipping work, I know the difference between activity and progress. We stay close to the work, make decisions quickly, and keep raising the standard until the result earns its place in the market.
             </p>
           </motion.div>
         </div>
@@ -172,9 +173,9 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.35, delay: (index % 4) * 0.05 }}
-                className="rounded-xl bg-[#F5F5F7] border border-black/[0.06] px-5 py-6 text-center hover:bg-[#4452FB] hover:border-[#4452FB] group transition-colors"
+                className="rounded-xl border-b border-black/[0.12] px-1 py-5 text-left transition-colors hover:border-[#4452FB]"
               >
-                <p className="font-medium text-sm text-[#0A0A0B] group-hover:text-white transition-colors">{skill}</p>
+                <p className="font-medium text-sm text-[#0A0A0B]">{skill}</p>
               </motion.div>
             ))}
           </div>
