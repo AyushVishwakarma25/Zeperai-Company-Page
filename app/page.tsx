@@ -2,7 +2,7 @@
 
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { KeywordTicker } from "@/components/keyword-ticker"
+import { TextLoop } from "@/components/text-loop"
 import { ProofStrip } from "@/components/proof-strip"
 import { CaseStudies } from "@/components/case-studies"
 import { ScrollFillText } from "@/components/scroll-fill-text"
@@ -83,7 +83,15 @@ export default function Home() {
       <ProofStrip />
 
       <div className="mt-16">
-        <KeywordTicker />
+        <TextLoop
+          text="Shopify Development · Meta Ads Management · AI Ad Creatives · Content & Video Production · Brand Design · For Brands in India & Abroad"
+          separator="✦"
+          speed={72}
+          fontSize={30}
+          curviness={26}
+          ribbonColor="#E8E8FF"
+          color="#0A0A0B"
+        />
       </div>
 
       {/* ── Problem Section ── */}
