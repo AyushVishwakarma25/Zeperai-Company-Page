@@ -57,16 +57,16 @@ function VelocityLine({ text, reverse = false }: { text: string; reverse?: boole
   const copies = Array.from({ length: 5 })
 
   return (
-    <div className="overflow-hidden py-3 md:py-4">
+    <div className="overflow-hidden py-1.5 md:py-2">
       <motion.div className="flex w-max whitespace-nowrap" style={{ x }}>
         {copies.map((_, index) => (
           <span
             key={index}
             ref={index === 0 ? copyRef : undefined}
-            className="flex shrink-0 items-center gap-5 px-4 text-[clamp(1.15rem,2.2vw,2rem)] font-medium tracking-[-0.04em] text-white/85 md:gap-7 md:px-7"
+            className="flex shrink-0 items-center gap-4 px-4 text-[clamp(1.45rem,3vw,2.65rem)] font-extrabold leading-none tracking-[-0.045em] text-[#0A0A0B] md:gap-6 md:px-7"
           >
             {text}
-            <span className="inline-block h-10 w-10 rounded-xl bg-white/10 text-center text-xl leading-[2.5rem] text-white/65">✦</span>
+            <span className="inline-block h-9 w-9 rounded-full bg-[#0A0A0B] text-center text-lg leading-9 text-white md:h-10 md:w-10 md:text-xl md:leading-10">✦</span>
           </span>
         ))}
       </motion.div>
@@ -76,7 +76,7 @@ function VelocityLine({ text, reverse = false }: { text: string; reverse?: boole
 
 export function KeywordTicker() {
   return (
-    <section className="overflow-hidden bg-[#101010] py-2 text-white" aria-label="Our capabilities">
+    <section className="overflow-hidden bg-[#E8E8E3] py-1 text-[#0A0A0B]" aria-label="Our capabilities">
       <VelocityLine text={keywords.slice(0, 3).join("   ·   ")} />
       <VelocityLine text={keywords.slice(3).concat(keywords.slice(0, 2)).join("   ·   ")} reverse />
     </section>
