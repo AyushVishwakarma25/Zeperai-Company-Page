@@ -67,7 +67,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <SchemaMarkup />
         {/* Google Analytics */}
         <Script
           async
@@ -85,6 +84,7 @@ export default function RootLayout({
       </head>
       <body className={cn("min-h-screen bg-[#F5F5F7] font-sans antialiased", inter.variable, playfair.variable, poppins.variable)}>
         {children}
+        <SchemaMarkup />
       </body>
     </html>
   )
