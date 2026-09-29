@@ -42,7 +42,7 @@ export function TextLoop({
   const tailRef = useRef<SVGTextPathElement>(null)
   const [metrics, setMetrics] = useState({ length: 0, reps: 1 })
   const pathId = `keyword-loop-${useId().replace(/:/g, "")}`
-  const unit = useMemo(() => `${text.toUpperCase()}\u00A0${separator}\u00A0`, [text, separator])
+  const unit = useMemo(() => `${text.toUpperCase()}\u00A0\u00A0\u00A0${separator}\u00A0\u00A0\u00A0`, [text, separator])
   const path = useMemo(() => buildWave(curviness), [curviness])
 
   useLayoutEffect(() => {
@@ -87,11 +87,11 @@ export function TextLoop({
     <div ref={rootRef} className="text-loop" aria-label={text}>
       <svg className="text-loop-svg" viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} role="img" aria-hidden="true">
         <path ref={pathRef} id={pathId} d={path} fill="none" stroke={ribbonColor} strokeWidth={ribbonWidth} strokeLinecap="round" />
-        <text ref={measureRef} className="text-loop-measure" style={{ fontSize, fontWeight: 700, letterSpacing: 2 }}>{unit}</text>
-        <text className="text-loop-text" fill={color} style={{ fontSize, fontWeight: 700, letterSpacing: 2 }} dominantBaseline="central" textLength={metrics.length || undefined} lengthAdjust="spacing">
+        <text ref={measureRef} className="text-loop-measure" style={{ fontSize, fontWeight: 700, letterSpacing: 3 }}>{unit}</text>
+        <text className="text-loop-text" fill={color} style={{ fontSize, fontWeight: 700, letterSpacing: 3 }} dominantBaseline="central" textLength={metrics.length || undefined} lengthAdjust="spacing">
           <textPath ref={headRef} href={`#${pathId}`}>{unit.repeat(metrics.reps)}</textPath>
         </text>
-        <text className="text-loop-text" fill={color} style={{ fontSize, fontWeight: 700, letterSpacing: 2 }} dominantBaseline="central" textLength={metrics.length || undefined} lengthAdjust="spacing">
+        <text className="text-loop-text" fill={color} style={{ fontSize, fontWeight: 700, letterSpacing: 3 }} dominantBaseline="central" textLength={metrics.length || undefined} lengthAdjust="spacing">
           <textPath ref={tailRef} href={`#${pathId}`}>{unit.repeat(metrics.reps)}</textPath>
         </text>
       </svg>
