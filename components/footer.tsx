@@ -19,13 +19,13 @@ export function Footer() {
               Creative, technology &amp; growth for brands that want to be harder to ignore.
             </p>
             <div className="flex gap-4 mt-6">
-              <a href="https://www.linkedin.com/in/vishwakarma-ayush/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#6C78FF] transition-colors">
+              <a href="https://www.linkedin.com/in/vishwakarma-ayush/" target="_blank" rel="noopener noreferrer" aria-label="Ayush Vishwakarma on LinkedIn" className="text-white/50 hover:text-[#6C78FF] transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://instagram.com/zeperai" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#6C78FF] transition-colors">
+              <a href="https://instagram.com/zeperai" target="_blank" rel="noopener noreferrer" aria-label="ZeperAI Media on Instagram" className="text-white/50 hover:text-[#6C78FF] transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="mailto:growth@zeperai.com" className="text-white/50 hover:text-[#6C78FF] transition-colors">
+              <a href="mailto:growth@zeperai.com" aria-label="Email ZeperAI Media" className="text-white/50 hover:text-[#6C78FF] transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
