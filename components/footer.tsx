@@ -25,7 +25,7 @@ export function Footer() {
               <a href="https://instagram.com/zeperai" target="_blank" rel="noopener noreferrer" aria-label="ZeperAI Media on Instagram" className="text-white/50 hover:text-[#6C78FF] transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="mailto:growth@zeperai.com" aria-label="Email ZeperAI Media" className="text-white/50 hover:text-[#6C78FF] transition-colors">
+              <a href="mailto:team@zeperai.com" aria-label="Email the ZeperAI team" className="text-white/50 hover:text-[#6C78FF] transition-colors">
                 <Mail className="w-5 h-5" />
               </a>
             </div>

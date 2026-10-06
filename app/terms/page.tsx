@@ -39,7 +39,7 @@ const sections = [
   },
   {
     title: "8. Contact",
-    body: "Questions about these terms can be sent to growth@zeperai.com.",
+    body: "Questions about these terms can be sent to team@zeperai.com.",
   },
 ]
 
