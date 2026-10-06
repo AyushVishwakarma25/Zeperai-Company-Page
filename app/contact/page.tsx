@@ -17,7 +17,7 @@ export default function ContactPage() {
   }, [])
 
   const contactInfo = [
-    { Icon: Mail, label: "Email", value: "growth@zeperai.com", href: "mailto:growth@zeperai.com" },
+    { Icon: Mail, label: "Email", value: "team@zeperai.com", href: "mailto:team@zeperai.com" },
     { Icon: Linkedin, label: "LinkedIn", value: "Ayush Vishwakarma", href: "https://www.linkedin.com/in/vishwakarma-ayush/" },
   ]
 
