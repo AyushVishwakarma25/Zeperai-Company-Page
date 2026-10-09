@@ -4,9 +4,9 @@ export function ArticleContent({ html }: { html: string }) {
       className="
         prose-zc max-w-none
         text-[17px] leading-[1.8] text-[#0A0A0B]/90
-        [&_h2]:font-poppins [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-bold
+        [&_h2]:font-poppins [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:font-bold [&_h2]:scroll-mt-28
         [&_h2]:mt-14 [&_h2]:mb-5 [&_h2]:leading-snug [&_h2]:text-[#0A0A0B]
-        [&_h3]:font-poppins [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mt-10 [&_h3]:mb-4 [&_h3]:text-[#0A0A0B]
+        [&_h3]:font-poppins [&_h3]:text-xl [&_h3]:font-bold [&_h3]:scroll-mt-28 [&_h3]:mt-10 [&_h3]:mb-4 [&_h3]:text-[#0A0A0B]
         [&_p]:mb-6
         [&_a]:text-[#4452FB] [&_a]:underline [&_a]:underline-offset-2 [&_a]:decoration-[#4452FB]/40 hover:[&_a]:decoration-[#4452FB]
         [&_ul]:mb-6 [&_ul]:pl-6 [&_ul]:list-disc [&_ul]:space-y-2
