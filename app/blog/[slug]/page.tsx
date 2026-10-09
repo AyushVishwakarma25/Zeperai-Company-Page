@@ -65,12 +65,34 @@ function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
 }
 
+function slugifyHeading(heading: string) {
+  return heading.toLowerCase().replace(/<[^>]+>/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
+}
+
+function prepareArticle(html: string) {
+  const headings: { id: string; label: string; level: 2 | 3 }[] = []
+  const usedIds = new Set<string>()
+  const preparedHtml = html.replace(/<(h2|h3)([^>]*)>([\s\S]*?)<\/\1>/gi, (_, tag: string, attrs: string, inner: string) => {
+    const label = inner.replace(/<[^>]+>/g, "").trim()
+    const baseId = slugifyHeading(label) || "section"
+    let id = baseId
+    let suffix = 2
+    while (usedIds.has(id)) id = `${baseId}-${suffix++}`
+    usedIds.add(id)
+    headings.push({ id, label, level: tag.toLowerCase() as 2 | 3 })
+    const withoutId = attrs.replace(/\s+id=(?:"[^"]*"|'[^']*')/i, "")
+    return `<${tag}${withoutId} id="${id}">${inner}</${tag}>`
+  })
+  return { preparedHtml, headings }
+}
+
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params
   const post = getPostBySlug(slug)
   if (!post) notFound()
 
   const related = getRelatedPosts(post, 3)
+  const { preparedHtml, headings } = prepareArticle(post.contentHtml)
   const categoryLabel = post.category === "b2b" ? "B2B" : "D2C"
   const categoryHref = `/blog/${post.category}`
 
@@ -124,7 +146,22 @@ export default async function BlogPostPage({ params }: PageProps) {
             />
           </div>
 
-          <ArticleContent html={post.contentHtml} />
+          {headings.length > 0 && (
+            <nav aria-label="Table of contents" className="mb-12 rounded-2xl border border-black/[0.08] bg-white p-6 shadow-sm">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#4452FB]">In this article</p>
+              <ol className="space-y-2">
+                {headings.map((heading) => (
+                  <li key={heading.id} className={heading.level === 3 ? "pl-4" : ""}>
+                    <a href={`#${heading.id}`} className="text-sm font-medium text-[#0A0A0B]/70 transition-colors hover:text-[#4452FB]">
+                      {heading.label}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )}
+
+          <ArticleContent html={preparedHtml} />
         </div>
       </article>
 
