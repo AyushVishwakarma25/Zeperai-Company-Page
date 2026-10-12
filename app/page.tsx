@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { KeywordTicker } from "@/components/keyword-ticker"
+import InversionCircleScrollAnimation from "@/components/inversion-circle-scroll-animation"
 import { ProofStrip } from "@/components/proof-strip"
 import { CaseStudies } from "@/components/case-studies"
 import { ScrollFillText } from "@/components/scroll-fill-text"
@@ -79,6 +80,12 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <InversionCircleScrollAnimation
+        title="Make the first impression count. Then make it convert."
+        description="The strongest brands are built with a clear point of view, disciplined craft, and momentum that compounds."
+        ctaHref="/booking"
+      />
 
       <ProofStrip />
 
