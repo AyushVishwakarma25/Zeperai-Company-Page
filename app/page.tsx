@@ -83,8 +83,8 @@ export default function Home() {
       <ProofStrip />
 
       <InversionCircleScrollAnimation
-        title="The problem they recognize"
-        description="You're doing the marketing. So why isn't it moving the business forward?\n\nPosting more. Testing new creatives. Updating the website. Trying another campaign. And still wondering why the results don't match the effort."
+        title="You're doing the marketing."
+        description="So why isn't it moving the business forward?\nPosting more. Testing new creatives. Updating the website. Trying another campaign. And still wondering why the results don't match the effort."
         ctaHref="/booking"
       />
 

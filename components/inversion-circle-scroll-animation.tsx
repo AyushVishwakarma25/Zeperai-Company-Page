@@ -66,10 +66,10 @@ export default function InversionCircleScrollAnimation({
           <p className="mt-5 max-w-xl text-base text-white/60 md:text-lg">Strategy, creative, and execution brought together to turn attention into demand—and demand into growth.</p>
         </div>
       </div>
-      <div data-work-content className={`absolute inset-x-0 bottom-0 z-30 flex min-h-screen items-center justify-center bg-white px-6 py-24 text-[#0A0A0B] transition-colors duration-1000 ${contentVisible ? "" : "bg-[#0A0A0B] text-white"}`}>
+      <div data-work-content className={`absolute inset-x-0 bottom-0 z-30 flex min-h-[80vh] items-center justify-center bg-white px-6 py-24 text-[#0A0A0B] transition-colors duration-1000 ${contentVisible ? "" : "bg-[#0A0A0B] text-white"}`}>
         <div className={`mx-auto flex max-w-3xl flex-col items-center gap-7 text-center transition-all duration-700 ${contentVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}>
           <h3 className="font-poppins text-4xl font-bold leading-[1.08] tracking-[-0.04em] md:text-6xl">{title}</h3>
-          <p className="max-w-xl text-base leading-relaxed opacity-60 md:text-lg">{description}</p>
+          <p className="max-w-xl whitespace-pre-line text-base leading-relaxed opacity-60 md:text-lg">{description}</p>
           <a href={ctaHref} className="rounded-full bg-[#4452FB] px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.03]">Start a conversation</a>
         </div>
       </div>
