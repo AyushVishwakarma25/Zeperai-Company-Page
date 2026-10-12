@@ -8,7 +8,6 @@ import { ProofStrip } from "@/components/proof-strip"
 import { CaseStudies } from "@/components/case-studies"
 import { ScrollFillText } from "@/components/scroll-fill-text"
 import { MaskReveal } from "@/components/mask-reveal"
-import { ProcessSteps } from "@/components/process-steps"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ChevronDown, ArrowRight, ArrowUpRight, Megaphone, ShoppingBag, Sparkles, Clapperboard, PenTool } from "lucide-react"
@@ -81,13 +80,13 @@ export default function Home() {
         </div>
       </section>
 
+      <ProofStrip />
+
       <InversionCircleScrollAnimation
-        title="Make the first impression count. Then make it convert."
-        description="The strongest brands are built with a clear point of view, disciplined craft, and momentum that compounds."
+        title="We produce what sells."
+        description="Strategy, creative, and execution brought together to turn attention into demand—and demand into growth."
         ctaHref="/booking"
       />
-
-      <ProofStrip />
 
       <div className="mt-16">
         <KeywordTicker />
@@ -193,25 +192,6 @@ export default function Home() {
           </motion.div>
 
           <CaseStudies />
-        </div>
-      </section>
-
-      {/* ── Process ── */}
-      <section className="py-28 md:py-36 px-6 bg-white border-y border-black/[0.06]">
-        <div className="container mx-auto max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16 md:mb-20"
-          >
-            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-3">How We Work</span>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-poppins font-bold mb-5">
-              A process built to move fast without breaking the brand
-            </h2>
-          </motion.div>
-
-          <ProcessSteps />
         </div>
       </section>
 
