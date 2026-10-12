@@ -5,6 +5,12 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-
 import { Menu, X } from 'lucide-react'
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -46,19 +52,26 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-9">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-[13px] font-medium text-[#0A0A0B]/65 hover:text-[#0A0A0B] transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className="hidden md:flex items-center gap-5">
+          <NavigationMenu viewport={false}>
+            <NavigationMenuList className="gap-2">
+              {navLinks.map((link) => (
+                <NavigationMenuItem key={link.name}>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href={link.href}
+                      className="h-auto rounded-full px-3 py-2 text-[13px] font-medium text-[#0A0A0B]/65 hover:bg-black/[0.04] hover:text-[#0A0A0B] focus:bg-black/[0.04] focus:text-[#0A0A0B]"
+                    >
+                      {link.name}
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
           <Link
             href="/booking"
-            className="group relative inline-flex items-center gap-2 bg-[#0A0A0B] text-white pl-4 pr-3.5 py-2 rounded-full text-[13px] font-semibold overflow-hidden transition-transform hover:scale-[1.03]"
+            className="group relative inline-flex items-center gap-2 rounded-full bg-[#0A0A0B] px-4 py-2 text-[13px] font-semibold text-white transition-transform hover:scale-[1.03]"
           >
             Book a Call
           </Link>
