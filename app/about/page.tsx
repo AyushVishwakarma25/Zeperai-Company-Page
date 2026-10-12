@@ -51,7 +51,7 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-5"
           >
-            About the Agency
+            About Us
           </motion.span>
           <MaskReveal
             delayStart={0.1}
