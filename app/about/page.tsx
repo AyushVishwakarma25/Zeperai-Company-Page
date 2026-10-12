@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import InversionCircleScrollAnimation from "@/components/inversion-circle-scroll-animation"
 import { MaskReveal } from "@/components/mask-reveal"
 import { ScrollFillText } from "@/components/scroll-fill-text"
 import { motion } from "framer-motion"
@@ -134,6 +135,11 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <InversionCircleScrollAnimation
+        title="Build with intention. Ship with confidence."
+        description="Every great brand starts with a clear point of view. We turn that point of view into focused strategy, sharp creative, and work that earns attention in the real world."
+      />
 
       {/* Agency Philosophy */}
       <section className="py-28 md:py-36 px-6 bg-[#0A0A0B] text-white">
