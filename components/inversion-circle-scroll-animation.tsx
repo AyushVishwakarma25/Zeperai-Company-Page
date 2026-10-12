@@ -54,7 +54,7 @@ export default function InversionCircleScrollAnimation({
 
   const p1e = progress.phaseOne < 0.5 ? 8 * progress.phaseOne ** 4 : 1 - (-2 * progress.phaseOne + 2) ** 4 / 2
   const p2e = progress.phaseTwo ** 2
-  const yOffset = (1 - p1e) * (progress.viewH / 2 + BALL_SIZE / 2)
+  const yOffset = (1 - p1e) * (progress.viewH / 2)
   const coverSize = Math.max(progress.viewW, progress.viewH) * 2.8
   const ballSize = BALL_SIZE + p2e * (coverSize - BALL_SIZE)
   const clipY = progress.viewH / 2 + yOffset
@@ -84,7 +84,7 @@ export default function InversionCircleScrollAnimation({
       </div>
       <div
         data-work-content
-        className={`relative z-30 flex min-h-screen items-center justify-center bg-white px-6 py-24 text-[#0A0A0B] transition-colors duration-1000 ${contentVisible ? "" : "bg-[#0A0A0B] text-white"}`}
+        className={`absolute inset-x-0 bottom-0 z-30 flex min-h-screen items-center justify-center bg-white px-6 py-24 text-[#0A0A0B] transition-colors duration-1000 ${contentVisible ? "" : "bg-[#0A0A0B] text-white"}`}
       >
         <div className={`mx-auto flex max-w-3xl flex-col items-center gap-7 text-center transition-all duration-700 ${contentVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}>
           <span className="text-xs font-semibold uppercase tracking-[0.2em] opacity-50">The process</span>
