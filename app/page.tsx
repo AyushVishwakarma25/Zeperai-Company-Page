@@ -93,8 +93,6 @@ export default function Home() {
       {/* ── Brands We Worked With (Efferd Logo Cloud 2) ── */}
       <LogoCloud2 />
 
-      <AnimatedTestimonials />
-
       <div className="mt-8">
         <KeywordTicker />
       </div>
@@ -201,6 +199,8 @@ export default function Home() {
           <CaseStudies />
         </div>
       </section>
+
+      <AnimatedTestimonials />
 
       {/* ── Philosophy ── */}
       <section className="py-28 md:py-40 px-6">
