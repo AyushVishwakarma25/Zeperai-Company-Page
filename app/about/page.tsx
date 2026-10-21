@@ -126,7 +126,7 @@ export default function AboutPage() {
                 From the Founder
               </motion.span>
 
-              <ScrollFillText text="Hey, I&apos;m Ayush. I started ZeperAI because I didn&apos;t want to build another agency. I wanted to build the kind of team I&apos;d want to hire." />
+              <ScrollFillText text="Six years of experimentation taught me that technology only matters if it solves a real problem." />
 
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
