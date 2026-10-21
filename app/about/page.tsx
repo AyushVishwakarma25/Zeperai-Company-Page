@@ -133,13 +133,13 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.15 }}
-                className="mt-8 space-y-6 text-[#6B6B72] text-base md:text-lg leading-relaxed"
+                className="mt-8 space-y-6 text-[#6B6B72] text-sm md:text-base leading-relaxed"
               >
                 <p>
-                  Small, fast, design-obsessed and comfortable using AI without letting AI do the thinking. We work with brands that need more than random creatives every week. We help turn products, ideas and campaigns into things people actually notice.
+                  I spent the last six years trying things out—building AI products, running an agency, failing at a few ventures, and learning what actually moves the needle versus what just looks good on paper.
                 </p>
                 <p>
-                  After years of building brands and shipping work, I know the difference between activity and progress. We stay close to the work, make decisions quickly, and keep raising the standard until the result earns its place in the market.
+                  ZeperAI Media is simply the sum of those lessons. My purpose with this isn&apos;t to disrupt an entire industry or sell a magic bullet. It&apos;s to take everything I&apos;ve learned about modern AI and creative workflows, cut out the fluff, and build something genuinely useful for businesses that care about real growth.
                 </p>
 
                 {/* Direct principles pills */}
