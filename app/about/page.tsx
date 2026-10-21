@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { MaskReveal } from "@/components/mask-reveal"
 import { ScrollFillText } from "@/components/scroll-fill-text"
+import { BrandsSection } from "@/components/brands-section"
 import { motion } from "framer-motion"
 import { ArrowRight, Sparkles, Target, Layers } from 'lucide-react'
 import Link from "next/link"
@@ -70,34 +71,99 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Brands We Worked With */}
+      <BrandsSection className="bg-white border-y border-black/[0.06]" />
+
       {/* Founder Story */}
-      <section className="py-20 md:py-28 px-6 bg-white border-y border-black/[0.06]">
-        <div className="container mx-auto max-w-3xl">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-8"
-          >
-            From the Founder
-          </motion.span>
+      <section className="py-24 md:py-32 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[440px_1fr] gap-12 lg:gap-16 items-start">
+            {/* Founder Portrait Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative lg:sticky lg:top-28"
+            >
+              <div className="relative rounded-3xl overflow-hidden bg-white border border-black/[0.08] shadow-[0_20px_50px_rgba(10,10,11,0.06)] group">
+                <img
+                  src="/ayush-vishwakarma.png"
+                  alt="Ayush Vishwakarma - Founder of ZeperAI"
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                />
+                {/* Floating identity pill at bottom of image */}
+                <div className="absolute inset-x-4 bottom-4 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-white/50 shadow-md flex items-center justify-between">
+                  <div>
+                    <p className="font-poppins font-bold text-[#0A0A0B] text-base leading-tight">
+                      Ayush Vishwakarma
+                    </p>
+                    <p className="text-xs font-medium text-[#4452FB] mt-0.5">
+                      Founder & Creative Lead, ZeperAI
+                    </p>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/vishwakarma-ayush/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-full bg-[#0A0A0B] text-white flex items-center justify-center hover:bg-[#4452FB] hover:scale-105 transition-all"
+                    aria-label="Ayush Vishwakarma on LinkedIn"
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
 
-          <ScrollFillText text="Hey, I&apos;m Ayush. I started ZeperAI because I didn&apos;t want to build another agency. I wanted to build the kind of team I&apos;d want to hire." />
+            {/* Founder Narrative */}
+            <div>
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4452FB] mb-6"
+              >
+                From the Founder
+              </motion.span>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-            className="mt-10 space-y-5 text-[#6B6B72] text-base md:text-lg leading-relaxed"
-          >
-            <p>
-              Small, fast, design-obsessed and comfortable using AI without letting AI do the thinking. We work with brands that need more than random creatives every week. We help turn products, ideas and campaigns into things people actually notice.
-            </p>
-            <p>
-              After years of building brands and shipping work, I know the difference between activity and progress. We stay close to the work, make decisions quickly, and keep raising the standard until the result earns its place in the market.
-            </p>
-          </motion.div>
+              <ScrollFillText text="Hey, I&apos;m Ayush. I started ZeperAI because I didn&apos;t want to build another agency. I wanted to build the kind of team I&apos;d want to hire." />
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15 }}
+                className="mt-8 space-y-6 text-[#6B6B72] text-base md:text-lg leading-relaxed"
+              >
+                <p>
+                  Small, fast, design-obsessed and comfortable using AI without letting AI do the thinking. We work with brands that need more than random creatives every week. We help turn products, ideas and campaigns into things people actually notice.
+                </p>
+                <p>
+                  After years of building brands and shipping work, I know the difference between activity and progress. We stay close to the work, make decisions quickly, and keep raising the standard until the result earns its place in the market.
+                </p>
+
+                {/* Direct principles pills */}
+                <div className="pt-6 border-t border-black/[0.08] grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-2xl bg-white border border-black/[0.06] shadow-sm">
+                    <p className="font-poppins font-semibold text-sm text-[#0A0A0B] mb-1">
+                      Direct Senior Involvement
+                    </p>
+                    <p className="text-xs text-[#6B6B72] leading-relaxed">
+                      No account managers playing telephone. You work directly with the strategists and creators executing the vision.
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-white border border-black/[0.06] shadow-sm">
+                    <p className="font-poppins font-semibold text-sm text-[#0A0A0B] mb-1">
+                      Velocity with Craft
+                    </p>
+                    <p className="text-xs text-[#6B6B72] leading-relaxed">
+                      We pair human creative instinct with AI production to deliver weeks of campaign output in days.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 

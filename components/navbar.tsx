@@ -1,137 +1,222 @@
 "use client"
 
-import { useState } from "react"
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion"
-import { Menu, X } from 'lucide-react'
-import { cn } from "@/lib/utils"
-import Link from "next/link"
+import React, { useState } from "react"
 import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu"
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion"
+import { Menu, X, ArrowUpRight } from "lucide-react"
+import Link from "next/link"
+
+interface NavItem {
+  name: string
+  href: string
+}
+
+const navLinks: NavItem[] = [
+  { name: "Work", href: "/#work" },
+  { name: "Services", href: "/services" },
+  { name: "Blog", href: "/blog" },
+  { name: "Tools", href: "/tools" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+]
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { scrollY } = useScroll()
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+  // Monitor scroll position
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 40)
+    if (latest > 90) {
+      if (!isScrolled) {
+        setIsScrolled(true)
+        setIsExpanded(false) // Collapse to circle when scrolling down
+      }
+    } else {
+      if (isScrolled) {
+        setIsScrolled(false)
+        setIsExpanded(false)
+      }
+    }
   })
 
-  const navLinks = [
-    { name: "Work", href: "/#work" },
-    { name: "Services", href: "/services" },
-    { name: "Blog", href: "/blog" },
-    { name: "Tools", href: "/tools" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-  ]
+  const showFullMenu = !isScrolled || isExpanded
 
   return (
-    <motion.nav
-      initial={{ y: -40, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6"
-    >
-      <div
-        className={cn(
-          "max-w-6xl mx-auto flex items-center justify-between transition-all duration-300",
-          isScrolled
-            ? "mt-3 rounded-full bg-white/90 backdrop-blur-md border border-black/[0.06] shadow-[0_2px_20px_rgba(10,10,11,0.06)] px-5 py-3"
-            : "mt-6 rounded-full bg-transparent border border-transparent px-5 py-4"
-        )}
-      >
-        <Link href="/" className="flex items-center gap-2 relative z-50">
-          <span className="font-poppins font-bold text-[15px] tracking-tight text-[#0A0A0B]">
-            ZeperAI <span className="text-[#4452FB]">Media</span>
-          </span>
-        </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-5">
-          <NavigationMenu viewport={false}>
-            <NavigationMenuList className="gap-2">
-              {navLinks.map((link) => (
-                <NavigationMenuItem key={link.name}>
-                  <NavigationMenuLink asChild>
-                    <Link
-                      href={link.href}
-                      className="h-auto rounded-full px-3 py-2 text-[13px] font-medium text-[#0A0A0B]/65 hover:bg-black/[0.04] hover:text-[#0A0A0B] focus:bg-black/[0.04] focus:text-[#0A0A0B]"
-                    >
-                      {link.name}
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-          <Link
-            href="/booking"
-            className="group relative inline-flex items-center gap-2 rounded-full bg-[#0A0A0B] px-4 py-2 text-[13px] font-semibold text-white transition-transform hover:scale-[1.03]"
-          >
-            Book a Call
-          </Link>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden relative z-50 text-[#0A0A0B]"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
+    <>
+      <div className="fixed top-5 inset-x-0 z-50 flex justify-center items-center pointer-events-none px-4">
+        <motion.div
+          layout
+          transition={{
+            type: "spring",
+            stiffness: 380,
+            damping: 30,
+          }}
+          className={`pointer-events-auto flex items-center border border-black/[0.08] bg-white/90 backdrop-blur-md shadow-[0_8px_30px_rgba(10,10,11,0.08)] ${
+            showFullMenu
+              ? "rounded-full px-5 py-2.5 gap-4 md:gap-8 max-w-5xl"
+              : "rounded-full p-3.5 cursor-pointer hover:scale-105 active:scale-95 hover:border-[#4452FB]/40 shadow-[0_8px_25px_rgba(10,10,11,0.12)] transition-shadow"
+          }`}
+          onClick={() => {
+            if (!showFullMenu) setIsExpanded(true)
+          }}
         >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
+          <AnimatePresence mode="wait">
+            {showFullMenu ? (
+              <motion.div
+                key="full-nav"
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.2 }}
+                className="flex items-center gap-4 md:gap-8 w-full justify-between"
+              >
+                {/* Logo / Brand */}
+                <Link
+                  href="/"
+                  className="font-poppins font-bold text-[15px] tracking-tight text-[#0A0A0B] flex items-center gap-1.5 flex-shrink-0"
+                >
+                  ZeperAI <span className="text-[#4452FB]">Media</span>
+                </Link>
+
+                {/* Desktop Navigation Links */}
+                <nav className="hidden md:flex items-center gap-7 text-[13px] font-medium text-[#0A0A0B]/65">
+                  {navLinks.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="transition-colors hover:text-[#0A0A0B]"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </nav>
+
+                {/* Action Button & Collapse Button */}
+                <div className="flex items-center gap-2">
+                  <Link
+                    href="/booking"
+                    className="group rounded-full bg-[#0A0A0B] text-white text-xs sm:text-[13px] font-semibold px-4 py-2 flex items-center gap-1.5 hover:bg-[#4452FB] transition-colors"
+                  >
+                    Book a Call
+                    <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </Link>
+
+                  {/* Collapse button when expanded while scrolled */}
+                  {isScrolled && isExpanded && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setIsExpanded(false)
+                      }}
+                      className="p-1.5 rounded-full hover:bg-black/5 text-[#0A0A0B]/60 hover:text-[#0A0A0B] transition-colors"
+                      aria-label="Collapse menu"
+                      title="Collapse menu"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  )}
+
+                  {/* Mobile Menu Hamburger button */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setIsMobileMenuOpen(true)
+                    }}
+                    className="md:hidden p-1.5 text-[#0A0A0B] hover:text-[#4452FB] transition-colors"
+                    aria-label="Open mobile navigation"
+                  >
+                    <Menu className="w-5 h-5" />
+                  </button>
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="compact-circle"
+                initial={{ opacity: 0, rotate: -45 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 45 }}
+                transition={{ duration: 0.2 }}
+                className="flex items-center justify-center text-[#0A0A0B]"
+                title="Click to expand menu"
+              >
+                <Menu className="w-5 h-5 text-[#0A0A0B]" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Full Screen Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ clipPath: "inset(0 0 100% 0)" }}
-            animate={{ clipPath: "inset(0 0 0% 0)" }}
-            exit={{ clipPath: "inset(0 0 100% 0)" }}
-            transition={{ duration: 0.45, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 bg-[#F5F5F7] z-40 flex items-center justify-center md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-[#0A0A0B]/50 backdrop-blur-sm z-50 md:hidden"
+            onClick={() => setIsMobileMenuOpen(false)}
           >
-            <div className="flex flex-col items-center gap-2 w-full px-6">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.06 }}
-                  className="w-full"
+            <motion.div
+              initial={{ y: -30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -30, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="bg-[#F5F5F7] m-4 rounded-3xl p-6 shadow-2xl border border-black/[0.08]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between pb-6 border-b border-black/[0.08]">
+                <Link
+                  href="/"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="font-poppins font-bold text-lg text-[#0A0A0B]"
                 >
+                  ZeperAI <span className="text-[#4452FB]">Media</span>
+                </Link>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="p-2 rounded-full hover:bg-black/5 text-[#0A0A0B]"
+                  aria-label="Close menu"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="flex flex-col gap-2 py-6">
+                {navLinks.map((link) => (
                   <Link
+                    key={link.name}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-3xl font-poppins font-semibold text-[#0A0A0B] hover:text-[#4452FB] transition-colors w-full text-center py-4 block"
+                    className="font-poppins font-semibold text-xl text-[#0A0A0B] hover:text-[#4452FB] py-2.5 transition-colors"
                   >
                     {link.name}
                   </Link>
-                </motion.div>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
+                ))}
+              </div>
+
+              <div className="pt-4 border-t border-black/[0.08]">
                 <Link
                   href="/booking"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="mt-6 inline-block bg-[#4452FB] text-white px-8 py-3.5 rounded-full text-base font-semibold"
+                  className="w-full bg-[#4452FB] text-white py-3.5 rounded-full font-semibold flex items-center justify-center gap-2"
                 >
-                  Book a Call
+                  Book a Call <ArrowUpRight className="w-4 h-4" />
                 </Link>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   )
 }
+
+// Named alias for convenience if requested as AnimatedNavFramer
+export { Navbar as AnimatedNavFramer }
