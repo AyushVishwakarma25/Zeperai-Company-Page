@@ -9,6 +9,7 @@ import { CaseStudies } from "@/components/case-studies"
 import { ScrollFillText } from "@/components/scroll-fill-text"
 import { MaskReveal } from "@/components/mask-reveal"
 import { LogoCloud2 } from "@/components/logo-cloud-2"
+import { AnimatedTestimonials } from "@/components/animated-testimonials"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ChevronDown, ArrowRight, ArrowUpRight, Megaphone, ShoppingBag, Sparkles, Clapperboard, PenTool } from "lucide-react"
@@ -198,6 +199,8 @@ export default function Home() {
           <CaseStudies />
         </div>
       </section>
+
+      <AnimatedTestimonials />
 
       {/* ── Philosophy ── */}
       <section className="py-28 md:py-40 px-6">

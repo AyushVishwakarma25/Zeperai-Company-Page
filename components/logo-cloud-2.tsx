@@ -17,18 +17,18 @@ const logos: Logo[] = [
   {
     src: "/brands/fast-diagnostics.png",
     alt: "Fast Diagnostics",
-    heightClass: "h-10 sm:h-12 md:h-14",
+    heightClass: "h-5 sm:h-6 md:h-7",
   },
   {
     src: "/brands/prustlr.png",
     alt: "Prustlr",
-    heightClass: "h-8 sm:h-10 md:h-11",
+    heightClass: "h-4 sm:h-5 md:h-5",
     href: "/case-studies/prustlr",
   },
   {
     src: "/brands/varan-jewellers.png",
     alt: "Varan Jewellers",
-    heightClass: "h-9 sm:h-11 md:h-12",
+    heightClass: "h-4.5 sm:h-5.5 md:h-6",
   },
 ]
 
@@ -41,7 +41,7 @@ function LogoCard({ logo, className, children, ...props }: LogoCardProps) {
   const innerContent = (
     <div
       className={cn(
-        "group relative flex items-center justify-center p-8 sm:p-10 md:p-14 min-h-[140px] md:min-h-[170px] transition-all duration-300",
+        "group relative flex items-center justify-center p-6 sm:p-7 md:p-8 min-h-[96px] md:min-h-[110px] transition-all duration-300",
         className
       )}
       {...props}
@@ -83,7 +83,7 @@ export function LogoCloud2({ className }: { className?: string }) {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-poppins font-bold tracking-tight text-[#0A0A0B]">
-            Companies we collaborate with
+            Brands we have worked with
           </h2>
         </motion.div>
 
