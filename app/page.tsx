@@ -9,6 +9,7 @@ import { CaseStudies } from "@/components/case-studies"
 import { ScrollFillText } from "@/components/scroll-fill-text"
 import { MaskReveal } from "@/components/mask-reveal"
 import { LogoCloud2 } from "@/components/logo-cloud-2"
+import { AnimatedTestimonials } from "@/components/animated-testimonials"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ChevronDown, ArrowRight, ArrowUpRight, Megaphone, ShoppingBag, Sparkles, Clapperboard, PenTool } from "lucide-react"
@@ -91,6 +92,8 @@ export default function Home() {
 
       {/* ── Brands We Worked With (Efferd Logo Cloud 2) ── */}
       <LogoCloud2 />
+
+      <AnimatedTestimonials />
 
       <div className="mt-8">
         <KeywordTicker />
